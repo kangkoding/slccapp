@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1614753612;s:3:"ttl";i:3600;s:4:"data";s:4909:"<?php $this->_opening_section('content'); ?>
+a:3:{s:4:"time";i:1614824408;s:3:"ttl";i:3600;s:4:"data";s:4998:"<?php $this->_opening_section('content'); ?>
 	<h2>About Section</h2>    <script src="<?php echo base_url();?>assets/tinymce/tinymce.min.js"></script>
     <script>
     $(document).ready(function(){

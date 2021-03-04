@@ -132,7 +132,7 @@
               <li><a href="<?php echo base_url('admin/permalink') ?>"><i class="fa fa-link"></i> <span>Permalink</span></a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-image"></i> <span>Gallery</span>
             <span class="pull-right-container">
@@ -143,8 +143,8 @@
             <li><a href="<?php echo base_url('admin/gallery') ?>"><i class="fa fa-file text-yellow"></i> <span>Album</span></a></li>
             <li><a href="<?php echo base_url('admin/gallery/gambar') ?>"><i class="fa fa-image"></i> Gambar</a></li>
           </ul>
-        </li>
-        <li class="treeview">
+        </li> -->
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-bookmark"></i> <span>Program Studi</span>
             <span class="pull-right-container">
@@ -155,7 +155,7 @@
             <li><a href="<?php echo base_url('admin/program-studi') ?>"><i class="fa fa-bookmark text-yellow"></i> <span>Program Studi</span></a></li>
             <li><a href="<?php echo base_url('admin/program-studi/create') ?>"><i class="fa fa-plus"></i> Tambah</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pencil-square"></i> <span>Tulisan</span>
@@ -169,7 +169,7 @@
             <li><a href="<?php echo base_url('admin/kategori') ?>"><i class="fa fa-circle-o"></i> Kategori</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-file"></i> <span>Document / File</span>
             <span class="pull-right-container">
@@ -180,7 +180,7 @@
             <li><a href="<?php echo base_url('admin/files') ?>"><i class="fa fa-file text-yellow"></i> <span>Semua File</span></a></li>
             <li><a href="<?php echo base_url('admin/files/create') ?>"><i class="fa fa-plus"></i> Upload</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="treeview">
           <a href="#">
             <i class="fa fa-file"></i> <span>Laman</span>

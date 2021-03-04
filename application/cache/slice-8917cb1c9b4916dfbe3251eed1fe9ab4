@@ -1,8 +1,0 @@
-a:3:{s:4:"time";i:1532335292;s:3:"ttl";i:3600;s:4:"data";s:540:"<?php $this->_opening_section('content'); ?>
-    <h2 style="margin-top:0px">Sliders Read</h2>
-    <table class="table">
-        <tr><td>Image</td><td><img src="<?php echo base_url() ?>assets/images/<?php echo $image ?>" width="600" alt=""></td></tr>
-        <tr><td>Level</td><td><?php echo $level; ?></td></tr>
-        <tr><td></td><td><a href="<?php echo site_url('admin/sliders') ?>" class="btn btn-default">Cancel</a></td></tr>
-   </table>
-<?php $this->_closing_section(); ?><?php echo $this->_include('admin.template.admin'); ?>";}

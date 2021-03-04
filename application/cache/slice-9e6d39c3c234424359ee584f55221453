@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1614750494;s:3:"ttl";i:3600;s:4:"data";s:1279:"<?php $this->_opening_section('content'); ?>
+a:3:{s:4:"time";i:1614823929;s:3:"ttl";i:3600;s:4:"data";s:1300:"<?php $this->_opening_section('content'); ?>
         <h2 style="margin-top:0px">News Section <?php echo $button ?></h2>
         <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">

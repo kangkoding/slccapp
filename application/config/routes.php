@@ -53,15 +53,10 @@ $route['default_controller'] = 'home';
 $route['(admin|post|galeri|home)'] = "$1";
 $route['(admin|post|galeri|home)/(:any)'] = "$1/$2";
 $route['member/register/pencari'] = 'member/page/pencari';
-//pendaftaran
-$route['pmb']  = 'page/info-pendaftaran';
+
 $route['page/(:any)']  = 'page/index/$1';
 $route['product/(:any)']  = 'product/index/$1';
 $route['sys-admin'] = 'auth/login';
-$route['program-studi/(:any)']   = 'program_studi/index/$1';
-$route['login']   = 'login/index';
-$route['al']   = 'alumni/home';
-$route['mhs']   = 'mhs/home';
 //permalink option
 $route['(:any)'] = 'post/read/$1';
 $route[':num/:num/(:any)'] = 'post/read/$1';

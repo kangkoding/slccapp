@@ -1,9 +1,0 @@
-a:3:{s:4:"time";i:1534582389;s:3:"ttl";i:3600;s:4:"data";s:536:"<?php $this->_opening_section('content'); ?>
-	<div class="row">
-		<div class="col-md-12">
-			<?php $lang = $this->session->userdata('swu_lang') ?>
-			<h4><?php if($lang != 2): ?> <?php echo  $prodi->nama_program ; ?> <?php else: ?> <?php echo  $prodi->program_name ; ?> <?php endif; ?></h4>
-			<?php if($lang != 2): ?> <?php echo  $prodi->deskripsi ; ?> <?php else: ?> <?php echo  $prodi->description ; ?> <?php endif; ?>
-		</div>
-	</div>
-<?php $this->_closing_section(); ?><?php echo $this->_include('template.simple.page'); ?>";}

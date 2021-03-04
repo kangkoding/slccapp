@@ -1,8 +1,0 @@
-a:3:{s:4:"time";i:1533795515;s:3:"ttl";i:3600;s:4:"data";s:454:"<?php $this->_opening_section('content'); ?>
-    <h2 style="margin-top:0px">Sidebar Read</h2>
-    <table class="table">
-	    <tr><td>Title</td><td><?php echo $title; ?></td></tr>
-	    <tr><td>Jenis</td><td><?php echo $jenis; ?></td></tr>
-	    <tr><td></td><td><a href="<?php echo site_url('admin/sidebar') ?>" class="btn btn-default">Cancel</a></td></tr>
-	</table>
-<?php $this->_closing_section(); ?><?php echo $this->_include('admin.template.admin'); ?>";}

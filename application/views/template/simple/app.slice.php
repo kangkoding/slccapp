@@ -62,6 +62,7 @@
         .section {
             border-top: 1px solid #eceaea;
             border-bottom: 1px solid #eceaea;
+            margin-top: 40px;
         }
 
         .recognition {
@@ -216,7 +217,8 @@
         }
 
         .footer-v1 .footer {
-            background: #2196F3 !important;
+            background: #003568 !important;
+            /* background-image: linear-gradient(to right, #D9F0EC, #003568) !important; */
             margin-top: 120px;
         }
 
@@ -323,7 +325,11 @@
         }
 
         .bg-grad {
-            background-image: linear-gradient(to right, #55C0FF, #00D5FD);
+            background-image: linear-gradient(to right, #D9F0EC, #003568);
+        }
+
+        .bg-grad-2 {
+            background-image: linear-gradient(to right, #9CADBC, #003568);
         }
 
         .site-title {
@@ -659,101 +665,6 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    <!-- <div class="wrapper">
-        <div class="header-v4">
-            <div class="row header-wrapper mM-0" data-spy="affix" data-offset-top="197" id="nav" style="width:100%;background-color:white;padding-bottom: 5px;">
-                <a href="{{ base_url() }}" target="blank">
-                    <div class="col-md-3 wrapper-mobile">
-                        <div class="row">
-                            <div class="" style="overflow:hidden;float:left">
-                                <img src="{{ base_url('assets/images/').settings('logo') }}" alt="" class="logo" style="width:70px;height:auto">
-                            </div>
-                            <div class="site-identity">
-                                <h4 class="site-title">{{ settings('website_name') }}</h4>
-                                <span>{{ settings('site_tagline') }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <div class="col-md-9" style="height:100%">
-                    <div class="navbar navbar-default mega-menu top-menu t-none" role="navigation">
-                        <div class="container" style="padding: 0px;">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                                    <span class="full-width-menu" style="visibility:hidden">Menu</span>
-                                    <span class="icon-toggle">
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="collapse navbar-collapse navbar-responsive-collapse">
-                            <div style="">
-                                <ul class="nav navbar-nav dm navbar-top">
-                                    @foreach(top_menu() as $tm)
-                                    <li><a href="{{ $tm['url'] }}" class="menu-top">{{ $tm['title'] }}</a></li>
-                                    @endforeach
-                                    @php $lang = $this->session->userdata('swu_lang') @endphp
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="navbar navbar-default mega-menu" role="navigation">
-                        <div class="container" style="padding: 0px;">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                                    <span class="full-width-menu" style="visibility:hidden">Menu</span>
-                                    <span class="icon-toggle">
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="collapse navbar-collapse navbar-responsive-collapse">
-                            <div class="container" style="">
-                                <ul class="nav navbar-bottom navbar-nav dm">
-                                    @foreach(load_menu() as $menu)
-                                    @if(empty($menu['sub_menu']))
-                                    <li class="">
-                                        <a href="<?php if ($menu['is_url'] != 1) {
-                                                        echo base_url() . $menu['slug'];
-                                                    } else {
-                                                        echo $menu['slug'];
-                                                    } ?>"> {{ $menu['menu'] }}</a>
-                                    </li>
-                                    @else
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" {{ $menu['parameter'] }}>
-                                            {{ $menu['menu'] }}
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            @foreach($menu['sub_menu'] as $sub_menu)
-                                            <li><a href="<?php if ($sub_menu->is_url != 1) {
-                                                                echo base_url() . $sub_menu->slug;
-                                                            } else {
-                                                                echo $sub_menu->slug;
-                                                            } ?>" {{ $sub_menu->parameter }}> {{ $sub_menu->submenu }}</a></li>
-                                            @endforeach
-                                        </ul>
-                                    </li>
-                                    @endif
-                                    @endforeach
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-grad fixed-top navbar-collapse">
         <div class="container">
             <a href="{{ base_url() }}" target="blank">
@@ -770,25 +681,45 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
+                    @foreach(load_menu() as $menu)
+                    @if(empty($menu['sub_menu']))
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
-                            <span class="sr-only">(current)</span>
+                        <a href="
+                        <?php if ($menu['is_url'] != 1) {
+                            echo base_url() . $menu['slug'];
+                        } else {
+                            echo $menu['slug'];
+                        } ?>" class="nav-link"> {{ $menu['menu'] }}</a>
+                    </li>
+                    @else
+                    <li class="nav-item active dropdown">
+                        <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-toggle="dropdown" {{ $menu['parameter'] }} id="navbarDropdown">
+                            {{ $menu['menu'] }}
                         </a>
+                        <div class="dropdown-menu">
+                            @foreach($menu['sub_menu'] as $sub_menu)
+                            <a class="dropdown-item" href="
+                            <?php if ($sub_menu->is_url != 1) {
+                                echo base_url() . $sub_menu->slug;
+                            } else {
+                                echo $sub_menu->slug;
+                            } ?>" {{ $sub_menu->parameter }}> {{ $sub_menu->submenu }}</a>
+                            @endforeach
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
+                    @endif
+                    @endforeach
                 </ul>
             </div>
         </div>
     </nav>
-    <div id="footer-v1" class="footer-v1 bg-grad">
+    <div>
+        <!-- <div class="">
+            @yield('carousel')
+        </div> -->
+        @yield('content')
+    </div>
+    <div id="footer-v1" class="footer-v1">
         <div class="footer">
             <div class="container">
                 <div class="row">
