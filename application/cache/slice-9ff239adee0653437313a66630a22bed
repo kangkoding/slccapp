@@ -1,0 +1,39 @@
+a:3:{s:4:"time";i:1608258313;s:3:"ttl";i:3600;s:4:"data";s:2331:"<?php $this->_opening_section('content'); ?>
+    <h2 style="margin-top:0px">Sliders <?php echo $button ?></h2>
+    <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+        <?php if($button=='Update'): ?>
+        <div class="form-group">
+            <label for="varchar">Old Image</label><br>
+            <img src="<?php echo base_url() ?>assets/images/<?php echo $image ?>" width="600" alt="">
+        </div>
+        <?php else: ?>
+        <?php endif; ?>
+        <div class="form-group">
+            <label for="varchar">Judul</label>
+            <input type="text" class="form-control" name="title" id="title" placeholder="Judul" value="<?php echo $title; ?>" />
+        </div>
+        <div class="form-group">
+            <label for="varchar">Isi</label>
+            <input type="text" class="form-control" name="content" id="content" placeholder="ISI" value="<?php echo $content; ?>" />
+        </div>
+        <div class="form-group">
+            <label for="varchar"><?php if ($button=='Update') { echo ' New '; } ?>Image standar(1250 x 500)px <?php echo form_error('image') ?></label>
+            <input type="file" class="form-control" name="image" id="image" placeholder="Image" />
+        </div>
+        <div class="form-group">
+            <label for="varchar">Level <?php echo form_error('level') ?></label>
+            <select class="form-control" name="level" id="level">
+                <option <?php echo ($level=='1' ? 'selected' : '') ?> value="1">1</option>
+                <option <?php echo ($level=='2' ? 'selected' : '') ?> value="2">2</option>
+                <option <?php echo ($level=='3' ? 'selected' : '') ?> value="3">3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="varchar">URL</label>
+            <input type="text" class="form-control" name="url" id="url" placeholder="URL" value="<?php echo $url; ?>" />
+        </div>
+        <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
+        <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
+        <a href="<?php echo site_url('admin/sliders') ?>" class="btn btn-default">Cancel</a>
+    </form>
+<?php $this->_closing_section(); ?><?php echo $this->_include('admin.template.admin'); ?>";}

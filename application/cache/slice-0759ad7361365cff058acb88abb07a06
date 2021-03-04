@@ -1,0 +1,36 @@
+a:3:{s:4:"time";i:1532760114;s:3:"ttl";i:3600;s:4:"data";s:1021:"<?php $this->_opening_section('content'); ?>
+	<div class="row" style="padding-right:10px;margin-top:15px;">
+		<div style="panel panel-green">
+			<div class="panel-heading">
+				Data Perusahaan
+			</div>
+			<div class="panel-body">
+				<table class="table table-hover table-striped" id="myTable">
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Perusahaan</th>
+							<th>Jenis Perusahaan</th>
+							<th>Bergabung Sejak</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach($data_perusahaan as $dp): ?>
+						<tr>
+							<td><?php echo $dp->id; ?></td>
+							<td><?php echo $dp->perusahaan; ?></td>
+							<td><?php echo $dp->jenis_perusahaan; ?></td>
+							<td><?php echo $dp->bergabung_sejak; ?></td>
+						</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+<script>
+	$(document).ready(function(){
+		$('#myTable').DataTable();
+	});
+</script>
+<?php $this->_closing_section(); ?><?php echo $this->_include('template.simple.app'); ?>";}

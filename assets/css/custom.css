@@ -1,0 +1,120 @@
+/* Add here all your css styles (customizations) */
+
+/*Panel Green*/
+.panel-green {
+   border-color: #4765a0; /*change to dark blue*/
+}
+
+.panel-green > .panel-heading {
+   background: #065077;
+}
+
+.panel-u {
+   border-color: #065077;
+}
+
+.panel-u > .panel-heading {
+   background: #065077;
+}
+
+a{
+	color: #3498db;
+}
+
+a:hover{
+	color: #065099;
+}
+
+/* navbar */
+/*Navbar Menu*/
+.header-v4 .navbar-default .navbar-nav > li:hover > a {
+        color: #065077;
+        border-top: solid 2px #065077;
+    }
+
+.header-v4 .dropdown-menu .active > a,
+	.header-v4 .dropdown-menu li > a:hover {
+		color: #fff;
+		filter: none !important;
+		background: #065077 !important;
+	}
+
+/*button*/
+.btn-u {
+	background: #065077;
+}
+
+.btn-u:hover {
+	background: #3498db;
+}
+
+.service .service-icon{
+	color: #065077;
+}
+
+/* Heading */
+.headline h2, 
+.headline h3, 
+.headline h4 {
+  	border-bottom:2px solid #065077;
+	/*border-bottom:none;*/
+}
+
+/*pagination*/
+.pagination > .active > a, 
+.pagination > .active > span, 
+.pagination > .active > a:hover, 
+.pagination > .active > span:hover, 
+.pagination > .active > a:focus, 
+.pagination > .active > span:focus {
+   border-color: #065077;
+   background-color: #065077;
+}
+
+.footer-v1 .footer {
+    background: #065077;
+}
+.footer-v1 .link-list li {
+    border-top: none;
+}
+
+.footer-v1 .footer .headline h2{
+    border-bottom: none;
+}
+.footer-v2 .copyright{
+    background-color: #032B40;
+}
+.link-list li {
+    border-top: none;
+}
+
+/*blockquote*/
+blockquote:hover,
+blockquote.text-right:hover {
+  border-color: #065077;
+}
+
+.header-v4 img.header-banner {
+    margin-bottom: 0px;
+}
+.topbar-v1 {
+    border-top: 0px solid #F0F0F0;
+    border-bottom: 0px solid #F0F0F0;
+}
+
+.linka{
+	color: #065077;
+}
+.tag-box-v3 {
+    border: solid 2px #eee;
+}
+.tag-box {
+    padding: 20px;
+    background: #fff;
+    margin-bottom: 30px;
+}
+.headline {
+    display: block;
+    margin: 10px 0 25px 0;
+    border-bottom: 1px dotted #e4e9f0;
+}

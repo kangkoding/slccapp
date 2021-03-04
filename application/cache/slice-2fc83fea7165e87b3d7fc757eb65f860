@@ -1,0 +1,9 @@
+a:3:{s:4:"time";i:1531988685;s:3:"ttl";i:3600;s:4:"data";s:523:"<?php $this->_opening_section('content'); ?>
+        <h2 style="margin-top:0px">Testimoni Read</h2>
+        <table class="table">
+	    <tr><td>Nama</td><td><?php echo $name; ?></td></tr>
+	    <tr><td>Isi</td><td><?php echo $isi; ?></td></tr>
+	    <tr><td>Tanggal</td><td><?php echo $tanggal; ?></td></tr>
+	    <tr><td></td><td><a href="<?php echo site_url('admin/testimoni') ?>" class="btn btn-default">Cancel</a></td></tr>
+	</table>
+<?php $this->_closing_section(); ?><?php echo $this->_include('admin.template.admin'); ?>";}

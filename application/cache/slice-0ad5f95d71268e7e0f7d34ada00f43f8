@@ -1,0 +1,222 @@
+a:3:{s:4:"time";i:1532330976;s:3:"ttl";i:3600;s:4:"data";s:16786:"<?php $this->_opening_section('content'); ?>
+	<div class="row" style="margin-top:15px;padding-right:10px">
+            <div class="table-label">
+                <div class="clear"></div>
+            </div>
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    Ubah Profil
+                </div>
+                <div class="panel-body">
+                    <div class="form-container table-container">
+                        <form action="<?php echo base_url('member/page/change_profile') ?>" method="post" id="crudForm"  enctype="multipart/form-data" class="form-horizontal" accept-charset="utf-8">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                Nama Lengkap<span class='required'>*</span></label>
+                            <div class="col-sm-9">
+                            <input id='field-cari_fullname' class='form-control' name='full_name' type='text' value="<?php echo  $data_user->full_name ; ?>" maxlength='64' />
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                Tempat Lahir<span class='required'>*</span></label>
+                            <div class="col-sm-9">
+                                <input id='field-cari_birthplace' class='form-control' name='birth_place' type='text' value="<?php echo  $data_user->birth_place ; ?>" maxlength='16' />                                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                Tanggal Lahir<span class='required'>*</span></label>
+                            <div class="col-sm-9">
+                                <input id='field-cari_birthdate' name='birth_date' type='text' value='<?php echo  $data_user->birth_date ; ?>' maxlength='10' class='datepicker-input form-control' />
+        						<a class='datepicker-input-clear' tabindex='-1'>Bersihkan</a> (dd/mm/yyyy)                                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                No. KTP<span class='required'>*</span></label>
+                            <div class="col-sm-9">
+                                <input id='field-cari_ktp' class='form-control' name='id_number' type='text' value="<?php echo  $data_user->id_number ; ?>" maxlength='32' />                                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                Jenis Kelamin<span class='required'>*</span></label>
+                            <div class="col-sm-9">
+                                <select id='field-cari_kelamin' name='cari_kelamin' class='chosen-select form-control' data-placeholder='Pilih Jenis Kelamin'>
+                                    <?php if($data_user->gender == 'Pria'): ?>
+                                    <option value='Pria' selected>Pria</option>
+                                    <?php elseif($data_user->gender == 'Wanita'): ?>
+                                    <option value='Wanita' selected >Wanita</option>
+                                    <?php else: ?>
+                                    <option value='Pria'>Pria</option>
+                                    <option value='Wanita'>Wanita</option>
+                                    <?php endif; ?>
+                                </select>                                  
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                Alamat<span class='required'>*</span></label>
+                            <div class="col-sm-9">
+                                <textarea id='field-cari_alamat' name='address' class='texteditor form-control' ><?php echo  $data_user->address ; ?></textarea>                                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                Kota/Kabupaten<span class='required'>*</span></label>
+                            <div class="col-sm-9">
+                                <select name="city_id" id="city_id" class="form-control">
+                                    <?php foreach($city_id as $city): ?>
+                                        <?php if($data_user->city_id == $city->id): ?>
+                                        <option value="<?php echo  $city->id  ; ?>" selected><?php echo  $city->name ; ?></option>
+                                        <?php else: ?>
+                                        <option value="<?php echo  $city->id  ; ?>"><?php echo  $city->name ; ?></option>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                Kode Pos</label>
+                            <div class="col-sm-9">
+                                <input id='field-cari_kodepos' class='form-control' name='postal_code' type='text' value="<?php echo  $data_user->postal_code ; ?>" maxlength='5' />                                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                No. Telepon</label>
+                            <div class="col-sm-9">
+                                <input id='field-cari_telepon' class='form-control' name='phone' type='text' value="<?php echo  $data_user->phone ; ?>" maxlength='16' />                                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                No. HP<span class='required'>*</span></label>
+                            <div class="col-sm-9">
+                                <input id='field-cari_hp' class='form-control' name='mobile_number' type='text' value="<?php echo  $data_user->mobile_number ; ?>" maxlength='16' />                                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                Kewarganegaraan<span class='required'>*</span></label>
+                            <div class="col-sm-9">
+                                <select id='field-cari_kewarganegaraan' name='country' class='chosen-select form-control' data-placeholder='Pilih Kewarganegaraan'>
+                                    <?php if($data_user->country == 'WNI'): ?>
+                                    <option value='WNI' selected='selected' >WNI</option>
+                                    <?php elseif($data_user->country == 'WNA'): ?>
+                                    <option value='WNA' selected >WNA</option>
+                                    <?php else: ?>
+                                    <option value='WNI'>WNI</option>
+                                    <option value='WNA'>WNA</option>
+                                    <?php endif; ?>
+                                </select>                                    
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                Status<span class='required'>*</span></label>
+                            <div class="col-sm-9">
+                                <select id='field-cari_marital' name='marriage_status' class='chosen-select form-control' data-placeholder='Pilih Status'>
+                                    <?php if($data_user->marriage_status == 'Kawin'): ?>
+                                    <option value='Kawin'  selected>Kawin</option>
+                                    <?php elseif($data_user->marriage_status == 'Tidak Kawin'): ?>
+                                    <option value='Tidak Kawin' selected>Tidak Kawin</option>
+                                    <?php elseif($data_user->marriage_status == 'Janda'): ?>
+                                    <option value='Janda' selected >Janda</option>
+                                    <?php elseif($data_user->marriage_status == 'Duda'): ?>
+                                    <option value='Duda'  selected>Duda</option>
+                                    <?php else: ?>
+                                    <option value='Kawin'  >Kawin</option>
+                                    <option value='Tidak Kawin' >Tidak Kawin</option>
+                                    <option value='Janda'  >Janda</option>
+                                    <option value='Duda'  >Duda</option>
+                                    <?php endif; ?>
+                                </select>                                    
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                Agama<span class='required'>*</span></label>
+                            <div class="col-sm-9">
+                                <select id='field-cari_agama' name='cari_agama' class='chosen-select form-control' data-placeholder='Pilih Agama'>
+                                    <?php if($data_user->religion == 'Islam'): ?>
+                                    <option value='Islam' selected>Islam</option>
+                                    <?php elseif($data_user->religion == 'Kristen'): ?>
+                                    <option value='Kristen' selected>Kristen</option>
+                                    <?php elseif($data_user->religion == 'Katolik'): ?>
+                                    <option value='Katolik' selected>Katolik</option>
+                                    <?php elseif($data_user->religion == 'Budha'): ?>
+                                    <option value='Budha' selected>Budha</option>
+                                    <?php elseif($data_user->religion == 'Hindu'): ?>
+                                    <option value='Hindu' selected>Hindu</option>
+                                    <?php elseif($data_user->religion == 'Konghucu'): ?>
+                                    <option value='Konghucu' selected>Konghucu</option>
+                                    <?php elseif($data_user->religion == 'Lainya'): ?>
+                                    <option value='Lainnya' selected>Lainnya</option>
+                                    <?php else: ?>
+                                    <option value='Islam'>Islam</option>
+                                    <option value='Kristen'>Kristen</option>
+                                    <option value='Katolik'>Katolik</option>
+                                    <option value='Budha'>Budha</option>
+                                    <option value='Hindu'>Hindu</option>
+                                    <option value='Konghucu'>Konghucu</option>
+                                    <option value='Lainnya'>Lainnya</option>
+                                    <?php endif; ?>
+                                </select>                                    
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                Pendidikan<span class='required'>*</span></label>
+                            <div class="col-sm-9">
+                                <select id='field-pendidikan_id'  name='pendidikan_id' class='chosen-select form-control' data-placeholder='Pilih Pendidikan' style='width:300px'>
+                                    <?php foreach($kat_pendidikan as $pend): ?>
+                                        <?php if($pend->id == $data_user->id_kat_pendidikan): ?>
+                                        <option value='<?php echo  $pend->id ; ?> ' selected><?php echo  $pend->pendidikan ; ?></option>
+                                        <?php else: ?>
+                                        <option value='<?php echo  $pend->id ; ?> '><?php echo  $pend->pendidikan ; ?></option>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </select>                                    
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                IPK (Jika Kuliah)</label>
+                            <div class="col-sm-9">
+                                <input id='field-cari_ipk' class='form-control' name='ipk' type='text' value="<?php echo  $data_user->ipk ; ?>" maxlength='4' />                                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                Bidang</label>
+                            <div class="col-sm-9">
+                                <select id='field-bid_id'  name='id_bidang' class='chosen-select form-control' data-placeholder='Pilih Bidang' style='width:300px'>
+                                    <?php foreach($bidang as $bd): ?>
+                                        <?php if($bd->id == $data_user->id_bidang): ?>
+                                        <option value='<?php echo  $bd->id ; ?>  ' selected><?php echo  $bd->bidang ; ?></option>
+                                        <?php else: ?>
+                                        <option value='<?php echo  $bd->id ; ?>  ' ><?php echo  $bd->bidang ; ?></option>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </select>                                   
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" style="text-align:left">
+                                Jika anda penyandang cacat tuliskan disini</label>
+                            <div class="col-sm-9">
+                                <input id='field-cari_cacat' class='form-control' name='ket_disabilitas' type='text' value="" maxlength='128' />                                    </div>
+                        </div>
+                        <div class="form-group">
+                        <div id='report-error' class='report-div error bg-danger' style="display:none"></div>
+                        <div id='report-success' class='report-div success bg-success' style="display:none"></div>
+                    	</div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-7">
+                                <button class="btn btn-default btn-success b10" type="submit" id="form-button-save">
+                                    <i class="fa fa-save"></i>
+                                    Simpan
+                                </button>
+        					</div>
+                        </div>
+                        </form>                
+                    </div>
+                </div>
+            </div>
+	</div>
+<?php $this->_closing_section(); ?><?php echo $this->_include('template.simple.app'); ?>";}

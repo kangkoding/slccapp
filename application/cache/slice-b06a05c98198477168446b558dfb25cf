@@ -1,0 +1,116 @@
+a:3:{s:4:"time";i:1533258917;s:3:"ttl";i:3600;s:4:"data";s:4265:"<?php $this->_opening_section('content'); ?>
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3><?php echo $users ?></h3>
+
+              <p>Total Pengguna</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+            </div>
+            <a href="<?php echo base_url('admin/users') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3><?php echo $testimoni ?></h3>
+
+              <p>Total Testimoni</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="<?php echo base_url('admin/testimoni') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3><?php echo $lowongan ?></h3>
+
+              <p>Total Lowongan</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
+            </div>
+            <a href="<?php echo base_url('admin/lowongan') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3><?php echo $perusahaan ?></h3>
+
+              <p>Total Perusahaan</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="<?php echo base_url('admin/perusahaan') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
+      <!-- /.row -->
+      <!-- Main row -->
+      <div class="row">
+        <!-- Left col -->
+        <section class="col-lg-7 connectedSortable">
+          <!-- Custom tabs (Charts with tabs)-->
+
+          <!-- quick email widget -->
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              TESTIMONI
+            </div>
+            <div class="panel-body">
+            <table class="table table-hover table-striped">
+              <thead style="background-color:white!important;color:black!important">
+                <th>Nama</th>
+                <th>Testimoni</th>
+              </thead>
+              <tbody>
+                <?php foreach ($data_testimoni as $dt): ?>
+                  <tr>
+                    <td><?php echo $dt->name ?></td>
+                    <td><?php echo $dt->isi ?></td>
+                  </tr>
+                <?php endforeach ?>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- /.Left col -->
+        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+        <section class="col-lg-5 connectedSortable">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              User terahir Login
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover">
+                  <?php $i = 1;foreach ($last_login as $ls): ?>
+                  <tr>
+                    <td><?php echo $i ?></td>
+                    <td><?php echo $ls->email ?></td>
+                  </tr>
+                  <?php $i++; endforeach ?>
+              </table>
+            </div>
+          </div>
+        </section>
+        <!-- right col -->
+      </div>
+      <!-- /.row (main row) -->
+<?php $this->_closing_section(); ?><?php echo $this->_include('admin.template.admin'); ?>";}

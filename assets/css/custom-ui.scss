@@ -1,0 +1,150 @@
+.header-v4 {
+    .row.header-wrapper {
+        position: absolute;
+        margin:0px;
+        background: rgba(32,65,127,0.5)!important;
+        border-bottom:solid 4px rgba(32,65,127,1);
+        li > a {
+            color:white!important;
+        }
+    }
+}
+
+#nav.affix {
+    position: fixed!important;
+    top:0px;
+    background: rgba(32,65,127,1)!important;
+}
+
+.wrapper-mobile {
+    background-color:transparent!important;
+    color:white!important;
+    .site-title {
+        color:white!important;
+    }
+}
+
+.carousel-overlap {
+    margin-top:0px;
+}
+
+.navbar-top {
+    margin-top:0px!important;
+}
+
+.dropdown-menu {
+    background:rgba(32, 65, 127, .5)!important;
+    border-bottom:0px!important;
+}
+
+.carousel-inner>.item>a>img {
+    height:500px;
+    width:100%!important;
+    // height:auto!important;
+    object-fit:cover;
+}
+
+.carousel-caption {
+    position: absolute!important;
+    left: 10%!important;
+    width: 35%!important;
+    text-align:left;
+    .carousel-title {
+        font-weight: bolder;
+        text-transform: uppercase;
+        font-size:20px;
+        margin-bottom:10px;
+        padding:20px;
+        background:#fec311!important;
+        text-shadow: none!important;
+        color:rgba(32,65,127,1)!important;
+    }
+    .carousel-content {
+        padding:20px;
+        background:rgba(32, 65, 127, .5)!important;
+        font-weight: bolder;
+        text-transform:uppercase;
+    }
+}
+
+.carousel-indicators {
+    left:20%;
+    bottom:0px!important;
+    li {
+        border-radius:0px!important;
+        width:50px!important;
+    }
+}
+
+.greeting-wrapper {
+    position:relative;
+    border-top:0px;
+    background:linear-gradient(0deg,rgba(32, 65, 127, .9),rgba(32, 65, 127, .9)),url('../images/swu.jpg');
+    p {
+        color:white!important;
+    }
+    h3 {
+        font-weight: bolder;
+        text-transform: uppercase;
+        font-weight: 50px;
+        color:white!important;
+    }
+}
+
+.panel-sidebar .panel-heading > h3 {
+    width: fit-content;
+    padding: 10px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 25px;
+    background-color: #20417f!important;
+}
+
+.panel-sidebar .panel-heading 
+{
+    border-bottom:solid 3px #20417f!important
+}
+
+.news-images.bottom {
+    display: flex;
+    height:420px!important;
+    .news-title {
+        width:100%;
+        align-self:flex-end;
+        padding:20px;
+        background:rgba(32, 65, 127, .7);
+        h4 {
+            color:white!important;
+        }
+    }
+}
+
+.row.event {
+    background:whitesmoke;
+    .date {
+        background:orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h1 {
+            font-size:40px;
+        }
+        h4 {
+            font-size:22px;
+        }
+    }
+    .detail {
+        padding:10px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .carousel-indicators {
+        left: 40%;
+        bottom: 0px !important;
+    }
+    .carousel-caption {
+        width:80%!important;
+    }
+}

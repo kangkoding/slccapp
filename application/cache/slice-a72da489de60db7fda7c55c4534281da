@@ -1,0 +1,278 @@
+a:3:{s:4:"time";i:1533258906;s:3:"ttl";i:3600;s:4:"data";s:13316:"<?php $this->_opening_section('title', 'Title'); ?>
+<?php if(empty($username)): ?><?php $this->_opening_section('carousel'); ?>
+	  <?php if(count($data_sliders) > 0): ?>
+	    <div class="col-md-12">
+	    	<div class="row margin-bottom-20"> 
+	      		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			      <!-- Indicators -->
+			      	<?php
+			      	$i_sliders = 0;
+			      	$li = "";
+			      	$item = "";
+			      	foreach($data_sliders as $key_sliders):
+			      	  $class = "";
+			      	  if ($i_sliders==0) {
+			      	    $class = "active";
+			      	  }
+			      	  $li .= '<li data-target="#carousel-example-generic" data-slide-to="'.$i_sliders.'" class="'.$class.'"></li>';
+			      	  $item .= '
+			          <div class="item '.$class.'">
+			            <a href="#" title=""><img src="'.base_url().'assets/images/'.$key_sliders->image.'"></a>
+			            <div class="carousel-caption">
+			            </div>
+			          </div>';
+			      	  $i_sliders++;
+			      	endforeach;
+			      	?>
+			        <ol class="carousel-indicators">
+			          <?php echo $li ?>
+			        </ol>
+			        <!-- Wrapper for slides -->
+			        <div class="carousel-inner" role="listbox">
+			          <?php echo $item ?>
+			        </div>
+			        <!-- Controls -->
+			        <?php if($i_sliders > 1): ?>
+			        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			          <span class="glyphicon glyphicon-chevron-left fa fa-chevron-left" aria-hidden="true"></span>
+			          <span class="sr-only">Previous</span>
+			        </a>
+			        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			          <span class="glyphicon glyphicon-chevron-right fa fa-chevron-right" aria-hidden="true"></span>
+			          <span class="sr-only">Next</span>
+			        </a>
+			        <?php endif; ?>
+	    		</div>
+	    	</div>
+	    </div>
+	    <br><br>
+	  <?php endif; ?>
+	<?php $this->_closing_section(); ?>
+<?php endif; ?>
+<?php if(empty($data['id_user'])): ?><?php $this->_opening_section('content'); ?>
+		<div class="row margin-bottom-20"> <!--  -->
+			<div class="col-md-6">
+				<div class="service">
+				 <a href="<?php echo  base_url() ; ?>member/register/pencari" >
+		            <i class="fa fa-users service-icon"></i>
+					<div class="desc">
+						<h4>Pencari Kerja</h4>
+		                <p>Registrasi pencari kerja</p>
+					</div>
+				</a>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="service">
+		            <a href="#" >
+		            <i class="fa fa-briefcase service-icon"></i>
+					<div class="desc">
+						<h4>Penyedia Kerja</h4>
+		                <p>Registrasi penyedia kerja</p>
+					</div>
+				</a>
+				</div>
+			</div>
+		</div>
+		<hr class="hr-xs">
+		<div class="row">
+		    <div class="col-lg-8">
+				<!--
+				<p>
+					<h2> <font color="#21759b" size="10em"> JOB FAIR 20 </font> STMIK WIDYA UTAMA  Career Center</h2>
+					<p style = "border:3px solid red; padding:1em 1em 1em 1em; font-size:1.5em;">
+						Anda Belum Bekerja ?? Segara Daftar Ke <i><u><a href="<?php echo  base_url() ; ?>tiket_JF20">TIKET JOB FAIR 20</a></u></i>
+						<br>
+						&nbsp;&nbsp;&nbsp;Hari &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Sabtu & Minggu<br>
+						&nbsp;&nbsp;&nbsp;Tanggal : 21 & 22 April 2018<br>
+						&nbsp;&nbsp;&nbsp;Pukul &nbsp;&nbsp;&nbsp;&nbsp;: 08.30 - 16.00 WIB<br>
+						Informasi perusahaan peserta JOB FAIR 20 klik <i><u><a href="<?php echo  base_url() ; ?>jobfair">JOB FAIR 20</a></i></u>
+
+					</p>
+				</p>-->
+				<p></p><br>
+		        <div class="headline"><h2>Hati - Hati dan Waspada !</h2></div>
+		        Dalam melamar pekerjaan harus diwaspadai terhadap oknum yang mengatasnamakan perusahaan besar dengan jabatan menarik yang meminta pengiriman uang ke rekening tertentu dengan alasan interview, pelatihan, penggantian uang tiket dan lain-lain karena bisa jadi itu adalah modus penipuan.<br /><br>
+		        <strong>Berdasarkan konvensi ILO, Pencari kerja / pelamar kerja tidak boleh dipungut biaya dalam rangka penempatan.</strong> <br /><br>
+		        Ikutilah info lowongan kerja yang disediakan oleh Pemerintah dan lembaga Penempatan Resmi melalui website maupun job fair yang tidak memungut biaya terhadap pencari kerja / pelamar kerja.<br /><br />
+		        <strong>Jadilah pelamar kerja yang cerdas jangan sampai menjadi korban penipuan.</strong> Informasikan ke kami apabila ada informasi yang merugikan.<br><br>
+		        <p class="pull-right">- TIM Career Center STMIK WIDYA UTAMA </p>
+		        <h1 style="visibility: hidden;">STMIK WIDYA UTAMA  Career Center </h1>
+		   </div>
+		    <div class="col-lg-4">
+		    	 <!-- polling -->
+		        <div class="panel panel-green">
+	                <div class="panel-heading">
+	                    <h3 class="panel-title">Lowongan Terbaru</h3>
+	                </div>
+	                <div class="panel-body">
+            		<?php foreach($data_loker as $loker): ?>
+	                <a href="<?php echo  base_url('member/page/detail-loker/'.$loker->id) ; ?>" class="linka">
+	                    <?php echo  $loker->perusahaan ; ?><br />
+	                    <?php echo  $loker->lowongan ; ?><br />
+	                </a>
+	                <i><?php echo  $loker->tgl ; ?></i><br />
+	                <hr class="hr-xs"/>  
+	                <?php endforeach; ?>                                             
+	                <a href="<?php echo  base_url('member/page/lowongan') ; ?>" class="btn btn-primary pull-right">Lowongan Terlengkap</a>
+	                </div>
+		        </div>
+				<div class="panel panel-green">
+					<div class="panel-heading">
+						<h3 class="panel-title"> <center> Informasi Campus Hiring </center> </h3>
+					</div>
+					<div class="panel-body">
+						<center>
+							<H4> CAMPUS HIRING </H4>
+							<p style="font-size:15px;">  </p>
+						<center>
+
+						<hr>
+						<span style="text-align:left">
+							<?php if(!empty($data_hiring)): ?>
+		            		<?php foreach($data_hiring as $hiring): ?>
+			                <a href="<?php echo  base_url('home/hiring-read/'.$loker->id) ; ?>" class="linka">
+			                    <?php echo  $hiring->judul; ; ?><br />
+			                </a>
+			                <i><?php echo  $hiring->tgl ; ?></i><br />
+			                <hr class="hr-xs"/>  
+			                <a href="<?php echo  base_url('home/campus-hiring/') ; ?>" class="btn btn-primary pull-right">Lowongan Terlengkap</a>
+			                <?php endforeach; ?>
+			                <?php else: ?>
+			                	<p>Tidak ada  lowongan</p>
+			                <?php endif; ?>
+		                </span>                                      
+					</div>
+				</div>
+				<!--
+				<div class="panel panel-green">
+					<div class="panel-heading">
+						<h3 class="panel-title"> <center> Informasi Workshop </center> </h3>
+					</div>
+					<div class="panel-body">
+						<center>
+							<H4> WORKSHOP </H4>
+						<center>
+
+						<hr>
+
+					</div>
+				</div>
+				-->
+
+			</div>
+		</div>
+		<br/>
+	<?php $this->_closing_section(); ?>
+<?php else: ?><?php $this->_opening_section('content'); ?>
+	<div class="row margin-bottom-20" style="margin-top:10px;padding-right:10px">
+		<div class="panel-group acc-v1" id="accordion-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-One">
+                            <b>Mohon Diperhatikan</b>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse-One" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="img-responsive" src="<?php echo  base_url() ; ?>assets/images/img12.jpg" alt="">
+                            </div>
+                            <div class="col-md-8">
+                             <b>Lowongan kerja di Website ini sebelum dipublikasikan sudah diverifikasi secara normatif</b>, namun <i> admin berpesan masih harus tetap berhati-hati terhadap perusahaan sebagai berikut:</i><br/>
+							    1. Perusahaan yang bukan pengguna langsung tenaga kerja / Calo / perantara atau semacamnya.<br />
+							    2. Perusahaan ternyata tidak sesuai dengan info di website ini / fiktive.<br />
+							    3. Ternyata bukan perusahaan tetapi Lembaga pelatihan yang menjanjikan penempatan tenaga kerja.<br />
+							    4. Perusahaan mensyaratkan pelamar mengirimkan uang kerekening tertentu dengan alasan  Interview , biaya tiket atau pelatihan.<br /><br />
+            				</div>
+                    	</div>
+                	</div>
+            	</div>
+        	</div>
+	        <div class="panel panel-default">
+	            <div class="panel-heading">
+	                <h4 class="panel-title">
+	                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two">
+	                        <b>Cara melamar pekerjaan di website ini</b>
+	                    </a>
+	                </h4>
+	            </div>
+	            <div id="collapse-Two" class="panel-collapse collapse">
+	                <div class="panel-body">
+	                    <div class="row">
+	                        <div class="col-md-8">
+                         	<b><i>
+					        <ol>                
+					        	<li> -> Isi lengkap profil, data pendidikan, dan pengalaman kerja anda</li>
+				                <li> -> Buka lowongan yang akan anda lamar</li>
+				                <li> -> klik tombol apply lowongan</li>
+				                <li> -> tunggu hingga anda mendapat panggilan dari perusahaan.<br /></li>
+				            </ol>
+							</i></b>
+						</ul>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        	</div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Three">
+                        <b>Bagaimana Kami melindungi Anda ?</b>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse-Three" class="panel-collapse collapse">
+                <div class="panel-body">
+                <div class="row">   
+                    <div class="col-md-8">
+                    <i>Guna melindungi pelamar dari tindak penipuan oleh oknum tertentu maka pencari kerja dapat melamar langsung dengan cara pilih menu kirim lamaran selanjutnya database anda akan masuk ke database perusahaan sebagai pelamar.<br />
+					<b>Anda tinggal menunggu respon dari perusahaan meliputi : belum ditanggapi/diperiksa/dipanggil atau diterima.</b><br />
+					Selalu ikuti terus status lamaran anda di menu login anda.</i><br />   
+                    </div>
+                    <div class="col-md-4">
+                        </div>
+		                </div>
+		            </div>       
+		            </div>
+		        </div>
+                <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Four">
+                                    <b>Bantu Kami !</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse-Four" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-8">
+					            Untuk meningkatkan layanan di website STMIK Career Center, kami membutuhkan kritik dan saran dari pengguna.
+					            Silahkan berikan kritik dan saran mengenai layanan kami dengan cara memberikan testimoni kepada kami. Terima kasih.
+					            <br><br>
+					            <a href="<?php echo  base_url() ; ?>member/pencari/testimoni" class="btn btn-u">KIRIM TESTIMONI</a> 
+					            <a href="#" class="btn btn-u">facebook</a>
+					            <a href="#" class="btn btn-u">Twitter</a>  
+					            <a href="#" class="btn btn-u">Instagram</a>         
+                    		</div>
+                    	<div class="col-md-4">
+                        	<img class="img-responsive" src="<?php echo  base_url() ; ?>assets/images/img11.jpg" alt="">
+                    	</div>
+                	</div>      
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Accordion v1 -->                
+
+        </div>
+	<?php $this->_closing_section(); ?>
+<?php endif; ?>
+<?php echo $this->_include('template.simple.app'); ?>";}

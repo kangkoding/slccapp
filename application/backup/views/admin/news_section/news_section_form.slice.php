@@ -1,0 +1,23 @@
+@extends('admin.template.admin')
+@section('content')
+        <h2 style="margin-top:0px">News Section <?php echo $button ?></h2>
+        <form action="<?php echo $action; ?>" method="post">
+	    <div class="form-group">
+            <label for="varchar">Title <?php echo form_error('title') ?></label>
+            <input type="text" class="form-control" name="title" id="title" placeholder="Title" value="<?php echo $title; ?>" />
+        </div>
+	    <div class="form-group">
+            <label for="int">Kategori <?php echo form_error('id_kategori') ?></label>
+            <select name="id_kategori" id="" class="form-control">
+                <?php foreach ($kategori as $kat): ?>
+                <option value="<?php echo $kat->id; ?>" <?php if($kat->id == $id_kategori){ echo 'selected'; } ?>>
+                    <?php echo $kat->kategori ?>
+                </option>
+                <?php endforeach ?>
+            </select>
+        </div>
+	    <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
+	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
+	    <a href="<?php echo site_url('admin/news_section') ?>" class="btn btn-default">Cancel</a>
+	</form>
+@endsection

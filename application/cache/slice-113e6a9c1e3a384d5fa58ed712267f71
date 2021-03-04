@@ -1,0 +1,20 @@
+a:3:{s:4:"time";i:1533260562;s:3:"ttl";i:3600;s:4:"data";s:1086:"<?php $this->_opening_section('content'); ?>
+        <h2 style="margin-top:0px">Header <?php echo $button ?></h2>
+        <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+            <div class="well">
+                Gambar Lama <br>
+                <img src="<?php echo  base_url('assets/images/').$gambar ; ?>" alt="" style="height:100px">
+            </div>
+            <div class="well">
+        	    <div class="form-group">
+                    <label for="gambar">Gambar <?php echo form_error('gambar') ?></label>
+                    <input type="hidden" name="old_image" value="<?php echo  $gambar ; ?>">
+                    <input type="file" name="gambar">
+                </div>
+            </div>
+	    <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
+	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
+	    <a href="<?php echo site_url('header') ?>" class="btn btn-default">Cancel</a>
+	</form>
+    </body>
+<?php $this->_closing_section(); ?><?php echo $this->_include('admin.template.admin'); ?>";}

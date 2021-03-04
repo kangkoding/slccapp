@@ -1,0 +1,368 @@
+a:3:{s:4:"time";i:1533259600;s:3:"ttl";i:3600;s:4:"data";s:19206:"<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>STMIK WIDYA UTAMA  Career Center |<?php echo $this->_yield('title'); ?></title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="copyright" content="Career Center STMIK WIDYA UTAMA ">
+    <meta name="rating" content="general">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="STMIK WIDYA UTAMA  Career Center Merupakan pusat layanan dan Karir bagi Alumni STMIK WIDYA UTAMA. Kami menyediakan informasi karir, pemagangan (internship) dan lowongan kerja diberbagai bidang dan listas perusahaan industri.">
+    <meta name="keywords" content="STMIK WIDYA UTAMA  career center, ucc, cc stmik, STMIK WIDYA UTAMA , career center, career center semarang, STMIK WIDYA UTAMA  career center">
+    <meta name="author" content="STMIK WIDYA UTAMA  Career Center">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="<?php echo  base_url() ; ?>assets/img/fav.jpg">
+    <!-- Web Fonts
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin"> -->
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="<?php echo  base_url() ; ?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo  base_url() ; ?>assets/css/style.css">
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="<?php echo  base_url() ; ?>assets/css/header-v4.css">
+    <link rel="stylesheet" href="<?php echo  base_url() ; ?>assets/css/footer-v1.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="<?php echo  base_url() ; ?>assets/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="<?php echo  base_url() ; ?>assets/datatables/datatables.min.css">
+    <script type="text/javascript" src="<?php echo  base_url() ; ?>assets/js/jquery.min.js"></script>
+    
+    <!-- CSS Customization -->
+    <style>
+        .purchase {
+            background: none;
+            border-bottom: none;
+            padding: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="<?php echo  base_url() ; ?>assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="<?php echo  base_url() ; ?>assets/css/custom.css">
+    <style>
+        .header-v4 .navbar-header {
+            margin: 0px 0px;
+        }
+        .header-v4 .navbar-default .navbar-nav > li > a {
+            font-size: 12px;
+            padding: 10px 10px 11px 10px;
+        }
+        .panel-body {
+            padding: 10px;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        .form-group {
+            margin-bottom: 5px;
+        }
+        .panel-heading {
+            padding: 5px 15px;
+            color:white;
+        }
+        * {
+            border-radius:0px!important;
+        }
+    </style>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-78251034-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+    </head>
+<body class="boxed-layout container">
+<div class="wrapper">
+    <div class="header-v4">
+    <div class="navbar navbar-default mega-menu" role="navigation">
+        <div class="container" style="padding: 0px;">
+            <div class="navbar-header">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php 
+                            $header = $this->db->get('header')->row()->gambar;
+                        ?>
+                        <a href="#"><img class="header-banner img-responsive" src="<?php echo  base_url() ; ?>assets/images/<?php echo  $header ; ?>" width="100%" style="width: 100%;" alt="Header STMIK WIDYA UTAMA  Career Center" title="STMIK WIDYA UTAMA  Career Center"></a>
+                     </div>
+                </div>    
+                <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="full-width-menu">Menu</span>
+                    <span class="icon-toggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </span>    
+                </button>
+            </div>
+        </div>    
+        <div class="clearfix"></div>
+        <div class="collapse navbar-collapse navbar-responsive-collapse">
+            <div class="container" style="padding: 0px;">
+                <?php $username = $this->session->userdata('username') ?>
+                <?php if(empty($username)): ?>
+                <ul class="nav navbar-nav">
+                    <li class="">
+                        <a href="<?php echo  base_url() ; ?>" ><i class="fa fa-home"></i> Home</a>
+                    </li>
+                    <li class="">
+                        <a href="<?php echo  base_url() ; ?>page/lowongan" ><i class="fa fa-list"></i> Lowongan Kerja</a>
+                        </li>
+                    <li class="">
+                        <a href="<?php echo  base_url() ; ?>page/perusahaan" ><i class="fa fa-list"></i> Perusahaan</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="fa fa-briefcase"></i> Registrasi  <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo  base_url() ; ?>member/register/pencari">Pencari Kerja</a></li>
+                           <!--  <li><a href="<?php echo  base_url() ; ?>member/register/penyedia">Perusahaan</a></li>-->
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="fa fa-briefcase"></i> Hasil Tracer  2015<i class="fa fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">  
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="fa fa-users fa-fw"></i> Tracer Alumni  <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo  base_url() ; ?>tracer" target="_blank" > Web Tracer Alumni</a></li>
+                            <li><a href="<?php echo  base_url() ; ?>main/traceralumni" target="_blank" > Hasil Tracer Alumni 2015</a></li>
+                        </ul>
+                    </li>
+                    -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="fa fa-phone"></i> Hubungi Kami <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="">
+                                <a href="<?php echo  base_url() ; ?>kontak" >
+                                    <i class="fa fa-phone"></i> Hubungi Kami
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="<?php echo  base_url() ; ?>faq" ><i class="fa fa-info"></i> FAQ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--     
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="fa fa-list"></i> Laporan <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </li>
+                    -->
+                </ul>
+                <?php else: ?>
+                <ul class="nav navbar-nav">
+                    <li class="">
+                        <a href="<?php echo  base_url() ; ?>" ><i class="fa fa-home"></i> Home</a>
+                    </li>
+                    <li class="">
+                        <a href="<?php echo  base_url('member/page/profil') ; ?>" > Profil</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                           <i class="fa fa-briefcase"></i> Pendidikan  <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo  base_url('member/pendidikan-formal') ; ?>">Pendidikan Formal</a></li>
+                            <li><a href="<?php echo  base_url('member/pendidikan-nonformal') ; ?>">Pendidikan NonFormal</a></li>
+                            <li><a href="<?php echo  base_url('member/sertifikasi') ; ?>">Sertifikasi</a></li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="<?php echo  base_url('member/page/lowongan') ; ?>" > Lowongan</a>
+                    </li>
+                    <li class="">
+                        <a href="<?php echo  base_url('member/page/lamaran') ; ?>" > Lamaran</a>
+                    </li>
+                    <li class="">
+                        <a href="<?php echo  base_url('member/pengalaman') ; ?>" > Pengalaman Kerja</a>
+                    </li>
+                    <li class="">
+                        <a href="<?php echo  base_url('member/testimoni') ; ?>" > Testimoni</a>
+                    </li>
+                    <li class="">
+                        <a href="<?php echo  base_url('auth/change_password') ; ?>" > Ubah Password</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo  base_url('auth/logout') ; ?>">
+                           <i class="fa fa-exit"></i> LOG OUT
+                        </a>
+                    </li>
+                </ul>
+                <?php endif; ?>
+            </div>
+        </div>
+        </div>
+    </div>    
+    <div class="container" style="padding-top: 10px;"><?php echo $this->_yield('carousel'); ?>
+    <div class="row">
+    <div class="col-lg-3" style="margin-top:10px">
+        <?php if(empty($username)): ?>
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <h3 class="panel-title">Login</h3>
+            </div>
+            <div class="panel-body">
+            <?php if(!empty($message)): ?> 
+            <div class="well" style="border:1px solid red">
+                <?php echo  $message ; ?>
+            </div>
+            <?php endif; ?>                                             
+                <form role="form" method="post" action="<?php echo base_url('auth/login') ?>">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input class="form-control" placeholder="Username" type="text" name="identity" required="" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input class="form-control" placeholder="Password" type="password" name="password" required="" />
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                </form>
+            </div>
+        </div> 
+        <?php endif; ?>       
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <h3 class="panel-title">Cari Lowongan</h3>
+            </div>
+            <div class="panel-body">                                                      
+                <form role="form" action="<?php echo  base_url('member/page/cari-lowongan') ; ?>">
+                    <div class="form-group">
+                        <label>
+                            Isi dengan nama lowongan / nama perusahaan / penempatan / min pendidikan.
+                        </label>
+                        <input class="form-control" placeholder="Kata kunci" type="text" name="search" />
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Cari</button>
+                </form>
+            </div>
+        </div>        
+    <div class="panel panel-green">
+    <div class="panel-heading">
+        <h3 class="panel-title">Berita Terkini</h3>
+    </div>
+    <?php 
+        $data = $this->db->order_by('id','desc')->get('berita')->result();
+    ?>
+    <div class="panel-body">
+        <?php foreach($data as $dt): ?>
+            <?php
+                $title = str_replace(' ','-',strtolower($dt->judul));
+            ?>
+            <a href="<?php echo  base_url() ; ?>artikel/read/<?php echo  $dt->id.'-'.$title ; ?>" class="linka"><i class="fa fa-caret-right"></i> <?php echo  $dt->judul ; ?> </a>
+            <br/><i><?php echo  $dt->tgl_berita ; ?></i><br />
+            <hr class="hr-xs">
+        <?php endforeach; ?>
+
+        <a href="<?php echo base_url('artikel'); ?>" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Selengkapnya</a>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-9"><?php echo $this->_yield('content'); ?>
+    </div>
+    </div>
+    </div>
+    </div>
+
+     <br/>
+ <br/>
+ <!--=== Footer v1 ===-->
+    <div id="footer-v1" class="footer-v1">
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <!-- About -->
+                    <div class="col-md-3 md-margin-bottom-40">
+                    <div class="headline"><h2>Tentang Kami</h2></div>
+                        <p><b>Career Center STMIK WIDYA UTAMA </b> Merupakan pusat layanan dan Karir bagi Alumni STMIK WIDYA UTAMA.   
+                        Kami menyediakan informasi karir, pemagangan (<i>internship</i>) dan lowongan kerja diberbagai bidang dan listas perusahaan industri.
+                        </p>    
+                    </div>
+                    <!-- End About -->
+                    <!-- Link List -->
+                    <div class="col-md-3 md-margin-bottom-40">
+                        <div class="headline"><h2>Eksternal Link</h2></div>
+                        <ul class="list-unstyled link-list">
+                            <li><a href="http://swu.ac.id">STMIK WIDYA UTAMA</a><i class="fa fa-angle-right"></i></li>
+                        </ul>
+                    </div>
+                    <!-- End Link List -->   
+                    <!-- Latest -->
+                    <div class="col-md-3 md-margin-bottom-40">
+                        <div class="headline"><h2>Ikuti Kami</h2></div>
+                            <address class="md-margin-bottom-40">
+                            <a href="#" style="color:#ecf0f1;"><i class="fa fa-facebook fa-fw"></i> STMIK WIDYA UTAMA  Career Center<br/></a>
+                            <a href="#" style="color:#ecf0f1;"> <i class="fa fa-twitter fa-fw"></i> @stmik_widya_utama<br/></a>
+                            <a href="#" style="color:#ecf0f1;"> <i class="fa fa-instagram fa-fw"></i> @STMIK WIDYA UTAMA careercenter<br /></a>
+                            <a href="#" style="color:#ecf0f1;"> <i class="fa fa-share-alt fa-fw" ></i> STMIK WIDYA UTAMA  Career Center (BBM Channel)<br /></a>
+                            <a href="#" style="color:#ecf0f1;"> <i class="fa  fa-stack-exchange fa-fw"></i> STMIK WIDYA UTAMA careercenter (LINE)</a>
+                        </address>
+                    </div>  
+                    <!-- End Latest -->                
+                    <!-- Address -->
+                    <div class="col-md-3 map-img md-margin-bottom-40">
+                        <div class="headline"><h2>Kontak Kami</h2></div>                         
+                        <address class="md-margin-bottom-40">
+                            <i class="fa fa-map-marker fa-fw"></i> Jl. Soewatio No. 9A, Purwokerto Selatan, Teluk, Banyumas, Kabupaten Banyumas, Jawa Tengah 53145<br/>
+                            <i class="fa fa-phone fa-fw"></i> (0281) 6512290<br />
+                            <i class="fa fa-envelope fa-fw"></i> <a href="mailto:cc@swu.ac.id" style="color:#ecf0f1;">cc@swu.ac.id</a> 
+                        </address>
+                    </div>
+                    <!-- End Address -->
+                </div>
+            </div> 
+        </div><!--/footer-->
+<div class="footer-v2">
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">                     
+                    <center><p>
+                        &copy; <a href="" >Career Center STMIK WIDYA UTAMA  </a>
+                       <a href="#">Privacy Policy</a> |
+                       <a href="#">Terms of Service</a>
+                    </p></center>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>     
+</div><!--/wrapper-->
+<!-- JS Global Compulsory -->
+<script type="text/javascript" src="<?php echo  base_url() ; ?>assets/js/jquery-migrate.min.js"></script>
+<script src="<?php echo  base_url() ; ?>assets/datatables/datatables.min.js"></script>
+<script type="text/javascript" src="<?php echo  base_url() ; ?>assets/js/bootstrap.min.js"></script>
+<!-- JS Implementing Plugins -->
+<script type="text/javascript" src="<?php echo  base_url() ; ?>assets/js/smoothScroll.js"></script>
+<!-- JS Customization -->
+<script type="text/javascript" src="<?php echo  base_url() ; ?>assets/js/custom.js"></script>
+<!-- JS Page Level -->
+<script type="text/javascript" src="<?php echo  base_url() ; ?>assets/js/app.js"></script>
+<script type="text/javascript" src="<?php echo  base_url() ; ?>assets/js/owl.carousel.js"></script>
+<script type="text/javascript">
+    jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 500;
+    jQuery(document).ready(function() {
+
+        App.init();
+        OwlCarousel.initOwlCarousel({
+            autoplay:true,
+            autoplayTimeout:5000,
+        });
+    });
+</script>
+</body>
+</html>";}

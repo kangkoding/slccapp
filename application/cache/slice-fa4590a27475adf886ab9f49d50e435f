@@ -1,0 +1,17 @@
+a:3:{s:4:"time";i:1534742923;s:3:"ttl";i:3600;s:4:"data";s:569:"<?php $this->_opening_section('content'); ?>
+	<style>
+		.panel {
+			box-shadow: 0 0 0!important;
+		}
+
+	</style>
+	    <div class="row">
+	        <div class="col-lg-9" style="box-shadow: 0px 0px 4px #b5acac;overflow-x:hidden"><?php echo $this->_yield('subcontent'); ?>
+	        </div>
+	        <div class="col-lg-3" style="margin-top:10px">
+	        	<?php foreach(sidebar() as $sidebar): ?>
+					<?php echo  $sidebar ; ?>
+	        	<?php endforeach; ?>
+	        </div>
+	    </div>
+	<?php $this->_closing_section(); ?><?php echo $this->_include('template.simple.app'); ?>";}

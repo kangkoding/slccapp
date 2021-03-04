@@ -1,0 +1,121 @@
+@extends('admin.template.admin')
+@section('content')
+    <script src="<?php echo base_url();?>assets/tinymce/tinymce.min.js"></script>
+    <script>
+      tinymce.init({
+        selector: 'textarea',
+        height: 500,
+        theme: 'modern',
+        plugins: 'print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern',
+        toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+        image_advtab: true,
+        templates: [
+          { title: 'Test template 1', content: 'Test 1' },
+          { title: 'Test template 2', content: 'Test 2' }
+        ],
+        images_upload_handler: function (blobInfo, success, failure) {
+          var xhr, formData;
+          xhr = new XMLHttpRequest();
+          xhr.withCredentials = false;
+          xhr.open('POST', "<?php echo base_url() ?>admin/post/upload_gambar");
+          xhr.onload = function() {
+              var json;
+              if (xhr.status != 200) {
+                  failure("HTTP Error: " + xhr.status);
+                  return;
+              }
+              json = JSON.parse(xhr.responseText);
+              if (!json || typeof json.location != "string") {
+                  failure("Invalid JSON: " + xhr.responseText);
+                  return;
+              }
+              success(json.location);
+          };
+          formData = new FormData();
+          formData.append('file', blobInfo.blob(), blobInfo.filename());
+          xhr.send(formData);
+        },
+          valid_elements : "@[id|class|style|title|dir<ltr?rtl|lang|xml::lang],"
+          + "a[rel|rev|charset|hreflang|tabindex|accesskey|type|"
+          + "name|href|target|title|class],strong/b,em/i,strike,u,"
+          + "#p[style],-ol[type|compact],-ul[type|compact],-li,br,img[longdesc|usemap|"
+          + "src|border|alt=|title|hspace|vspace|width|height|align],-sub,-sup,"
+          + "-blockquote,-table[border=0|cellspacing|cellpadding|width|frame|rules|"
+          + "height|align|summary|bgcolor|background|bordercolor],-tr[rowspan|width|"
+          + "height|align|valign|bgcolor|background|bordercolor],tbody,thead,tfoot,"
+          + "#td[colspan|rowspan|width|height|align|valign|bgcolor|background|bordercolor"
+          + "|scope],#th[colspan|rowspan|width|height|align|valign|scope],caption,-div,"
+          + "-span,-code,-pre,address,-h1,-h2,-h3,-h4,-h5,-h6,hr[size|noshade],-font[face"
+          + "|size|color],dd,dl,dt,cite,abbr,acronym,del[datetime|cite],ins[datetime|cite],"
+          + "object[classid|width|height|codebase|*],param[name|value|_value],embed[type|width"
+          + "|height|src|*],map[name],area[shape|coords|href|alt|target],bdo,"
+          + "button,col[align|char|charoff|span|valign|width],colgroup[align|char|charoff|span|"
+          + "valign|width],dfn,fieldset,form[action|accept|accept-charset|enctype|method],"
+          + "input[accept|alt|checked|disabled|maxlength|name|readonly|size|src|type|value],"
+          + "kbd,label[for],legend,noscript,optgroup[label|disabled],option[disabled|label|selected|value],"
+          + "q[cite],samp,select[disabled|multiple|name|size],small,"
+          + "textarea[cols|rows|disabled|name|readonly],tt,var,big",
+          extended_valid_elements : "p[style]",
+          inline_styles : true,
+          verify_html : false
+      });
+    </script>
+        <h2 style="margin-top:0px">Sidebar <?php echo $button ?></h2>
+        <form action="<?php echo $action; ?>" method="post">
+	    <div class="form-group">
+            <label for="varchar">Title <?php echo form_error('title') ?></label>
+            <input type="text" class="form-control" name="title" id="title" placeholder="Title" value="<?php echo $title; ?>" />
+        </div>
+	    <div class="form-group">
+            <label for="int">Jenis <?php echo form_error('jenis') ?></label>
+            <select name="jenis" id="jenis" class="form-control">
+                <option value="">Pilih</option>
+                <?php foreach ($data_jenis as $dj): ?>
+                <option value="<?php echo $dj->id ?>" <?php if($dj->id == $jenis){ echo 'selected'; } ?>><?php echo $dj->jenis ?></option>
+                <?php endforeach ?>
+            </select>
+        </div>
+	    <div class="form-group d-none" id="kat-id">
+            <label for="int">Kategori <?php echo form_error('id_kategori') ?></label>
+            <select name="id_kategori" id="" class="form-control">
+                <?php foreach ($data_kategori as $dk): ?>
+                    <option value="<?php echo $dk->id ?>" <?php if($dk->id == $id_kategori) ?>><?php echo $dk->kategori ?></option>
+                <?php endforeach ?>
+            </select>
+        </div>
+        <div class="form-group d-none" id="limit-g">
+            <label for="int">Limit Tulisan <?php echo form_error('limit') ?></label>
+            <input type="text" class="form-control" name="limit" id="limit" placeholder="Limit" value="<?php echo $limit; ?>" />
+        </div>
+	    <div class="form-group d-none" id="dat-isi">
+            <label for="isi">Isi <?php echo form_error('isi') ?></label>
+            <textarea class="form-control" rows="3" name="isi" id="isi" placeholder="Isi"><?php echo $isi; ?></textarea>
+        </div>
+	    <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
+	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
+	    <a href="<?php echo site_url('admin/sidebar') ?>" class="btn btn-default">Cancel</a>
+	</form>
+    <script>
+        $(document).ready(function(){
+            jenis();
+            $('#jenis').change(function(){
+                jenis();
+            });
+        });
+        var jenis = function(){
+            var jenis = $('#jenis').val();
+            if(jenis == 1){
+                $('#limit-g').removeClass('d-none');
+                $('#kat-id').removeClass('d-none');
+            }else if(jenis == 2){
+                $('#limit-g').addClass('d-none');
+                $('#kat-id').addClass('d-none');
+                $('#dat-isi').addClass('d-none');      
+            }else if(jenis == 3){
+                $('#limit-g').addClass('d-none');
+                $('#kat-id').addClass('d-none');
+                $('#dat-isi').removeClass('d-none');
+            }
+        }
+    </script>
+@endsection

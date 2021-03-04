@@ -1,0 +1,11 @@
+a:3:{s:4:"time";i:1533349507;s:3:"ttl";i:3600;s:4:"data";s:462:"<?php $this->_opening_section('subcontent'); ?>
+	<div class="row p-20">
+		<div class="h-title" style="padding-bottom:10px;border-bottom:dotted 1px silver">
+			<h3><i class="fa fa-files-o"></i> <?php echo  $data->judul ; ?> </h3>
+			<span><?php echo  $data->created ; ?></span>
+		</div>
+		<div class="content p-20">
+			<?php echo  $data->isi ; ?>
+		</div>
+	</div>
+<?php $this->_closing_section(); ?><?php echo $this->_include('template.simple.page'); ?>";}

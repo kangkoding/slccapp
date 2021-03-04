@@ -1,0 +1,31 @@
+a:3:{s:4:"time";i:1589862445;s:3:"ttl";i:3600;s:4:"data";s:1146:"<?php $this->_opening_section('content'); ?>
+      <div class="row" style="margin-top:100px">
+        <div class="col-lg-12 col-md-12 mx-auto">
+          <?php foreach($results as $b): ?>
+          <?php
+              $title = str_replace(' ','-',strtolower($b->judul));
+          ?>
+          <div class="post-preview">
+            <a href="<?php echo  base_url() ; ?>artikel/read/<?php echo  $b->id.'-'.$title ; ?>">
+              <h2 class="post-title">
+               <?php echo  $b->judul ; ?>
+              </h2>
+              <h4 class="post-subtitle">
+              <?php echo  substr($b->berita, 0 , 100) ; ?>
+              </h4>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="#">Admin</a>
+              on <?php echo  $b->tgl_berita ; ?></p>
+          </div>
+          <hr>
+          <?php endforeach; ?>
+
+        </div>
+        <div class="col-xs-12">
+          <?php if(isset($links)): ?>
+             <?php echo  $links ; ?>
+          <?php endif; ?>
+        </div>
+      </div>
+<?php $this->_closing_section(); ?><?php echo $this->_include('template.simple.app'); ?>";}

@@ -1,0 +1,13 @@
+a:3:{s:4:"time";i:1531988674;s:3:"ttl";i:3600;s:4:"data";s:769:"<?php $this->_opening_section('content'); ?>
+        <h2 style="margin-top:0px">Testimoni <?php echo $button ?></h2>
+        <form action="<?php echo $action; ?>" method="post">
+	    <div class="form-group">
+            <label for="ISI">Isi <?php echo form_error('isi') ?></label>
+            <textarea class="form-control" rows="3" name="isi" id="isi" placeholder="Isi"><?php echo $isi; ?></textarea>
+        </div>
+	    <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
+	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
+	    <a href="<?php echo site_url('admin/testimoni') ?>" class="btn btn-default">Cancel</a>
+	</form>
+    </body>
+<?php $this->_closing_section(); ?><?php echo $this->_include('admin.template.admin'); ?>";}

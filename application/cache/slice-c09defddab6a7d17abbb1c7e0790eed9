@@ -1,0 +1,10 @@
+a:3:{s:4:"time";i:1534390263;s:3:"ttl";i:3600;s:4:"data";s:570:"<?php $this->_opening_section('content'); ?>
+    <h2 style="margin-top:0px">Page Read</h2>
+    <table class="table">
+	    <tr><td>Judul</td><td><?php echo $judul; ?></td></tr>
+	    <tr><td>Isi</td><td><?php echo $isi; ?></td></tr>
+	    <tr><td>Created</td><td><?php echo $created; ?></td></tr>
+	    <tr><td>Updated</td><td><?php echo $updated; ?></td></tr>
+	    <tr><td></td><td><a href="<?php echo site_url('admin/page') ?>" class="btn btn-default">Cancel</a></td></tr>
+	</table>
+<?php $this->_closing_section(); ?><?php echo $this->_include('admin.template.admin'); ?>";}

@@ -1,0 +1,41 @@
+a:3:{s:4:"time";i:1589945089;s:3:"ttl";i:3600;s:4:"data";s:1172:"<?php $this->_opening_section('content'); ?>
+	<div class="row" style="margin-top:10px;padding-right:10px;">
+		<div class="panel panel-green">
+			<div class="panel-heading">
+				Lowongan <?php echo  $loker->lowongan ; ?>
+			</div>
+			<div class="panel-body">
+				<table style="width:100%">
+					<tr>
+						<th style="width:25%">Perusahaan</th>
+						<td><?php echo  $loker->perusahaan ; ?></td>
+					</tr>
+					<tr>
+						<th>Min. Pendidikan</th>
+						<td><?php echo  $loker->min_pendidikan ; ?></td>
+					</tr>
+					<tr>
+						<th>Batas Ahir</th>
+						<td><?php echo  $loker->batas_waktu ; ?></td>
+					</tr>
+					<tr>
+						<th>Judul Lowongan</th>
+						<td><?php echo  $loker->lowongan ; ?></td>
+					</tr>
+					<tr>
+						<th>Membutuhkan</th>
+						<td><?php echo  $loker->butuh_orang ; ?> Orang</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="panel panel-green">
+			<div class="panel-heading">
+				Detail Lowongan
+			</div>
+			<div class="panel-body">
+				<?php echo  $loker->detail_lowongan ; ?>
+			</div>
+		</div>
+	</div>
+<?php $this->_closing_section(); ?><?php echo $this->_include('template.simple.app'); ?>";}

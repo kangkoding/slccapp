@@ -1,0 +1,157 @@
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+
+class Campus_hiring extends CI_Controller
+{
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Campus_hiring_model');
+        $this->load->library('form_validation');        
+	    $this->load->library('datatables');
+        $this->load->model('Cek_login');
+        $this->Cek_login->is_admin();
+    }
+
+    public function index()
+    {
+        $this->slice->view('admin/campus_hiring/campus_hiring_list');
+    } 
+    
+    public function json() {
+        header('Content-Type: application/json');
+        echo $this->Campus_hiring_model->json();
+    }
+
+    public function read($id) 
+    {
+        $row = $this->Campus_hiring_model->get_by_id($id);
+        if ($row) {
+            $data = array(
+		'id' => $row->id,
+		'judul' => $row->judul,
+		'isi' => $row->isi,
+		'tgl' => $row->tgl,
+		'status' => $row->status,
+	    );
+            $this->slice->view('admin/campus_hiring/campus_hiring_read', $data);
+        } else {
+            $this->session->set_flashdata('message', 'Record Not Found');
+            redirect(site_url('admin/campus_hiring'));
+        }
+    }
+
+    public function create() 
+    {
+        $data = array(
+            'button' => 'Create',
+            'action' => site_url('admin/campus_hiring/create_action'),
+	    'id' => set_value('id'),
+	    'judul' => set_value('judul'),
+	    'isi' => set_value('isi'),
+	    'tgl' => set_value('tgl'),
+	    'status' => set_value('status'),
+	);
+        $this->slice->view('admin/campus_hiring/campus_hiring_form', $data);
+    }
+    
+    public function create_action() 
+    {
+        $this->_rules();
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->create();
+        } else {
+            $data = array(
+		'judul' => $this->input->post('judul',TRUE),
+		'isi' => $this->input->post('isi',TRUE),
+		'tgl' => $this->input->post('tgl',TRUE),
+		'status' => $this->input->post('status',TRUE),
+	    );
+
+            $this->Campus_hiring_model->insert($data);
+            $this->session->set_flashdata('message', 'Create Record Success');
+            redirect(site_url('admin/campus_hiring'));
+        }
+    }
+    public function close($id){
+        $data = array('status'=>1);
+        $this->db->where('id', $id);
+        if($this->db->update('campus_hiring', $data)){
+            redirect(site_url('admin/campus_hiring'),'refresh');
+        };
+
+    }
+    public function update($id) 
+    {
+        $row = $this->Campus_hiring_model->get_by_id($id);
+
+        if ($row) {
+            $data = array(
+                'button' => 'Update',
+                'action' => site_url('admin/campus_hiring/update_action'),
+        		'id' => set_value('id', $row->id),
+        		'judul' => set_value('judul', $row->judul),
+        		'isi' => set_value('isi', $row->isi),
+        		'tgl' => set_value('tgl', $row->tgl),
+        		'status' => set_value('status', $row->status),
+	    );
+            $this->slice->view('admin/campus_hiring/campus_hiring_form', $data);
+        } else {
+            $this->session->set_flashdata('message', 'Record Not Found');
+            redirect(site_url('admin/campus_hiring'));
+        }
+    }
+    
+    public function update_action() 
+    {
+        $this->_rules();
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->update($this->input->post('id', TRUE));
+        } else {
+            $data = array(
+    		'judul' => $this->input->post('judul',TRUE),
+    		'isi' => $this->input->post('isi',TRUE),
+    		'tgl' => $this->input->post('tgl',TRUE),
+    		'status' => $this->input->post('status',TRUE),
+	    );
+
+            $this->Campus_hiring_model->update($this->input->post('id', TRUE), $data);
+            $this->session->set_flashdata('message', 'Update Record Success');
+            redirect(site_url('admin/campus_hiring'));
+        }
+    }
+    
+    public function delete($id) 
+    {
+        $row = $this->Campus_hiring_model->get_by_id($id);
+
+        if ($row) {
+            $this->Campus_hiring_model->delete($id);
+            $this->session->set_flashdata('message', 'Delete Record Success');
+            redirect(site_url('admin/campus_hiring'));
+        } else {
+            $this->session->set_flashdata('message', 'Record Not Found');
+            redirect(site_url('admin/campus_hiring'));
+        }
+    }
+
+    public function _rules() 
+    {
+    	$this->form_validation->set_rules('judul', 'judul', 'trim|required');
+    	$this->form_validation->set_rules('isi', 'isi', 'trim|required');
+
+    	$this->form_validation->set_rules('id', 'id', 'trim');
+    	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+    }
+
+}
+
+/* End of file Campus_hiring.php */
+/* Location: ./application/controllers/Campus_hiring.php */
+/* Please DO NOT modify this information : */
+/* Generated by Harviacode Codeigniter CRUD Generator 2018-07-20 04:35:08 */
+/* http://harviacode.com */
