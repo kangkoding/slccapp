@@ -60,6 +60,10 @@
 						<label for="twitter_url"><i class="fa fa-twitter"></i> Twitter URL</label>
 						<input type="text" name="twitter_url" id="twitter_url" class="form-control" value="<?php echo $data->twitter_url ?>">
 					</div>
+					<div class="form-group">
+						<label for="youtube_url"><i class="fa fa-youtube"></i> Youtube Channel Id URL</label>
+						<input type="text" name="youtube_url" id="youtube_url" class="form-control" value="<?php echo $data->youtube_url ?>">
+					</div>
 				</div>
 			</div>
 			<!-- <div class="panel panel-default">

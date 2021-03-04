@@ -16,12 +16,13 @@ class News_section_model extends CI_Model
     }
 
     // datatables
-    function json() {
+    function json()
+    {
         $this->datatables->select('id,title,id_kategori');
         $this->datatables->from('news_section');
         //add this line for join
         //$this->datatables->join('table2', 'news_section.field = table2.field');
-        $this->datatables->add_column('action', anchor(site_url('admin/news-section/read/$1'),'<span class="btn btn-primary">Read</span>')." ".anchor(site_url('admin/news-section/update/$1'),'<span class="btn btn-warning">Edit</span>')." ".anchor(site_url('admin/news-section/delete/$1'),'<span class="btn btn-danger">Delete</span>','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'), 'id');
+        $this->datatables->add_column('action', anchor(site_url('admin/news-section/read/$1'), '<span class="btn btn-primary">Read</span>') . " " . anchor(site_url('admin/news-section/update/$1'), '<span class="btn btn-warning">Edit</span>') . " " . anchor(site_url('admin/news-section/delete/$1'), '<span class="btn btn-danger">Delete</span>', 'onclick="javasciprt: return confirm(\'Are You Sure ?\')"'), 'id');
         return $this->datatables->generate();
     }
 
@@ -38,23 +39,25 @@ class News_section_model extends CI_Model
         $this->db->where($this->id, $id);
         return $this->db->get($this->table)->row();
     }
-    
+
     // get total rows
-    function total_rows($q = NULL) {
+    function total_rows($q = NULL)
+    {
         $this->db->like('id', $q);
-	$this->db->or_like('title', $q);
-	$this->db->or_like('id_kategori', $q);
-	$this->db->from($this->table);
+        $this->db->or_like('title', $q);
+        $this->db->or_like('id_kategori', $q);
+        $this->db->from($this->table);
         return $this->db->count_all_results();
     }
 
     // get data with limit and search
-    function get_limit_data($limit, $start = 0, $q = NULL) {
+    function get_limit_data($limit, $start = 0, $q = NULL)
+    {
         $this->db->order_by($this->id, $this->order);
         $this->db->like('id', $q);
-	$this->db->or_like('title', $q);
-	$this->db->or_like('id_kategori', $q);
-	$this->db->limit($limit, $start);
+        $this->db->or_like('title', $q);
+        $this->db->or_like('id_kategori', $q);
+        $this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
     }
 
@@ -77,7 +80,6 @@ class News_section_model extends CI_Model
         $this->db->where($this->id, $id);
         $this->db->delete($this->table);
     }
-
 }
 
 /* End of file News_section_model.php */

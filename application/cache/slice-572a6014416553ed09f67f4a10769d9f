@@ -1,0 +1,9 @@
+a:3:{s:4:"time";i:1614843472;s:3:"ttl";i:3600;s:4:"data";s:541:"<?php $this->_opening_section('content'); ?>
+        <h2 style="margin-top:0px">Feature_section Read</h2>
+        <table class="table">
+	    <tr><td>Title</td><td><?php echo $title; ?></td></tr>
+	    <tr><td>Icon</td><td><?php echo $icon; ?></td></tr>
+	    <tr><td>Link</td><td><?php echo $link; ?></td></tr>
+	    <tr><td></td><td><a href="<?php echo site_url('admin/feature_section') ?>" class="btn btn-default">Cancel</a></td></tr>
+	</table>
+<?php $this->_closing_section(); ?><?php echo $this->_include('admin.template.admin'); ?>";}

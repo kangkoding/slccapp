@@ -139,6 +139,7 @@
             $( "#sortable" ).disableSelection();
             $('#sorted').click(function(){
                 var data = $('#sortable').sortable('serialize');
+                //console.log(data);
                 $.ajax({
                     url:'<?php echo base_url("admin/news_section/change_arrange");?>',
                     type:'post',

@@ -85,7 +85,7 @@
 	}
 </style>
 <div class="row section" style="border-top:0px">
-	<!-- <h3 class="c-blue p-20 pT-0">{{ settings('feature_section') }}</h3>-->
+	<h3 class="c-blue p-20 pT-0">{{ settings('feature_section') }}</h3>
 	<div class="col-md-4 p-0" style="padding-bottom:0px" align="right">
 	</div>
 	<div class="col-md-8 p-0 mbpT-10" style="padding-bottom:0px;padding-right:0px" align="right">
@@ -107,9 +107,13 @@
 						}
 					</style>
 					<?php
-					$arrayCol = [array("col" => "8", "wp" => true), array("col" => "4", "wp" => false)];
+					$arrayCol = [
+						array("col" => "8", "wp" => true),
+						array("col" => "4", "wp" => false),
+						array("col" => "4", "wp" => false)
+					];
 					$i = 0;
-					
+
 					foreach (news()['top'] as $top => $item) :
 					?>
 						<div class="col-md-{{$arrayCol[$i]['col']}}">
