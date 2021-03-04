@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2021 at 10:07 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.3.27
+-- Waktu pembuatan: 05 Mar 2021 pada 00.23
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berita`
+-- Struktur dari tabel `berita`
 --
 
 CREATE TABLE `berita` (
@@ -39,7 +39,7 @@ CREATE TABLE `berita` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bidang`
+-- Struktur dari tabel `bidang`
 --
 
 CREATE TABLE `bidang` (
@@ -50,7 +50,7 @@ CREATE TABLE `bidang` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `campus_hiring`
+-- Struktur dari tabel `campus_hiring`
 --
 
 CREATE TABLE `campus_hiring` (
@@ -64,7 +64,7 @@ CREATE TABLE `campus_hiring` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `city`
+-- Struktur dari tabel `city`
 --
 
 CREATE TABLE `city` (
@@ -76,7 +76,7 @@ CREATE TABLE `city` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact`
+-- Struktur dari tabel `contact`
 --
 
 CREATE TABLE `contact` (
@@ -90,7 +90,7 @@ CREATE TABLE `contact` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_pendidikan`
+-- Struktur dari tabel `data_pendidikan`
 --
 
 CREATE TABLE `data_pendidikan` (
@@ -105,7 +105,7 @@ CREATE TABLE `data_pendidikan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_sertifikasi`
+-- Struktur dari tabel `data_sertifikasi`
 --
 
 CREATE TABLE `data_sertifikasi` (
@@ -121,7 +121,7 @@ CREATE TABLE `data_sertifikasi` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `external_link`
+-- Struktur dari tabel `external_link`
 --
 
 CREATE TABLE `external_link` (
@@ -131,7 +131,7 @@ CREATE TABLE `external_link` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `external_link`
+-- Dumping data untuk tabel `external_link`
 --
 
 INSERT INTO `external_link` (`id`, `title`, `url`) VALUES
@@ -141,7 +141,7 @@ INSERT INTO `external_link` (`id`, `title`, `url`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `faq`
+-- Struktur dari tabel `faq`
 --
 
 CREATE TABLE `faq` (
@@ -153,7 +153,7 @@ CREATE TABLE `faq` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feature_section`
+-- Struktur dari tabel `feature_section`
 --
 
 CREATE TABLE `feature_section` (
@@ -164,7 +164,7 @@ CREATE TABLE `feature_section` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `feature_section`
+-- Dumping data untuk tabel `feature_section`
 --
 
 INSERT INTO `feature_section` (`id`, `title`, `icon`, `link`) VALUES
@@ -173,7 +173,7 @@ INSERT INTO `feature_section` (`id`, `title`, `icon`, `link`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `files`
+-- Struktur dari tabel `files`
 --
 
 CREATE TABLE `files` (
@@ -184,7 +184,7 @@ CREATE TABLE `files` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gallery`
+-- Struktur dari tabel `gallery`
 --
 
 CREATE TABLE `gallery` (
@@ -196,7 +196,7 @@ CREATE TABLE `gallery` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `groups`
+-- Struktur dari tabel `groups`
 --
 
 CREATE TABLE `groups` (
@@ -206,7 +206,7 @@ CREATE TABLE `groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `groups`
+-- Dumping data untuk tabel `groups`
 --
 
 INSERT INTO `groups` (`id`, `name`, `description`) VALUES
@@ -215,7 +215,7 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `header`
+-- Struktur dari tabel `header`
 --
 
 CREATE TABLE `header` (
@@ -226,7 +226,7 @@ CREATE TABLE `header` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `images_gallery`
+-- Struktur dari tabel `images_gallery`
 --
 
 CREATE TABLE `images_gallery` (
@@ -239,7 +239,7 @@ CREATE TABLE `images_gallery` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori_pendidikan`
+-- Struktur dari tabel `kategori_pendidikan`
 --
 
 CREATE TABLE `kategori_pendidikan` (
@@ -250,7 +250,7 @@ CREATE TABLE `kategori_pendidikan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kat_perusahaan`
+-- Struktur dari tabel `kat_perusahaan`
 --
 
 CREATE TABLE `kat_perusahaan` (
@@ -261,7 +261,7 @@ CREATE TABLE `kat_perusahaan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kat_sertifikasi`
+-- Struktur dari tabel `kat_sertifikasi`
 --
 
 CREATE TABLE `kat_sertifikasi` (
@@ -273,7 +273,7 @@ CREATE TABLE `kat_sertifikasi` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login_attempts`
+-- Struktur dari tabel `login_attempts`
 --
 
 CREATE TABLE `login_attempts` (
@@ -286,7 +286,7 @@ CREATE TABLE `login_attempts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lowongan`
+-- Struktur dari tabel `lowongan`
 --
 
 CREATE TABLE `lowongan` (
@@ -305,7 +305,7 @@ CREATE TABLE `lowongan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Struktur dari tabel `menu`
 --
 
 CREATE TABLE `menu` (
@@ -317,11 +317,11 @@ CREATE TABLE `menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `menu`
+-- Dumping data untuk tabel `menu`
 --
 
 INSERT INTO `menu` (`id`, `menu`, `slug`, `is_url`, `parameter`) VALUES
-(1, 'Beranda', 'beranda', 0, ''),
+(1, 'Beranda', 'beranda', 1, 'target=\'_blank\''),
 (2, 'Program', 'program', 0, 'target=\'_blank\''),
 (3, 'Struktur', 'struktur', 0, 'target=\'_blank\''),
 (4, 'SKGB', 'skgb', 0, 'target=\'_blank\''),
@@ -331,7 +331,7 @@ INSERT INTO `menu` (`id`, `menu`, `slug`, `is_url`, `parameter`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `news_section`
+-- Struktur dari tabel `news_section`
 --
 
 CREATE TABLE `news_section` (
@@ -342,20 +342,20 @@ CREATE TABLE `news_section` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `news_section`
+-- Dumping data untuk tabel `news_section`
 --
 
 INSERT INTO `news_section` (`id`, `title`, `id_kategori`, `arrange`) VALUES
-(16, 'Widget A', 1, 1),
-(17, 'Widget B', 2, 2),
-(18, 'Widget C', 3, 5),
-(19, 'Widget D', 4, 5),
-(20, 'Widget E', 5, 5);
+(16, 'BERITA', 1, 1),
+(17, 'POSTINGAN TERBARU', 2, 2),
+(18, 'DWIJA', 3, 5),
+(19, 'PJJ', 4, 5),
+(20, 'WEBINAR', 5, 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `page`
+-- Struktur dari tabel `page`
 --
 
 CREATE TABLE `page` (
@@ -371,7 +371,7 @@ CREATE TABLE `page` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `page`
+-- Dumping data untuk tabel `page`
 --
 
 INSERT INTO `page` (`id`, `judul`, `isi`, `created`, `updated`, `slug`, `title`, `content`, `template`) VALUES
@@ -381,7 +381,7 @@ INSERT INTO `page` (`id`, `judul`, `isi`, `created`, `updated`, `slug`, `title`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `panel_berita`
+-- Struktur dari tabel `panel_berita`
 --
 
 CREATE TABLE `panel_berita` (
@@ -392,7 +392,7 @@ CREATE TABLE `panel_berita` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengalaman`
+-- Struktur dari tabel `pengalaman`
 --
 
 CREATE TABLE `pengalaman` (
@@ -407,7 +407,7 @@ CREATE TABLE `pengalaman` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `perusahaan`
+-- Struktur dari tabel `perusahaan`
 --
 
 CREATE TABLE `perusahaan` (
@@ -421,7 +421,7 @@ CREATE TABLE `perusahaan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `post`
+-- Struktur dari tabel `post`
 --
 
 CREATE TABLE `post` (
@@ -437,7 +437,7 @@ CREATE TABLE `post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `post`
+-- Dumping data untuk tabel `post`
 --
 
 INSERT INTO `post` (`id`, `judul`, `isi`, `created`, `updated`, `slug`, `featured_image`, `title`, `content`) VALUES
@@ -450,7 +450,7 @@ INSERT INTO `post` (`id`, `judul`, `isi`, `created`, `updated`, `slug`, `feature
 -- --------------------------------------------------------
 
 --
--- Table structure for table `post_detail`
+-- Struktur dari tabel `post_detail`
 --
 
 CREATE TABLE `post_detail` (
@@ -460,7 +460,7 @@ CREATE TABLE `post_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `post_detail`
+-- Dumping data untuk tabel `post_detail`
 --
 
 INSERT INTO `post_detail` (`id`, `id_post`, `id_kategori`) VALUES
@@ -480,7 +480,7 @@ INSERT INTO `post_detail` (`id`, `id_post`, `id_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `post_kategori`
+-- Struktur dari tabel `post_kategori`
 --
 
 CREATE TABLE `post_kategori` (
@@ -490,7 +490,7 @@ CREATE TABLE `post_kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `post_kategori`
+-- Dumping data untuk tabel `post_kategori`
 --
 
 INSERT INTO `post_kategori` (`id`, `kategori`, `slug`) VALUES
@@ -504,7 +504,7 @@ INSERT INTO `post_kategori` (`id`, `kategori`, `slug`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `program_studi`
+-- Struktur dari tabel `program_studi`
 --
 
 CREATE TABLE `program_studi` (
@@ -518,7 +518,7 @@ CREATE TABLE `program_studi` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `provinces`
+-- Struktur dari tabel `provinces`
 --
 
 CREATE TABLE `provinces` (
@@ -527,7 +527,7 @@ CREATE TABLE `provinces` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `provinces`
+-- Dumping data untuk tabel `provinces`
 --
 
 INSERT INTO `provinces` (`id`, `name`) VALUES
@@ -569,7 +569,7 @@ INSERT INTO `provinces` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Struktur dari tabel `settings`
 --
 
 CREATE TABLE `settings` (
@@ -601,16 +601,16 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `settings`
+-- Dumping data untuk tabel `settings`
 --
 
 INSERT INTO `settings` (`id`, `website_name`, `website_url`, `facebook_url`, `instagram_url`, `twitter_url`, `youtube_url`, `email`, `about_section`, `carousel`, `feature_section`, `foot1`, `foot2`, `foot3`, `foot4`, `logo`, `alamat`, `fax`, `telp`, `about_text`, `about_images`, `lbanner_images`, `lbanner_tagline`, `site_tagline`, `permalink`) VALUES
-(0, 'SLCC PGRI Wonosobo', 'www.slccpgriwonosobo.org', '#', '#', '#', 'UCMs_dVz0xItsvgMX6wpmA1Q', 'slccpgriwonosobo@pgri.or.id', NULL, 1, NULL, NULL, NULL, NULL, NULL, 'SLCC-removebg-preview.png', 'Jl Sunan Kalijaga Berkoh, Purwokerto Selatan, Banyumas Jawa Tengah, Indonesia 53146', '', '(0281) 6512290', '<p>Ini Greeting</p>', 'Koala.jpg', 'banner-left.png', 'Smart Learning Character Center', 'Smart Learning Character Center', 2);
+(0, 'SLCC PGRI Wonosobo', 'www.slccpgriwonosobo.org', '#', '#', '#', 'https://www.youtube.com/channel/UCMs_dVz0xItsvgMX6wpmA1Q', 'slccpgriwonosobo@pgri.or.id', NULL, 1, NULL, NULL, NULL, NULL, NULL, 'SLCC-removebg-preview.png', 'Pagerkukuh, 1, Sukoyoso, Pagerkukuh, Kec. Wonosobo, Kabupaten Wonosobo, Jawa Tengah 56314', '', '(0286) 321625', '<p>Ini Greeting</p>', 'Koala.jpg', 'banner-left.png', 'Smart Learning Character Center', 'Smart Learning Character Center', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sidebar`
+-- Struktur dari tabel `sidebar`
 --
 
 CREATE TABLE `sidebar` (
@@ -624,7 +624,7 @@ CREATE TABLE `sidebar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `sidebar`
+-- Dumping data untuk tabel `sidebar`
 --
 
 INSERT INTO `sidebar` (`id`, `title`, `jenis`, `id_kategori`, `table`, `isi`, `limit`) VALUES
@@ -634,7 +634,7 @@ INSERT INTO `sidebar` (`id`, `title`, `jenis`, `id_kategori`, `table`, `isi`, `l
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sidebar_arrange`
+-- Struktur dari tabel `sidebar_arrange`
 --
 
 CREATE TABLE `sidebar_arrange` (
@@ -643,7 +643,7 @@ CREATE TABLE `sidebar_arrange` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `sidebar_arrange`
+-- Dumping data untuk tabel `sidebar_arrange`
 --
 
 INSERT INTO `sidebar_arrange` (`id`, `id_sidebar`) VALUES
@@ -655,7 +655,7 @@ INSERT INTO `sidebar_arrange` (`id`, `id_sidebar`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sidebar_opsi`
+-- Struktur dari tabel `sidebar_opsi`
 --
 
 CREATE TABLE `sidebar_opsi` (
@@ -664,7 +664,7 @@ CREATE TABLE `sidebar_opsi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `sidebar_opsi`
+-- Dumping data untuk tabel `sidebar_opsi`
 --
 
 INSERT INTO `sidebar_opsi` (`id`, `jenis`) VALUES
@@ -675,7 +675,7 @@ INSERT INTO `sidebar_opsi` (`id`, `jenis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sliders`
+-- Struktur dari tabel `sliders`
 --
 
 CREATE TABLE `sliders` (
@@ -687,10 +687,19 @@ CREATE TABLE `sliders` (
   `content` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `image`, `url`, `level`, `title`, `content`) VALUES
+(49, 'SLCC-removebg-preview1.png', '#', 1, 'Slider A', 'Ini isi Slider A'),
+(50, 'SLCC-removebg-preview2.png', '#', 2, 'Slider B', 'Ini isi Slider B'),
+(51, 'SLCC-removebg-preview3.png', '#', 3, 'Slider C', 'Ini isi Slider C');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `submenu`
+-- Struktur dari tabel `submenu`
 --
 
 CREATE TABLE `submenu` (
@@ -703,7 +712,7 @@ CREATE TABLE `submenu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `submenu`
+-- Dumping data untuk tabel `submenu`
 --
 
 INSERT INTO `submenu` (`id`, `id_menu`, `submenu`, `slug`, `is_url`, `parameter`) VALUES
@@ -712,7 +721,7 @@ INSERT INTO `submenu` (`id`, `id_menu`, `submenu`, `slug`, `is_url`, `parameter`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_brosur`
+-- Struktur dari tabel `tb_brosur`
 --
 
 CREATE TABLE `tb_brosur` (
@@ -724,7 +733,7 @@ CREATE TABLE `tb_brosur` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_organisasi`
+-- Struktur dari tabel `tb_organisasi`
 --
 
 CREATE TABLE `tb_organisasi` (
@@ -739,7 +748,7 @@ CREATE TABLE `tb_organisasi` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `testimoni`
+-- Struktur dari tabel `testimoni`
 --
 
 CREATE TABLE `testimoni` (
@@ -752,7 +761,7 @@ CREATE TABLE `testimoni` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `top_menu`
+-- Struktur dari tabel `top_menu`
 --
 
 CREATE TABLE `top_menu` (
@@ -764,7 +773,7 @@ CREATE TABLE `top_menu` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -788,16 +797,16 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2y$12$0Os7zz3d28mM/StrSK6xM.JDuKSllI6AqodCqu.KHgMc2qNl4Pg.e', '', 'admin@admin.com', '', NULL, NULL, 'JIQTvL22C28l6soX5V.mTO', 1268889823, 1614842328, 1, 'Admin', 'istrator', 'ADMIN', '0');
+(1, '127.0.0.1', 'administrator', '$2y$12$0Os7zz3d28mM/StrSK6xM.JDuKSllI6AqodCqu.KHgMc2qNl4Pg.e', '', 'admin@admin.com', '', NULL, NULL, 'JIQTvL22C28l6soX5V.mTO', 1268889823, 1614897251, 1, 'Admin', 'istrator', 'ADMIN', '0');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_groups`
+-- Struktur dari tabel `users_groups`
 --
 
 CREATE TABLE `users_groups` (
@@ -807,7 +816,7 @@ CREATE TABLE `users_groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users_groups`
+-- Dumping data untuk tabel `users_groups`
 --
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
@@ -818,261 +827,261 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 --
 
 --
--- Indexes for table `berita`
+-- Indeks untuk tabel `berita`
 --
 ALTER TABLE `berita`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `bidang`
+-- Indeks untuk tabel `bidang`
 --
 ALTER TABLE `bidang`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `campus_hiring`
+-- Indeks untuk tabel `campus_hiring`
 --
 ALTER TABLE `campus_hiring`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `city`
+-- Indeks untuk tabel `city`
 --
 ALTER TABLE `city`
   ADD PRIMARY KEY (`id`),
   ADD KEY `regencies_province_id_index` (`province_id`);
 
 --
--- Indexes for table `contact`
+-- Indeks untuk tabel `contact`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `data_pendidikan`
+-- Indeks untuk tabel `data_pendidikan`
 --
 ALTER TABLE `data_pendidikan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `data_sertifikasi`
+-- Indeks untuk tabel `data_sertifikasi`
 --
 ALTER TABLE `data_sertifikasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `external_link`
+-- Indeks untuk tabel `external_link`
 --
 ALTER TABLE `external_link`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `faq`
+-- Indeks untuk tabel `faq`
 --
 ALTER TABLE `faq`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `feature_section`
+-- Indeks untuk tabel `feature_section`
 --
 ALTER TABLE `feature_section`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `files`
+-- Indeks untuk tabel `files`
 --
 ALTER TABLE `files`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `gallery`
+-- Indeks untuk tabel `gallery`
 --
 ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `groups`
+-- Indeks untuk tabel `groups`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `header`
+-- Indeks untuk tabel `header`
 --
 ALTER TABLE `header`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `images_gallery`
+-- Indeks untuk tabel `images_gallery`
 --
 ALTER TABLE `images_gallery`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kategori_pendidikan`
+-- Indeks untuk tabel `kategori_pendidikan`
 --
 ALTER TABLE `kategori_pendidikan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kat_perusahaan`
+-- Indeks untuk tabel `kat_perusahaan`
 --
 ALTER TABLE `kat_perusahaan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kat_sertifikasi`
+-- Indeks untuk tabel `kat_sertifikasi`
 --
 ALTER TABLE `kat_sertifikasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `login_attempts`
+-- Indeks untuk tabel `login_attempts`
 --
 ALTER TABLE `login_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `lowongan`
+-- Indeks untuk tabel `lowongan`
 --
 ALTER TABLE `lowongan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `menu`
+-- Indeks untuk tabel `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `news_section`
+-- Indeks untuk tabel `news_section`
 --
 ALTER TABLE `news_section`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `page`
+-- Indeks untuk tabel `page`
 --
 ALTER TABLE `page`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `unique` (`slug`);
 
 --
--- Indexes for table `panel_berita`
+-- Indeks untuk tabel `panel_berita`
 --
 ALTER TABLE `panel_berita`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pengalaman`
+-- Indeks untuk tabel `pengalaman`
 --
 ALTER TABLE `pengalaman`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `perusahaan`
+-- Indeks untuk tabel `perusahaan`
 --
 ALTER TABLE `perusahaan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `post`
+-- Indeks untuk tabel `post`
 --
 ALTER TABLE `post`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `post_detail`
+-- Indeks untuk tabel `post_detail`
 --
 ALTER TABLE `post_detail`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `post_kategori`
+-- Indeks untuk tabel `post_kategori`
 --
 ALTER TABLE `post_kategori`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `program_studi`
+-- Indeks untuk tabel `program_studi`
 --
 ALTER TABLE `program_studi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `provinces`
+-- Indeks untuk tabel `provinces`
 --
 ALTER TABLE `provinces`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `settings`
+-- Indeks untuk tabel `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sidebar`
+-- Indeks untuk tabel `sidebar`
 --
 ALTER TABLE `sidebar`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sidebar_arrange`
+-- Indeks untuk tabel `sidebar_arrange`
 --
 ALTER TABLE `sidebar_arrange`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sidebar_opsi`
+-- Indeks untuk tabel `sidebar_opsi`
 --
 ALTER TABLE `sidebar_opsi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sliders`
+-- Indeks untuk tabel `sliders`
 --
 ALTER TABLE `sliders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `submenu`
+-- Indeks untuk tabel `submenu`
 --
 ALTER TABLE `submenu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_brosur`
+-- Indeks untuk tabel `tb_brosur`
 --
 ALTER TABLE `tb_brosur`
   ADD PRIMARY KEY (`id_brosur`);
 
 --
--- Indexes for table `tb_organisasi`
+-- Indeks untuk tabel `tb_organisasi`
 --
 ALTER TABLE `tb_organisasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `testimoni`
+-- Indeks untuk tabel `testimoni`
 --
 ALTER TABLE `testimoni`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `top_menu`
+-- Indeks untuk tabel `top_menu`
 --
 ALTER TABLE `top_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users_groups`
+-- Indeks untuk tabel `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD PRIMARY KEY (`id`),
@@ -1081,253 +1090,236 @@ ALTER TABLE `users_groups`
   ADD KEY `fk_users_groups_groups1_idx` (`group_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `berita`
+-- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
   MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `bidang`
+-- AUTO_INCREMENT untuk tabel `bidang`
 --
 ALTER TABLE `bidang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `campus_hiring`
+-- AUTO_INCREMENT untuk tabel `campus_hiring`
 --
 ALTER TABLE `campus_hiring`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `contact`
+-- AUTO_INCREMENT untuk tabel `contact`
 --
 ALTER TABLE `contact`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `data_pendidikan`
+-- AUTO_INCREMENT untuk tabel `data_pendidikan`
 --
 ALTER TABLE `data_pendidikan`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `data_sertifikasi`
+-- AUTO_INCREMENT untuk tabel `data_sertifikasi`
 --
 ALTER TABLE `data_sertifikasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `external_link`
+-- AUTO_INCREMENT untuk tabel `external_link`
 --
 ALTER TABLE `external_link`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `faq`
+-- AUTO_INCREMENT untuk tabel `faq`
 --
 ALTER TABLE `faq`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `feature_section`
+-- AUTO_INCREMENT untuk tabel `feature_section`
 --
 ALTER TABLE `feature_section`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `files`
+-- AUTO_INCREMENT untuk tabel `files`
 --
 ALTER TABLE `files`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `gallery`
+-- AUTO_INCREMENT untuk tabel `gallery`
 --
 ALTER TABLE `gallery`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- AUTO_INCREMENT for table `groups`
+-- AUTO_INCREMENT untuk tabel `groups`
 --
 ALTER TABLE `groups`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `images_gallery`
+-- AUTO_INCREMENT untuk tabel `images_gallery`
 --
 ALTER TABLE `images_gallery`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `kategori_pendidikan`
+-- AUTO_INCREMENT untuk tabel `kategori_pendidikan`
 --
 ALTER TABLE `kategori_pendidikan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `kat_perusahaan`
+-- AUTO_INCREMENT untuk tabel `kat_perusahaan`
 --
 ALTER TABLE `kat_perusahaan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `kat_sertifikasi`
+-- AUTO_INCREMENT untuk tabel `kat_sertifikasi`
 --
 ALTER TABLE `kat_sertifikasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `login_attempts`
+-- AUTO_INCREMENT untuk tabel `login_attempts`
 --
 ALTER TABLE `login_attempts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `lowongan`
+-- AUTO_INCREMENT untuk tabel `lowongan`
 --
 ALTER TABLE `lowongan`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `menu`
+-- AUTO_INCREMENT untuk tabel `menu`
 --
 ALTER TABLE `menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `news_section`
+-- AUTO_INCREMENT untuk tabel `news_section`
 --
 ALTER TABLE `news_section`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `page`
+-- AUTO_INCREMENT untuk tabel `page`
 --
 ALTER TABLE `page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT for table `panel_berita`
+-- AUTO_INCREMENT untuk tabel `panel_berita`
 --
 ALTER TABLE `panel_berita`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pengalaman`
+-- AUTO_INCREMENT untuk tabel `pengalaman`
 --
 ALTER TABLE `pengalaman`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `perusahaan`
+-- AUTO_INCREMENT untuk tabel `perusahaan`
 --
 ALTER TABLE `perusahaan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `post`
+-- AUTO_INCREMENT untuk tabel `post`
 --
 ALTER TABLE `post`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `post_detail`
+-- AUTO_INCREMENT untuk tabel `post_detail`
 --
 ALTER TABLE `post_detail`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `post_kategori`
+-- AUTO_INCREMENT untuk tabel `post_kategori`
 --
 ALTER TABLE `post_kategori`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `sidebar`
+-- AUTO_INCREMENT untuk tabel `sidebar`
 --
 ALTER TABLE `sidebar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `sidebar_arrange`
+-- AUTO_INCREMENT untuk tabel `sidebar_arrange`
 --
 ALTER TABLE `sidebar_arrange`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `sidebar_opsi`
+-- AUTO_INCREMENT untuk tabel `sidebar_opsi`
 --
 ALTER TABLE `sidebar_opsi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `sliders`
+-- AUTO_INCREMENT untuk tabel `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
--- AUTO_INCREMENT for table `submenu`
+-- AUTO_INCREMENT untuk tabel `submenu`
 --
 ALTER TABLE `submenu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_brosur`
+-- AUTO_INCREMENT untuk tabel `tb_brosur`
 --
 ALTER TABLE `tb_brosur`
   MODIFY `id_brosur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_organisasi`
+-- AUTO_INCREMENT untuk tabel `tb_organisasi`
 --
 ALTER TABLE `tb_organisasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `testimoni`
+-- AUTO_INCREMENT untuk tabel `testimoni`
 --
 ALTER TABLE `testimoni`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `top_menu`
+-- AUTO_INCREMENT untuk tabel `top_menu`
 --
 ALTER TABLE `top_menu`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `users_groups`
+-- AUTO_INCREMENT untuk tabel `users_groups`
 --
 ALTER TABLE `users_groups`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `city`
---
-ALTER TABLE `city`
-  ADD CONSTRAINT `city_ibfk_1` FOREIGN KEY (`province_id`) REFERENCES `provinces` (`id`);
-
---
--- Constraints for table `users_groups`
---
-ALTER TABLE `users_groups`
-  ADD CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_users_groups_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

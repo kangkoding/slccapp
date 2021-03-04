@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+a:3:{s:4:"time";i:1614898804;s:3:"ttl";i:3600;s:4:"data";s:17137:"<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -59,9 +59,9 @@
     <!-- Logo -->
     <a href="<?php echo site_url('admin') ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>{{ settings('website_name') }}</b></span>
+      <span class="logo-mini"><b><?php echo  settings('website_name') ; ?></b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">{{ settings('website_name') }}</span>
+      <span class="logo-lg"><?php echo  settings('website_name') ; ?></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -209,8 +209,7 @@
     <!-- Content Header (Page header) -->
 
     <!-- Main content -->
-    <section class="content">
-      @yield('content')
+    <section class="content"><?php echo $this->_yield('content'); ?>
     </section>
     <!-- /.content -->
   </div>
@@ -432,3 +431,4 @@
 
 </body>
 </html>
+";}

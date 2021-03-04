@@ -1,5 +1,4 @@
-@extends('admin.template.admin')
-@section('content')
+a:3:{s:4:"time";i:1614897960;s:3:"ttl";i:3600;s:4:"data";s:5771:"<?php $this->_opening_section('content'); ?>
 <div class="row">
 	<div class="col-md-12">
 		<form action="<?php echo $action ?>" class="" enctype="multipart/form-data" method="post">
@@ -18,7 +17,7 @@
 							</div>
 							<div class="col-md-6" style="margin-bottom:10px">
 								<label for="lbanner_images"><i class="fa fa-bookmark"></i> Left Banner</label>
-								<input type="hidden" name="old_banner" value="{{ $data->lbanner_images }}">
+								<input type="hidden" name="old_banner" value="<?php echo  $data->lbanner_images ; ?>">
 								<input type="file" name="lbanner_images" id="lbanner_images" class="form-control">
 							</div>
 							<div class="col-md-6" style="margin-bottom:10px">
@@ -115,4 +114,4 @@
 		</form>
 	</div>
 </div>
-@endsection
+<?php $this->_closing_section(); ?><?php echo $this->_include('admin.template.admin'); ?>";}
