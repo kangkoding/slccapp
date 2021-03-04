@@ -108,9 +108,11 @@
 					</style>
 					<?php
 					$arrayCol = [
+						array("col" => "12", "wp" => false),
 						array("col" => "8", "wp" => true),
 						array("col" => "4", "wp" => false),
-						array("col" => "4", "wp" => false)
+						array("col" => "12", "wp" => false),
+						array("col" => "4", "wp" => false),
 					];
 					$i = 0;
 

@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1614843733;s:3:"ttl";i:3600;s:4:"data";s:8923:"<?php $this->_opening_section('title', ' SLCC PGRI WONOSOBO'); ?><?php $this->_opening_section('carousel'); ?>
+a:3:{s:4:"time";i:1614848768;s:3:"ttl";i:3600;s:4:"data";s:9012:"<?php $this->_opening_section('title', ' SLCC PGRI WONOSOBO'); ?><?php $this->_opening_section('carousel'); ?>
 <?php if(count($data_sliders) > 0): ?>
 <div class="row">
 	<div id="carousel-example-generic" class="carousel slide carousel-overlap" data-ride="carousel">
@@ -103,9 +103,11 @@ a:3:{s:4:"time";i:1614843733;s:3:"ttl";i:3600;s:4:"data";s:8923:"<?php $this->_o
 					</style>
 					<?php
 					$arrayCol = [
+						array("col" => "12", "wp" => false),
 						array("col" => "8", "wp" => true),
 						array("col" => "4", "wp" => false),
-						array("col" => "4", "wp" => false)
+						array("col" => "12", "wp" => false),
+						array("col" => "4", "wp" => false),
 					];
 					$i = 0;
 

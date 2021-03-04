@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2021 at 07:48 AM
+-- Generation Time: Mar 04, 2021 at 10:07 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -162,6 +162,13 @@ CREATE TABLE `feature_section` (
   `icon` varchar(255) DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `feature_section`
+--
+
+INSERT INTO `feature_section` (`id`, `title`, `icon`, `link`) VALUES
+(7, 'Google', '001-search.png', 'www.google.com');
 
 -- --------------------------------------------------------
 
@@ -339,10 +346,11 @@ CREATE TABLE `news_section` (
 --
 
 INSERT INTO `news_section` (`id`, `title`, `id_kategori`, `arrange`) VALUES
-(1, 'Widget A', 1, 2),
-(2, 'Widget B', 2, 3),
-(3, 'Widget C', 3, 4),
-(7, 'Widget E', 6, 1);
+(16, 'Widget A', 1, 1),
+(17, 'Widget B', 2, 2),
+(18, 'Widget C', 3, 5),
+(19, 'Widget D', 4, 5),
+(20, 'Widget E', 5, 5);
 
 -- --------------------------------------------------------
 
@@ -433,11 +441,11 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id`, `judul`, `isi`, `created`, `updated`, `slug`, `featured_image`, `title`, `content`) VALUES
-(1, 'Tulisan A', '<p>Ini isi Tulisan A</p>', '2021-03-03 06:04:41', NULL, 'tulisan-a', '', '', ''),
-(2, 'Tulisan B', '<p>Ini isi Tulisan B</p>', '2021-03-03 06:05:22', NULL, 'tulisan-b', '', '', ''),
-(3, 'Tulisan C', '<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus ante a felis egestas aliquet. Nam vel posuere arcu. In in aliquet dolor. Vivamus quis tincidunt felis, nec fermentum velit. Morbi nibh ligula, pellentesque quis nunc vel, suscipit dictum massa. Etiam arcu magna, iaculis et ipsum ut, luctus porta ex. Integer sed ex ligula. Praesent gravida tellus ac mi cursus luctus.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Duis nisl dui, tristique in nibh ut, ornare dignissim leo. Ut nec metus ac arcu interdum mollis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec aliquet porttitor lectus ut laoreet. Donec suscipit sem ut elit venenatis, a tincidunt purus varius. Vestibulum quam metus, posuere id massa non, sodales auctor justo. Aliquam malesuada turpis vitae tempor scelerisque. Ut laoreet suscipit ornare. Mauris ut dapibus purus. Sed dapibus dolor quis quam placerat ornare.</p>', '2021-03-04 02:27:32', NULL, 'tulisan-c', '', '', ''),
-(4, 'Tulisan D', '<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus ante a felis egestas aliquet. Nam vel posuere arcu. In in aliquet dolor. Vivamus quis tincidunt felis, nec fermentum velit. Morbi nibh ligula, pellentesque quis nunc vel, suscipit dictum massa. Etiam arcu magna, iaculis et ipsum ut, luctus porta ex. Integer sed ex ligula. Praesent gravida tellus ac mi cursus luctus.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Duis nisl dui, tristique in nibh ut, ornare dignissim leo. Ut nec metus ac arcu interdum mollis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec aliquet porttitor lectus ut laoreet. Donec suscipit sem ut elit venenatis, a tincidunt purus varius. Vestibulum quam metus, posuere id massa non, sodales auctor justo. Aliquam malesuada turpis vitae tempor scelerisque. Ut laoreet suscipit ornare. Mauris ut dapibus purus. Sed dapibus dolor quis quam placerat ornare.</p>', '2021-03-04 02:28:13', NULL, 'tulisan-d', '', '', ''),
-(5, 'Tulisan E', '<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus ante a felis egestas aliquet. Nam vel posuere arcu. In in aliquet dolor. Vivamus quis tincidunt felis, nec fermentum velit. Morbi nibh ligula, pellentesque quis nunc vel, suscipit dictum massa. Etiam arcu magna, iaculis et ipsum ut, luctus porta ex. Integer sed ex ligula. Praesent gravida tellus ac mi cursus luctus.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Duis nisl dui, tristique in nibh ut, ornare dignissim leo. Ut nec metus ac arcu interdum mollis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec aliquet porttitor lectus ut laoreet. Donec suscipit sem ut elit venenatis, a tincidunt purus varius. Vestibulum quam metus, posuere id massa non, sodales auctor justo. Aliquam malesuada turpis vitae tempor scelerisque. Ut laoreet suscipit ornare. Mauris ut dapibus purus. Sed dapibus dolor quis quam placerat ornare.</p>', '2021-03-04 02:28:28', NULL, 'tulisan-e', '', '', '');
+(1, 'Tulisan A', '<p xss=\"removed\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis nisl sit amet sagittis congue. Donec pretium orci mauris, eget volutpat mauris fringilla ut. Nam mollis mattis nisi nec blandit. Aenean dictum congue velit, laoreet iaculis metus cursus a. Nam volutpat interdum arcu tristique tincidunt. Sed mollis ut sem non viverra. Maecenas diam odio, congue nec aliquet nec, tincidunt at ante. Etiam non arcu feugiat, tincidunt nibh vel, mattis leo.</p>\r\n<p xss=\"removed\">Suspendisse gravida risus sit amet facilisis eleifend. Curabitur eu nisi interdum, venenatis lorem sed, imperdiet mauris. Nunc at efficitur eros, quis mattis arcu. Aliquam metus ipsum, mollis eget eros non, sollicitudin ullamcorper est. Duis congue suscipit dolor sit amet bibendum. Etiam ut fringilla augue. Nunc in lorem eget massa dapibus congue quis vel magna. Nunc molestie molestie convallis. Integer ut mollis massa. Etiam a ligula molestie, lobortis lacus sit amet, iaculis urna. Praesent vulputate magna nulla, eget tincidunt justo viverra et. Morbi aliquet leo eu posuere varius. Duis non lacus sit amet quam facilisis mattis. Donec lacus nisi, ullamcorper at ligula vel, aliquam auctor dolor. Nulla et lacus pharetra, accumsan enim ut, blandit odio.</p>', '2021-03-03 06:04:41', '2021-03-04 08:46:31', 'tulisan-a', '', '', ''),
+(2, 'Tulisan B', '<p xss=\"removed\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis nisl sit amet sagittis congue. Donec pretium orci mauris, eget volutpat mauris fringilla ut. Nam mollis mattis nisi nec blandit. Aenean dictum congue velit, laoreet iaculis metus cursus a. Nam volutpat interdum arcu tristique tincidunt. Sed mollis ut sem non viverra. Maecenas diam odio, congue nec aliquet nec, tincidunt at ante. Etiam non arcu feugiat, tincidunt nibh vel, mattis leo.</p>\r\n<p xss=\"removed\">Suspendisse gravida risus sit amet facilisis eleifend. Curabitur eu nisi interdum, venenatis lorem sed, imperdiet mauris. Nunc at efficitur eros, quis mattis arcu. Aliquam metus ipsum, mollis eget eros non, sollicitudin ullamcorper est. Duis congue suscipit dolor sit amet bibendum. Etiam ut fringilla augue. Nunc in lorem eget massa dapibus congue quis vel magna. Nunc molestie molestie convallis. Integer ut mollis massa. Etiam a ligula molestie, lobortis lacus sit amet, iaculis urna. Praesent vulputate magna nulla, eget tincidunt justo viverra et. Morbi aliquet leo eu posuere varius. Duis non lacus sit amet quam facilisis mattis. Donec lacus nisi, ullamcorper at ligula vel, aliquam auctor dolor. Nulla et lacus pharetra, accumsan enim ut, blandit odio.</p>', '2021-03-03 06:05:22', '2021-03-04 08:39:49', 'tulisan-b', '', '', ''),
+(3, 'Tulisan C', '<p xss=\"removed\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus ante a felis egestas aliquet. Nam vel posuere arcu. In in aliquet dolor. Vivamus quis tincidunt felis, nec fermentum velit. Morbi nibh ligula, pellentesque quis nunc vel, suscipit dictum massa. Etiam arcu magna, iaculis et ipsum ut, luctus porta ex. Integer sed ex ligula. Praesent gravida tellus ac mi cursus luctus.</p>\r\n<p xss=\"removed\">Duis nisl dui, tristique in nibh ut, ornare dignissim leo. Ut nec metus ac arcu interdum mollis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec aliquet porttitor lectus ut laoreet. Donec suscipit sem ut elit venenatis, a tincidunt purus varius. Vestibulum quam metus, posuere id massa non, sodales auctor justo. Aliquam malesuada turpis vitae tempor scelerisque. Ut laoreet suscipit ornare. Mauris ut dapibus purus. Sed dapibus dolor quis quam placerat ornare.</p>', '2021-03-04 02:27:32', '2021-03-04 08:40:09', 'tulisan-c', '', '', ''),
+(4, 'Tulisan D', '<p xss=\"removed\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus ante a felis egestas aliquet. Nam vel posuere arcu. In in aliquet dolor. Vivamus quis tincidunt felis, nec fermentum velit. Morbi nibh ligula, pellentesque quis nunc vel, suscipit dictum massa. Etiam arcu magna, iaculis et ipsum ut, luctus porta ex. Integer sed ex ligula. Praesent gravida tellus ac mi cursus luctus.</p>\r\n<p xss=\"removed\">Duis nisl dui, tristique in nibh ut, ornare dignissim leo. Ut nec metus ac arcu interdum mollis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec aliquet porttitor lectus ut laoreet. Donec suscipit sem ut elit venenatis, a tincidunt purus varius. Vestibulum quam metus, posuere id massa non, sodales auctor justo. Aliquam malesuada turpis vitae tempor scelerisque. Ut laoreet suscipit ornare. Mauris ut dapibus purus. Sed dapibus dolor quis quam placerat ornare.</p>', '2021-03-04 02:28:13', '2021-03-04 08:40:51', 'tulisan-d', 'Desert1.jpg', '', ''),
+(5, 'Tulisan E', '<p xss=\"removed\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus ante a felis egestas aliquet. Nam vel posuere arcu. In in aliquet dolor. Vivamus quis tincidunt felis, nec fermentum velit. Morbi nibh ligula, pellentesque quis nunc vel, suscipit dictum massa. Etiam arcu magna, iaculis et ipsum ut, luctus porta ex. Integer sed ex ligula. Praesent gravida tellus ac mi cursus luctus.</p>\r\n<p xss=\"removed\">Duis nisl dui, tristique in nibh ut, ornare dignissim leo. Ut nec metus ac arcu interdum mollis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec aliquet porttitor lectus ut laoreet. Donec suscipit sem ut elit venenatis, a tincidunt purus varius. Vestibulum quam metus, posuere id massa non, sodales auctor justo. Aliquam malesuada turpis vitae tempor scelerisque. Ut laoreet suscipit ornare. Mauris ut dapibus purus. Sed dapibus dolor quis quam placerat ornare.</p>', '2021-03-04 02:28:28', '2021-03-04 08:42:30', 'tulisan-e', 'Desert2.jpg', '', '');
 
 -- --------------------------------------------------------
 
@@ -456,11 +464,18 @@ CREATE TABLE `post_detail` (
 --
 
 INSERT INTO `post_detail` (`id`, `id_post`, `id_kategori`) VALUES
-(1, 1, 4),
-(2, 2, 2),
-(3, 3, 6),
-(4, 4, 4),
-(5, 5, 3);
+(6, 1, 1),
+(7, 2, 0),
+(8, 2, 1),
+(9, 3, 0),
+(10, 3, 2),
+(11, 4, 3),
+(12, 5, 4),
+(13, 4, 0),
+(14, 5, 5),
+(15, 4, 1),
+(16, 2, 3),
+(17, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -564,6 +579,7 @@ CREATE TABLE `settings` (
   `facebook_url` varchar(100) DEFAULT NULL,
   `instagram_url` varchar(100) DEFAULT NULL,
   `twitter_url` varchar(100) DEFAULT NULL,
+  `youtube_url` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `about_section` varchar(100) DEFAULT NULL,
   `carousel` int(11) DEFAULT NULL,
@@ -588,8 +604,8 @@ CREATE TABLE `settings` (
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`id`, `website_name`, `website_url`, `facebook_url`, `instagram_url`, `twitter_url`, `email`, `about_section`, `carousel`, `feature_section`, `foot1`, `foot2`, `foot3`, `foot4`, `logo`, `alamat`, `fax`, `telp`, `about_text`, `about_images`, `lbanner_images`, `lbanner_tagline`, `site_tagline`, `permalink`) VALUES
-(0, 'SLCC PGRI Wonosobo', 'www.slccpgriwonosobo.org', '#', '#', '#', 'slccpgriwonosobo@pgri.or.id', '', 1, '', '', '', '', '', 'SLCC-removebg-preview.png', 'Jl Sunan Kalijaga Berkoh, Purwokerto Selatan, Banyumas Jawa Tengah, Indonesia 53146', '', '(0281) 6512290', '<p>Ini Greeting</p>', 'Koala.jpg', 'banner-left.png', 'Smart Learning Character Center', 'Smart Learning Character Center', 2);
+INSERT INTO `settings` (`id`, `website_name`, `website_url`, `facebook_url`, `instagram_url`, `twitter_url`, `youtube_url`, `email`, `about_section`, `carousel`, `feature_section`, `foot1`, `foot2`, `foot3`, `foot4`, `logo`, `alamat`, `fax`, `telp`, `about_text`, `about_images`, `lbanner_images`, `lbanner_tagline`, `site_tagline`, `permalink`) VALUES
+(0, 'SLCC PGRI Wonosobo', 'www.slccpgriwonosobo.org', '#', '#', '#', 'UCMs_dVz0xItsvgMX6wpmA1Q', 'slccpgriwonosobo@pgri.or.id', NULL, 1, NULL, NULL, NULL, NULL, NULL, 'SLCC-removebg-preview.png', 'Jl Sunan Kalijaga Berkoh, Purwokerto Selatan, Banyumas Jawa Tengah, Indonesia 53146', '', '(0281) 6512290', '<p>Ini Greeting</p>', 'Koala.jpg', 'banner-left.png', 'Smart Learning Character Center', 'Smart Learning Character Center', 2);
 
 -- --------------------------------------------------------
 
@@ -776,7 +792,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2y$12$0Os7zz3d28mM/StrSK6xM.JDuKSllI6AqodCqu.KHgMc2qNl4Pg.e', '', 'admin@admin.com', '', NULL, NULL, 'JIQTvL22C28l6soX5V.mTO', 1268889823, 1614823352, 1, 'Admin', 'istrator', 'ADMIN', '0');
+(1, '127.0.0.1', 'administrator', '$2y$12$0Os7zz3d28mM/StrSK6xM.JDuKSllI6AqodCqu.KHgMc2qNl4Pg.e', '', 'admin@admin.com', '', NULL, NULL, 'JIQTvL22C28l6soX5V.mTO', 1268889823, 1614842328, 1, 'Admin', 'istrator', 'ADMIN', '0');
 
 -- --------------------------------------------------------
 
@@ -1120,7 +1136,7 @@ ALTER TABLE `faq`
 -- AUTO_INCREMENT for table `feature_section`
 --
 ALTER TABLE `feature_section`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `files`
@@ -1186,7 +1202,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `news_section`
 --
 ALTER TABLE `news_section`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `page`
@@ -1222,7 +1238,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `post_detail`
 --
 ALTER TABLE `post_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `post_kategori`
