@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1614849201;s:3:"ttl";i:3600;s:4:"data";s:2127:"<?php $this->_opening_section('subcontent'); ?>
+a:3:{s:4:"time";i:1614917970;s:3:"ttl";i:3600;s:4:"data";s:2127:"<?php $this->_opening_section('subcontent'); ?>
     <style>
 		@media screen and (max-width: 460px) {
             .banner-left {

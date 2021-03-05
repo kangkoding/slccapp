@@ -27,16 +27,23 @@
     <link rel="stylesheet" href="{{ base_url() }}assets/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- CSS Theme -->
     <link rel="stylesheet" href="{{ base_url() }}assets/datatables/datatables.min.css">
+    <!-- <link rel="stylesheet" href="{{ base_url() }}assets/css/custom_carousel.css"> -->
     <script type="text/javascript" src="{{ base_url() }}assets/js/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ base_url() }}assets/css/custom.css">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Raleway&family=Roboto&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"> -->
     <!-- CSS Customization -->
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&family=Varela+Round&display=swap');
+
         body {
-            font-family: 'Noto Sans', sans-serif;
+            font-family: 'Lato', sans-serif;
+            font-family: 'Varela Round', sans-serif;
         }
 
         body img {
@@ -324,12 +331,20 @@
             color: white;
         }
 
+        .bg-card-date {
+            background-color: #D9A21B;
+        }
+
         .bg-grad {
             background-image: linear-gradient(to right, #022140, #004D6F);
         }
 
         .bg-grad-2 {
             background-image: linear-gradient(to right, #022140, #004D6F);
+        }
+
+        .bg-grad-3 {
+            background-image: linear-gradient(to right, #D9A21B, #FFEECB);
         }
 
         .site-title {
@@ -649,6 +664,20 @@
                 right: 0px;
             }
         }
+
+        video,
+        iframe {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .youtube-video {
+            background: white;
+            height: 70vh;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
     </style>
     <link rel="stylesheet" href="{{base_url('assets/css/custom-ui.css')}}">
 </head>
@@ -713,7 +742,8 @@
             </div>
         </div>
     </nav>
-    <div class="container p-20" style="margin-top: 90px !important; margin-bottom: 0;">
+    <div class="container p-20" style="margin-top: 50px !important; margin-bottom: 0;">
+        @yield('carousels')
         @yield('content')
     </div>
     <div id="footer-v1" class="footer-v1">

@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1614847669;s:3:"ttl";i:3600;s:4:"data";s:1483:"<?php $this->_opening_section('title'); ?>
+a:3:{s:4:"time";i:1614919129;s:3:"ttl";i:3600;s:4:"data";s:1483:"<?php $this->_opening_section('title'); ?>
 	Artikel
 <?php $this->_closing_section(); ?><?php $this->_opening_section('subcontent'); ?>
 	<div style="margin-top:10px">

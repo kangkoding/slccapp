@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1614845969;s:3:"ttl";i:3600;s:4:"data";s:17128:"<!DOCTYPE html>
+a:3:{s:4:"time";i:1614931222;s:3:"ttl";i:3600;s:4:"data";s:17137:"<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -123,7 +123,7 @@ a:3:{s:4:"time";i:1614845969;s:3:"ttl";i:3600;s:4:"data";s:17128:"<!DOCTYPE html
               <li><a href="<?php echo base_url('admin/settings') ?>"><i class="fa fa-globe"></i> <span>Site Settings</span></a></li>
               <!-- <li><a href="<?php echo base_url('admin/top-menu') ?>"><i class="fa fa-list"></i> <span>Top Menu</span></a></li> -->
               <li><a href="<?php echo base_url('admin/menu') ?>"><i class="fa fa-list"></i> <span>Menu</span></a></li>
-              <li><a href="<?php echo base_url('admin/feature_section') ?>"><i class="fa fa-bookmark"></i> <span>Feature Section</span></a></li>
+              <!-- <li><a href="<?php echo base_url('admin/feature_section') ?>"><i class="fa fa-bookmark"></i> <span>Feature Section</span></a></li> -->
               <li><a href="<?php echo base_url('admin/news_section') ?>"><i class="fa fa-newspaper-o"></i> <span>News Section</span></a></li>
               <li><a href="<?php echo base_url('admin/about_section') ?>"><i class="fa fa-bookmark"></i> <span>Greeting</span></a></li>
               <li><a href="<?php echo base_url('admin/sidebar') ?>"><i class="fa fa-list"></i> <span>Panel Sidebar</span></a></li>

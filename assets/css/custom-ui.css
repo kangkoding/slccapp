@@ -11,7 +11,7 @@
 #nav.affix {
   position: fixed !important;
   top: 0px;
-  background: #31C4FC !important;
+  background: #31c4fc !important;
 }
 
 .wrapper-mobile {
@@ -81,8 +81,20 @@
 .greeting-wrapper {
   position: relative;
   border-top: 0px;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(32, 65, 127, 0.9)), to(rgba(32, 65, 127, 0.9))), url("../images/swu.jpg");
-  background: linear-gradient(0deg, rgba(32, 65, 127, 0.9), rgba(32, 65, 127, 0.9)), url("../images/swu.jpg");
+  background: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      from(rgba(32, 65, 127, 0.9)),
+      to(rgba(32, 65, 127, 0.9))
+    ),
+    url("../images/swu.jpg");
+  background: linear-gradient(
+      0deg,
+      rgba(32, 65, 127, 0.9),
+      rgba(32, 65, 127, 0.9)
+    ),
+    url("../images/swu.jpg");
 }
 
 .greeting-wrapper p {
@@ -121,7 +133,7 @@
 .news-images.bottom .news-title {
   width: 100%;
   -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
   padding: 20px;
   background: rgba(32, 65, 127, 0.7);
 }
@@ -135,20 +147,20 @@
 }
 
 .row.event .date {
-  background: orange;
+  /* background: orange; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .row.event .date h1 {

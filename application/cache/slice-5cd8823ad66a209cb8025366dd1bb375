@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1614847533;s:3:"ttl";i:3600;s:4:"data";s:715:"<?php $this->_opening_section('content'); ?>
+a:3:{s:4:"time";i:1614924121;s:3:"ttl";i:3600;s:4:"data";s:715:"<?php $this->_opening_section('content'); ?>
     <h2 style="margin-top:0px">Post Read</h2>
     <table class="table">
 	    <tr><td>Judul</td><td><?php echo $judul; ?></td></tr>

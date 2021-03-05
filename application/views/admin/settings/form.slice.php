@@ -66,47 +66,42 @@
 					</div>
 				</div>
 			</div>
-			<!-- <div class="panel panel-default">
-					<div class="panel-heading">
-						Other
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Other
+				</div>
+				<div class="panel-body">
+					<!-- <div class="form-group">
+						<label for="about_section"><i class="fa fa-info-circle"></i> About Section</label>
+						<input type="text" name="about_section" id="about_section" class="form-control" value="<?php echo $data->about_section ?>">
 					</div>
-					<div class="panel-body">
-						<div class="form-group">
-							<label for="about_section"><i class="fa fa-info-circle"></i> About Section</label>
-							<input type="text" name="about_section" id="about_section" class="form-control" value="<?php echo $data->about_section ?>">
-						</div>
-						<div class="form-group">
-							<label for="feature_section"><i class="fa fa-bookmark"></i> Feature Section</label>
-							<input type="text" name="feature_section" id="feature_section" class="form-control" value="<?php echo $data->feature_section ?>">
-						</div>
-						<div class="form-group">
-							<label for="#"><i class="fa fa-list"></i> Footer</label>
-							<div class="row">
-								<div class="col-md-3">
-									<label for="foot1">Blok 1</label>
-									<input type="text" name="foot1" id="foot1" class="form-control" value="<?php echo $data->foot1 ?>">
-								</div>
-								<div class="col-md-3">
-									<label for="foot2">Blok 2</label>
-									<input type="text" name="foot2" id="foot2" class="form-control" value="<?php echo $data->foot2 ?>">
-								</div>
-								<div class="col-md-3">
-									<label for="foot3">Blok 3</label>
-									<input type="text" name="foot3" id="foot3" class="form-control" value="<?php echo $data->foot3 ?>">
-								</div>
-								<div class="col-md-3">
-									<label for="foot4">Blok 4</label>
-									<input type="text" name="foot4" id="foot4" class="form-control" value="<?php echo $data->foot4 ?>">
-								</div>
+					<div class="form-group">
+						<label for="feature_section"><i class="fa fa-bookmark"></i> Feature Section</label>
+						<input type="text" name="feature_section" id="feature_section" class="form-control" value="<?php echo $data->feature_section ?>">
+					</div> -->
+					<div class="form-group">
+						<label for="#"><i class="fa fa-list"></i> Footer</label>
+						<div class="row">
+							<div class="col-md-3">
+								<label for="foot1">Blok 1</label>
+								<input type="text" name="foot1" id="foot1" class="form-control" value="<?php echo $data->foot1 ?>">
+							</div>
+							<div class="col-md-3">
+								<label for="foot2">Blok 2</label>
+								<input type="text" name="foot2" id="foot2" class="form-control" value="<?php echo $data->foot2 ?>">
+							</div>
+							<div class="col-md-3">
+								<label for="foot3">Blok 3</label>
+								<input type="text" name="foot3" id="foot3" class="form-control" value="<?php echo $data->foot3 ?>">
+							</div>
+							<div class="col-md-3">
+								<label for="foot4">Blok 4</label>
+								<input type="text" name="foot4" id="foot4" class="form-control" value="<?php echo $data->foot4 ?>">
 							</div>
 						</div>
-						<div class="form-group">
-							<button class="btn btn-primary">
-								<i class="fa fa-save"></i> Simpan
-							</button>
-						</div>
 					</div>
-				</div> -->
+				</div>
+			</div>
 			<div class="form-group">
 				<button class="btn btn-primary">
 					<i class="fa fa-save"></i> Simpan

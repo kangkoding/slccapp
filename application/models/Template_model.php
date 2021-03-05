@@ -97,7 +97,7 @@ class Template_model extends CI_Model
 					'judul' => $r->judul,
 					'created' => $r->created,
 					'slug' => $r->slug,
-					'featured_image' => ($r->featured_image) ? $r->featured_image : 'stmik.svg',
+					'featured_image' => ($r->featured_image) ? $r->featured_image : '',
 					'permalink' => date('Y/m', strtotime($r->created)),
 				);
 			}
@@ -126,8 +126,10 @@ class Template_model extends CI_Model
 			);
 		}
 
-		$array2 = array("left" => array('title' => $r2->title, 'slug' => $r2->slug, 'data' => $dt[0]), 
-						"right" => array('title' => 'Other News', 'data' => $dt, 'slug' => $r2->slug,));
+		$array2 = array(
+			"left" => array('title' => $r2->title, 'slug' => $r2->slug, 'data' => $dt[0]),
+			"right" => array('title' => 'Other News', 'data' => $dt, 'slug' => $r2->slug,)
+		);
 		//
 		$array = array(
 			'top' => $array1,
