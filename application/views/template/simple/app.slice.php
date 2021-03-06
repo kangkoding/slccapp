@@ -38,6 +38,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Raleway&family=Roboto&display=swap" rel="stylesheet"> -->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"> -->
     <!-- CSS Customization -->
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato&family=Varela+Round&display=swap');
 
@@ -57,7 +58,8 @@
         h5,
         p,
         span {
-            font-family: 'Noto Sans', sans-serif !important;
+            font-family: 'Lato', sans-serif !important;
+            font-family: 'Varela Round', sans-serif !important;
         }
 
         .purchase {
@@ -743,7 +745,7 @@
         </div>
     </nav>
     <div class="container p-20" style="margin-top: 50px !important; margin-bottom: 0;">
-        @yield('carousels')
+        @yield('carousel')
         @yield('content')
     </div>
     <div id="footer-v1" class="footer-v1">

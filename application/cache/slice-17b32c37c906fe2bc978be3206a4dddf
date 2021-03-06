@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1614934178;s:3:"ttl";i:3600;s:4:"data";s:27605:"<!DOCTYPE html>
+a:3:{s:4:"time";i:1615020554;s:3:"ttl";i:3600;s:4:"data";s:27666:"<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -38,6 +38,7 @@ a:3:{s:4:"time";i:1614934178;s:3:"ttl";i:3600;s:4:"data";s:27605:"<!DOCTYPE html
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Raleway&family=Roboto&display=swap" rel="stylesheet"> -->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"> -->
     <!-- CSS Customization -->
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato&family=Varela+Round&display=swap');
 
@@ -57,7 +58,8 @@ a:3:{s:4:"time";i:1614934178;s:3:"ttl";i:3600;s:4:"data";s:27605:"<!DOCTYPE html
         h5,
         p,
         span {
-            font-family: 'Noto Sans', sans-serif !important;
+            font-family: 'Lato', sans-serif !important;
+            font-family: 'Varela Round', sans-serif !important;
         }
 
         .purchase {
@@ -742,7 +744,7 @@ a:3:{s:4:"time";i:1614934178;s:3:"ttl";i:3600;s:4:"data";s:27605:"<!DOCTYPE html
             </div>
         </div>
     </nav>
-    <div class="container p-20" style="margin-top: 50px !important; margin-bottom: 0;"><?php echo $this->_yield('carousels'); ?><?php echo $this->_yield('content'); ?>
+    <div class="container p-20" style="margin-top: 50px !important; margin-bottom: 0;"><?php echo $this->_yield('carousel'); ?><?php echo $this->_yield('content'); ?>
     </div>
     <div id="footer-v1" class="footer-v1">
         <div class="footer">

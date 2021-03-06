@@ -111,14 +111,14 @@ class News_section extends CI_Controller
     }
     public function change_arrange()
     {
-        $sort = array_flip($this->input->post('item'));
+        $sort = $this->input->post('item');
         if (!empty($sort)) {
             $i = 0;
             $result = $this->db->get('news_section')->result();
             foreach ($result as $row) {
                 $id = $row->id;
                 $this->db->where('id', $id);
-                $data = array('arrange' => $sort[$row->arrange] + 1);
+                $data = array('arrange' => $sort[$i]);
                 $this->db->update('news_section', $data);
                 $i++;
             }

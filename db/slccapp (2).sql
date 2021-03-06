@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2021 at 09:52 AM
+-- Generation Time: Mar 06, 2021 at 10:10 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -321,7 +321,11 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `menu`, `slug`, `is_url`, `parameter`) VALUES
-(1, 'Beranda', 'beranda', 1, 'target=\'_blank\'');
+(1, 'Beranda', 'beranda', 1, 'target=\'_blank\''),
+(7, 'Program', 'page/halaman-b', 0, 'target=\'_blank\''),
+(8, 'Struktur', 'page/halaman-b', 0, 'target=\'_blank\''),
+(9, 'Pengumuman', 'page/halaman-b', 0, 'target=\'_blank\''),
+(10, 'Download', 'page/halaman-b', 0, 'target=\'_blank\'');
 
 -- --------------------------------------------------------
 
@@ -341,10 +345,10 @@ CREATE TABLE `news_section` (
 --
 
 INSERT INTO `news_section` (`id`, `title`, `id_kategori`, `arrange`) VALUES
-(21, 'Berita', 9, NULL),
-(22, 'Post Terbaru', 10, NULL),
-(23, 'Pengumuman', 11, NULL),
-(24, 'Event', 12, NULL);
+(21, 'A', 9, 1),
+(22, 'B', 10, 2),
+(23, 'C', 11, 3),
+(24, 'D', 12, 4);
 
 -- --------------------------------------------------------
 
@@ -369,8 +373,8 @@ CREATE TABLE `page` (
 --
 
 INSERT INTO `page` (`id`, `judul`, `isi`, `created`, `updated`, `slug`, `title`, `content`, `template`) VALUES
-(25, 'Halaman A', '<p>Ini isi Halaman A</p>', '2021-03-03 06:06:06', NULL, 'halaman-a', '', '', 0),
-(26, 'Halaman B', '<p>Ini isi Halaman B</p>', '2021-03-03 06:06:20', NULL, 'halaman-b', '', '', 1);
+(25, 'Full Page', '<p>Ini isi Full Page</p>', NULL, NULL, 'halaman-a', '', '', 0),
+(26, 'With Sidebar', '<p>Ini isi With Sidebar</p>', NULL, NULL, 'halaman-b', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -519,7 +523,6 @@ CREATE TABLE `post_kategori` (
 --
 
 INSERT INTO `post_kategori` (`id`, `kategori`, `slug`) VALUES
-(8, 'Youtube', 'Youtube'),
 (9, 'Berita', 'Berita'),
 (10, 'Post Terbaru', 'Post-Terbaru'),
 (11, 'Pengumuman', 'Pengumuman'),
@@ -629,7 +632,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `website_name`, `website_url`, `facebook_url`, `instagram_url`, `twitter_url`, `youtube_url`, `email`, `about_section`, `carousel`, `feature_section`, `foot1`, `foot2`, `foot3`, `foot4`, `logo`, `alamat`, `fax`, `telp`, `about_text`, `about_images`, `lbanner_images`, `lbanner_tagline`, `site_tagline`, `permalink`) VALUES
-(0, 'SLCC PGRI Wonosobo', 'www.slccpgriwonosobo.org', '#', '#', '#', 'https://www.youtube.com/channel/UCMs_dVz0xItsvgMX6wpmA1Q', 'slccpgriwonosobo@pgri.or.id', NULL, 1, NULL, 'Navigasi', 'Internal Link', 'Ikuti Kami', 'Hubungi Kami', 'SLCC-removebg-preview.png', 'Pagerkukuh, 1, Sukoyoso, Pagerkukuh, Kec. Wonosobo, Kabupaten Wonosobo, Jawa Tengah 56314', '', '(0286) 321625', '<p>Ini Greeting</p>', 'Koala.jpg', 'banner-left.png', 'Smart Learning Character Center', 'Smart Learning Character Center', 2);
+(0, 'SLCC PGRI Wonosobo', 'www.slccpgriwonosobo.org', '#', '#', '#', 'https://www.youtube.com/embed/SHpa1LB-1A8', 'slccpgriwonosobo@pgri.or.id', NULL, 1, NULL, 'Navigasi', 'Internal Link', 'Ikuti Kami', 'Hubungi Kami', 'SLCC-removebg-preview.png', 'Pagerkukuh, 1, Sukoyoso, Pagerkukuh, Kec. Wonosobo, Kabupaten Wonosobo, Jawa Tengah 56314', '', '(0286) 321625', '<p>Ini Greeting</p>', 'Koala.jpg', 'banner-left.png', 'Smart Learning Character Center', 'Smart Learning Character Center', 2);
 
 -- --------------------------------------------------------
 
@@ -716,9 +719,9 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `image`, `url`, `level`, `title`, `content`) VALUES
-(49, 'SLCC-removebg-preview1.png', '#', 1, 'Slider A', 'Ini isi Slider A'),
-(50, 'SLCC-removebg-preview2.png', '#', 2, 'Slider B', 'Ini isi Slider B'),
-(51, 'SLCC-removebg-preview3.png', '#', 3, 'Slider C', 'Ini isi Slider C');
+(52, 'Desert6.jpg', '#', 1, 'Slider A', 'Ini isi Slider A'),
+(53, 'Hydrangeas4.jpg', '#', 2, 'Slider B', 'Ini isi Slider B'),
+(54, 'Jellyfish.jpg', '#', 3, 'Slider C', 'Ini isi Slider C');
 
 -- --------------------------------------------------------
 
@@ -818,7 +821,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2y$12$0Os7zz3d28mM/StrSK6xM.JDuKSllI6AqodCqu.KHgMc2qNl4Pg.e', '', 'admin@admin.com', '', NULL, NULL, 'JIQTvL22C28l6soX5V.mTO', 1268889823, 1614907048, 1, 'Admin', 'istrator', 'ADMIN', '0');
+(1, '127.0.0.1', 'administrator', '$2y$12$0Os7zz3d28mM/StrSK6xM.JDuKSllI6AqodCqu.KHgMc2qNl4Pg.e', '', 'admin@admin.com', '', NULL, NULL, 'JIQTvL22C28l6soX5V.mTO', 1268889823, 1614993653, 1, 'Admin', 'istrator', 'ADMIN', '0');
 
 -- --------------------------------------------------------
 
@@ -1222,13 +1225,13 @@ ALTER TABLE `lowongan`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `news_section`
 --
 ALTER TABLE `news_section`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `page`
@@ -1294,7 +1297,7 @@ ALTER TABLE `sidebar_opsi`
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `submenu`
