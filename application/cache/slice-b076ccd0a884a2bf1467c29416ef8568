@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1614931292;s:3:"ttl";i:3600;s:4:"data";s:801:"<?php $this->_opening_section('content'); ?>
+a:3:{s:4:"time";i:1615187827;s:3:"ttl";i:3600;s:4:"data";s:801:"<?php $this->_opening_section('content'); ?>
         <h2 style="margin-top:0px"><?php echo $button ?> Kategori </h2>
         <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">

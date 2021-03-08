@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2021 at 10:10 AM
+-- Generation Time: Mar 08, 2021 at 09:45 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -163,13 +163,6 @@ CREATE TABLE `feature_section` (
   `link` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `feature_section`
---
-
-INSERT INTO `feature_section` (`id`, `title`, `icon`, `link`) VALUES
-(7, 'Google', '001-search.png', 'www.google.com');
-
 -- --------------------------------------------------------
 
 --
@@ -321,11 +314,10 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `menu`, `slug`, `is_url`, `parameter`) VALUES
-(1, 'Beranda', 'beranda', 1, 'target=\'_blank\''),
-(7, 'Program', 'page/halaman-b', 0, 'target=\'_blank\''),
-(8, 'Struktur', 'page/halaman-b', 0, 'target=\'_blank\''),
-(9, 'Pengumuman', 'page/halaman-b', 0, 'target=\'_blank\''),
-(10, 'Download', 'page/halaman-b', 0, 'target=\'_blank\'');
+(1, 'Beranda', 'home', 1, ''),
+(15, 'Struktur', 'page/sumber-daya-slcc-pgri-jawa-tengah', 0, 'target=\'_blank\''),
+(16, 'SKGB', 'page/surat-kabar-guru-belajar', 0, 'target=\'_blank\''),
+(17, 'Gabung', 'page/gabung', 0, 'target=\'_blank\'');
 
 -- --------------------------------------------------------
 
@@ -345,10 +337,10 @@ CREATE TABLE `news_section` (
 --
 
 INSERT INTO `news_section` (`id`, `title`, `id_kategori`, `arrange`) VALUES
-(21, 'A', 9, 1),
-(22, 'B', 10, 2),
-(23, 'C', 11, 3),
-(24, 'D', 12, 4);
+(26, 'Berita', 13, NULL),
+(27, 'Pelatihan', 14, NULL),
+(28, 'Parenting', 15, NULL),
+(29, 'Webinar', 16, NULL);
 
 -- --------------------------------------------------------
 
@@ -373,8 +365,9 @@ CREATE TABLE `page` (
 --
 
 INSERT INTO `page` (`id`, `judul`, `isi`, `created`, `updated`, `slug`, `title`, `content`, `template`) VALUES
-(25, 'Full Page', '<p>Ini isi Full Page</p>', NULL, NULL, 'halaman-a', '', '', 0),
-(26, 'With Sidebar', '<p>Ini isi With Sidebar</p>', NULL, NULL, 'halaman-b', '', '', 1);
+(27, 'Sumber Daya SLCC PGRI Jawa Tengah', '<p>Berikut susunan struktur SLCC PGRI Kabupaten Wonosobo</p>', '2021-03-08 08:11:51', NULL, 'sumber-daya-slcc-pgri-jawa-tengah', '', '', 1),
+(28, 'Surat Kabar Guru Belajar', '<p>Ini adalah beberapa list Surat Kabar Guru Belajar</p>', '2021-03-08 08:17:43', NULL, 'surat-kabar-guru-belajar', '', '', 1),
+(29, 'Gabung', '<p><a href=\"https://t.me/joinchat/IZshSMJdCa_fb_jC\">Grup Telegram</a></p>\r\n<p><a href=\"http://anggota.pgri.or.id/keanggotaan.php\">Menjadi Anggota PGRI</a></p>', '2021-03-08 08:24:40', NULL, 'gabung', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -439,14 +432,19 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id`, `judul`, `isi`, `created`, `updated`, `slug`, `featured_image`, `title`, `content`) VALUES
-(16, 'Berita A', '<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit lectus eu elit eleifend, nec vulputate nisi porttitor. In at lorem tristique, sollicitudin magna non, sagittis massa. Morbi ultrices orci non mauris consequat pretium. Maecenas cursus odio blandit, malesuada lectus sit amet, porttitor lectus. Phasellus vel metus vitae turpis mattis aliquet eget in ligula. Mauris a erat ligula. In euismod sem nec malesuada faucibus. Nunc et consectetur lorem, id fringilla arcu. In venenatis tincidunt condimentum. Proin pretium augue tortor, ut tincidunt augue pellentesque quis. Vestibulum dictum hendrerit efficitur. In hac habitasse platea dictumst. Sed sollicitudin, mauris suscipit convallis ornare, sapien augue dignissim odio, id fermentum risus odio sit amet lacus. Sed sagittis sem neque, at imperdiet nulla posuere nec. Suspendisse urna est, scelerisque nec quam pharetra, mattis aliquam purus.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Vivamus vulputate magna lectus, eu consectetur nisl bibendum nec. In cursus massa felis, ut euismod erat auctor non. Suspendisse sed eros ut ex consequat pulvinar in non felis. Etiam vestibulum nisl eu justo rhoncus commodo. Pellentesque lacinia fermentum sem vel accumsan. Fusce tempor sapien in felis ultrices efficitur. Phasellus pharetra nec lectus a sollicitudin. Aenean auctor maximus quam, in ornare metus. Sed erat mi, scelerisque at arcu vel, ultrices vulputate dolor. Aliquam dignissim felis feugiat sodales fermentum. Donec odio sem, interdum facilisis bibendum in, dignissim ac ante.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Donec gravida vel lorem vitae sodales. Phasellus at interdum orci. Quisque est sapien, pulvinar ac ante eget, dignissim malesuada velit. Vestibulum rhoncus, nibh ut scelerisque posuere, tortor risus facilisis leo, vel vestibulum diam orci ut tortor. Duis aliquam, eros et congue tincidunt, elit mauris aliquam nisl, id suscipit elit libero eget sem. Sed at nunc sem. Nunc sed varius erat. Vivamus nisi mi, elementum eu varius in, pretium ut enim. Phasellus id odio a odio mollis dapibus eu ut lacus.</p>', '2021-03-05 08:21:24', NULL, 'berita-a', 'Chrysanthemum2.jpg', '', ''),
-(17, 'Berita B', '<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit lectus eu elit eleifend, nec vulputate nisi porttitor. In at lorem tristique, sollicitudin magna non, sagittis massa. Morbi ultrices orci non mauris consequat pretium. Maecenas cursus odio blandit, malesuada lectus sit amet, porttitor lectus. Phasellus vel metus vitae turpis mattis aliquet eget in ligula. Mauris a erat ligula. In euismod sem nec malesuada faucibus. Nunc et consectetur lorem, id fringilla arcu. In venenatis tincidunt condimentum. Proin pretium augue tortor, ut tincidunt augue pellentesque quis. Vestibulum dictum hendrerit efficitur. In hac habitasse platea dictumst. Sed sollicitudin, mauris suscipit convallis ornare, sapien augue dignissim odio, id fermentum risus odio sit amet lacus. Sed sagittis sem neque, at imperdiet nulla posuere nec. Suspendisse urna est, scelerisque nec quam pharetra, mattis aliquam purus.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Vivamus vulputate magna lectus, eu consectetur nisl bibendum nec. In cursus massa felis, ut euismod erat auctor non. Suspendisse sed eros ut ex consequat pulvinar in non felis. Etiam vestibulum nisl eu justo rhoncus commodo. Pellentesque lacinia fermentum sem vel accumsan. Fusce tempor sapien in felis ultrices efficitur. Phasellus pharetra nec lectus a sollicitudin. Aenean auctor maximus quam, in ornare metus. Sed erat mi, scelerisque at arcu vel, ultrices vulputate dolor. Aliquam dignissim felis feugiat sodales fermentum. Donec odio sem, interdum facilisis bibendum in, dignissim ac ante.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Donec gravida vel lorem vitae sodales. Phasellus at interdum orci. Quisque est sapien, pulvinar ac ante eget, dignissim malesuada velit. Vestibulum rhoncus, nibh ut scelerisque posuere, tortor risus facilisis leo, vel vestibulum diam orci ut tortor. Duis aliquam, eros et congue tincidunt, elit mauris aliquam nisl, id suscipit elit libero eget sem. Sed at nunc sem. Nunc sed varius erat. Vivamus nisi mi, elementum eu varius in, pretium ut enim. Phasellus id odio a odio mollis dapibus eu ut lacus.</p>', '2021-03-05 08:21:34', NULL, 'berita-b', '', '', ''),
-(18, 'Post A', '<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit lectus eu elit eleifend, nec vulputate nisi porttitor. In at lorem tristique, sollicitudin magna non, sagittis massa. Morbi ultrices orci non mauris consequat pretium. Maecenas cursus odio blandit, malesuada lectus sit amet, porttitor lectus. Phasellus vel metus vitae turpis mattis aliquet eget in ligula. Mauris a erat ligula. In euismod sem nec malesuada faucibus. Nunc et consectetur lorem, id fringilla arcu. In venenatis tincidunt condimentum. Proin pretium augue tortor, ut tincidunt augue pellentesque quis. Vestibulum dictum hendrerit efficitur. In hac habitasse platea dictumst. Sed sollicitudin, mauris suscipit convallis ornare, sapien augue dignissim odio, id fermentum risus odio sit amet lacus. Sed sagittis sem neque, at imperdiet nulla posuere nec. Suspendisse urna est, scelerisque nec quam pharetra, mattis aliquam purus.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Vivamus vulputate magna lectus, eu consectetur nisl bibendum nec. In cursus massa felis, ut euismod erat auctor non. Suspendisse sed eros ut ex consequat pulvinar in non felis. Etiam vestibulum nisl eu justo rhoncus commodo. Pellentesque lacinia fermentum sem vel accumsan. Fusce tempor sapien in felis ultrices efficitur. Phasellus pharetra nec lectus a sollicitudin. Aenean auctor maximus quam, in ornare metus. Sed erat mi, scelerisque at arcu vel, ultrices vulputate dolor. Aliquam dignissim felis feugiat sodales fermentum. Donec odio sem, interdum facilisis bibendum in, dignissim ac ante.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Donec gravida vel lorem vitae sodales. Phasellus at interdum orci. Quisque est sapien, pulvinar ac ante eget, dignissim malesuada velit. Vestibulum rhoncus, nibh ut scelerisque posuere, tortor risus facilisis leo, vel vestibulum diam orci ut tortor. Duis aliquam, eros et congue tincidunt, elit mauris aliquam nisl, id suscipit elit libero eget sem. Sed at nunc sem. Nunc sed varius erat. Vivamus nisi mi, elementum eu varius in, pretium ut enim. Phasellus id odio a odio mollis dapibus eu ut lacus.</p>', '2021-03-05 08:22:20', NULL, 'post-a', 'Desert5.jpg', '', ''),
-(19, 'Post B', '<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit lectus eu elit eleifend, nec vulputate nisi porttitor. In at lorem tristique, sollicitudin magna non, sagittis massa. Morbi ultrices orci non mauris consequat pretium. Maecenas cursus odio blandit, malesuada lectus sit amet, porttitor lectus. Phasellus vel metus vitae turpis mattis aliquet eget in ligula. Mauris a erat ligula. In euismod sem nec malesuada faucibus. Nunc et consectetur lorem, id fringilla arcu. In venenatis tincidunt condimentum. Proin pretium augue tortor, ut tincidunt augue pellentesque quis. Vestibulum dictum hendrerit efficitur. In hac habitasse platea dictumst. Sed sollicitudin, mauris suscipit convallis ornare, sapien augue dignissim odio, id fermentum risus odio sit amet lacus. Sed sagittis sem neque, at imperdiet nulla posuere nec. Suspendisse urna est, scelerisque nec quam pharetra, mattis aliquam purus.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Vivamus vulputate magna lectus, eu consectetur nisl bibendum nec. In cursus massa felis, ut euismod erat auctor non. Suspendisse sed eros ut ex consequat pulvinar in non felis. Etiam vestibulum nisl eu justo rhoncus commodo. Pellentesque lacinia fermentum sem vel accumsan. Fusce tempor sapien in felis ultrices efficitur. Phasellus pharetra nec lectus a sollicitudin. Aenean auctor maximus quam, in ornare metus. Sed erat mi, scelerisque at arcu vel, ultrices vulputate dolor. Aliquam dignissim felis feugiat sodales fermentum. Donec odio sem, interdum facilisis bibendum in, dignissim ac ante.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Donec gravida vel lorem vitae sodales. Phasellus at interdum orci. Quisque est sapien, pulvinar ac ante eget, dignissim malesuada velit. Vestibulum rhoncus, nibh ut scelerisque posuere, tortor risus facilisis leo, vel vestibulum diam orci ut tortor. Duis aliquam, eros et congue tincidunt, elit mauris aliquam nisl, id suscipit elit libero eget sem. Sed at nunc sem. Nunc sed varius erat. Vivamus nisi mi, elementum eu varius in, pretium ut enim. Phasellus id odio a odio mollis dapibus eu ut lacus.</p>', '2021-03-05 08:23:11', NULL, 'post-b', '', '', ''),
-(20, 'Pengumuman A', '<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit lectus eu elit eleifend, nec vulputate nisi porttitor. In at lorem tristique, sollicitudin magna non, sagittis massa. Morbi ultrices orci non mauris consequat pretium. Maecenas cursus odio blandit, malesuada lectus sit amet, porttitor lectus. Phasellus vel metus vitae turpis mattis aliquet eget in ligula. Mauris a erat ligula. In euismod sem nec malesuada faucibus. Nunc et consectetur lorem, id fringilla arcu. In venenatis tincidunt condimentum. Proin pretium augue tortor, ut tincidunt augue pellentesque quis. Vestibulum dictum hendrerit efficitur. In hac habitasse platea dictumst. Sed sollicitudin, mauris suscipit convallis ornare, sapien augue dignissim odio, id fermentum risus odio sit amet lacus. Sed sagittis sem neque, at imperdiet nulla posuere nec. Suspendisse urna est, scelerisque nec quam pharetra, mattis aliquam purus.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Vivamus vulputate magna lectus, eu consectetur nisl bibendum nec. In cursus massa felis, ut euismod erat auctor non. Suspendisse sed eros ut ex consequat pulvinar in non felis. Etiam vestibulum nisl eu justo rhoncus commodo. Pellentesque lacinia fermentum sem vel accumsan. Fusce tempor sapien in felis ultrices efficitur. Phasellus pharetra nec lectus a sollicitudin. Aenean auctor maximus quam, in ornare metus. Sed erat mi, scelerisque at arcu vel, ultrices vulputate dolor. Aliquam dignissim felis feugiat sodales fermentum. Donec odio sem, interdum facilisis bibendum in, dignissim ac ante.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Donec gravida vel lorem vitae sodales. Phasellus at interdum orci. Quisque est sapien, pulvinar ac ante eget, dignissim malesuada velit. Vestibulum rhoncus, nibh ut scelerisque posuere, tortor risus facilisis leo, vel vestibulum diam orci ut tortor. Duis aliquam, eros et congue tincidunt, elit mauris aliquam nisl, id suscipit elit libero eget sem. Sed at nunc sem. Nunc sed varius erat. Vivamus nisi mi, elementum eu varius in, pretium ut enim. Phasellus id odio a odio mollis dapibus eu ut lacus.</p>', '2021-03-05 08:23:31', NULL, 'pengumuman-a', 'Hydrangeas3.jpg', '', ''),
-(21, 'Pengumuman B', '<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit lectus eu elit eleifend, nec vulputate nisi porttitor. In at lorem tristique, sollicitudin magna non, sagittis massa. Morbi ultrices orci non mauris consequat pretium. Maecenas cursus odio blandit, malesuada lectus sit amet, porttitor lectus. Phasellus vel metus vitae turpis mattis aliquet eget in ligula. Mauris a erat ligula. In euismod sem nec malesuada faucibus. Nunc et consectetur lorem, id fringilla arcu. In venenatis tincidunt condimentum. Proin pretium augue tortor, ut tincidunt augue pellentesque quis. Vestibulum dictum hendrerit efficitur. In hac habitasse platea dictumst. Sed sollicitudin, mauris suscipit convallis ornare, sapien augue dignissim odio, id fermentum risus odio sit amet lacus. Sed sagittis sem neque, at imperdiet nulla posuere nec. Suspendisse urna est, scelerisque nec quam pharetra, mattis aliquam purus.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Vivamus vulputate magna lectus, eu consectetur nisl bibendum nec. In cursus massa felis, ut euismod erat auctor non. Suspendisse sed eros ut ex consequat pulvinar in non felis. Etiam vestibulum nisl eu justo rhoncus commodo. Pellentesque lacinia fermentum sem vel accumsan. Fusce tempor sapien in felis ultrices efficitur. Phasellus pharetra nec lectus a sollicitudin. Aenean auctor maximus quam, in ornare metus. Sed erat mi, scelerisque at arcu vel, ultrices vulputate dolor. Aliquam dignissim felis feugiat sodales fermentum. Donec odio sem, interdum facilisis bibendum in, dignissim ac ante.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Donec gravida vel lorem vitae sodales. Phasellus at interdum orci. Quisque est sapien, pulvinar ac ante eget, dignissim malesuada velit. Vestibulum rhoncus, nibh ut scelerisque posuere, tortor risus facilisis leo, vel vestibulum diam orci ut tortor. Duis aliquam, eros et congue tincidunt, elit mauris aliquam nisl, id suscipit elit libero eget sem. Sed at nunc sem. Nunc sed varius erat. Vivamus nisi mi, elementum eu varius in, pretium ut enim. Phasellus id odio a odio mollis dapibus eu ut lacus.</p>', '2021-03-05 08:23:50', NULL, 'pengumuman-b', '', '', ''),
-(22, 'Event A', '<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit lectus eu elit eleifend, nec vulputate nisi porttitor. In at lorem tristique, sollicitudin magna non, sagittis massa. Morbi ultrices orci non mauris consequat pretium. Maecenas cursus odio blandit, malesuada lectus sit amet, porttitor lectus. Phasellus vel metus vitae turpis mattis aliquet eget in ligula. Mauris a erat ligula. In euismod sem nec malesuada faucibus. Nunc et consectetur lorem, id fringilla arcu. In venenatis tincidunt condimentum. Proin pretium augue tortor, ut tincidunt augue pellentesque quis. Vestibulum dictum hendrerit efficitur. In hac habitasse platea dictumst. Sed sollicitudin, mauris suscipit convallis ornare, sapien augue dignissim odio, id fermentum risus odio sit amet lacus. Sed sagittis sem neque, at imperdiet nulla posuere nec. Suspendisse urna est, scelerisque nec quam pharetra, mattis aliquam purus.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Vivamus vulputate magna lectus, eu consectetur nisl bibendum nec. In cursus massa felis, ut euismod erat auctor non. Suspendisse sed eros ut ex consequat pulvinar in non felis. Etiam vestibulum nisl eu justo rhoncus commodo. Pellentesque lacinia fermentum sem vel accumsan. Fusce tempor sapien in felis ultrices efficitur. Phasellus pharetra nec lectus a sollicitudin. Aenean auctor maximus quam, in ornare metus. Sed erat mi, scelerisque at arcu vel, ultrices vulputate dolor. Aliquam dignissim felis feugiat sodales fermentum. Donec odio sem, interdum facilisis bibendum in, dignissim ac ante.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Donec gravida vel lorem vitae sodales. Phasellus at interdum orci. Quisque est sapien, pulvinar ac ante eget, dignissim malesuada velit. Vestibulum rhoncus, nibh ut scelerisque posuere, tortor risus facilisis leo, vel vestibulum diam orci ut tortor. Duis aliquam, eros et congue tincidunt, elit mauris aliquam nisl, id suscipit elit libero eget sem. Sed at nunc sem. Nunc sed varius erat. Vivamus nisi mi, elementum eu varius in, pretium ut enim. Phasellus id odio a odio mollis dapibus eu ut lacus.</p>', '2021-03-05 08:24:05', NULL, 'event-a', 'Penguins2.jpg', '', ''),
-(23, 'Event B', '<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit lectus eu elit eleifend, nec vulputate nisi porttitor. In at lorem tristique, sollicitudin magna non, sagittis massa. Morbi ultrices orci non mauris consequat pretium. Maecenas cursus odio blandit, malesuada lectus sit amet, porttitor lectus. Phasellus vel metus vitae turpis mattis aliquet eget in ligula. Mauris a erat ligula. In euismod sem nec malesuada faucibus. Nunc et consectetur lorem, id fringilla arcu. In venenatis tincidunt condimentum. Proin pretium augue tortor, ut tincidunt augue pellentesque quis. Vestibulum dictum hendrerit efficitur. In hac habitasse platea dictumst. Sed sollicitudin, mauris suscipit convallis ornare, sapien augue dignissim odio, id fermentum risus odio sit amet lacus. Sed sagittis sem neque, at imperdiet nulla posuere nec. Suspendisse urna est, scelerisque nec quam pharetra, mattis aliquam purus.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Vivamus vulputate magna lectus, eu consectetur nisl bibendum nec. In cursus massa felis, ut euismod erat auctor non. Suspendisse sed eros ut ex consequat pulvinar in non felis. Etiam vestibulum nisl eu justo rhoncus commodo. Pellentesque lacinia fermentum sem vel accumsan. Fusce tempor sapien in felis ultrices efficitur. Phasellus pharetra nec lectus a sollicitudin. Aenean auctor maximus quam, in ornare metus. Sed erat mi, scelerisque at arcu vel, ultrices vulputate dolor. Aliquam dignissim felis feugiat sodales fermentum. Donec odio sem, interdum facilisis bibendum in, dignissim ac ante.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif;\">Donec gravida vel lorem vitae sodales. Phasellus at interdum orci. Quisque est sapien, pulvinar ac ante eget, dignissim malesuada velit. Vestibulum rhoncus, nibh ut scelerisque posuere, tortor risus facilisis leo, vel vestibulum diam orci ut tortor. Duis aliquam, eros et congue tincidunt, elit mauris aliquam nisl, id suscipit elit libero eget sem. Sed at nunc sem. Nunc sed varius erat. Vivamus nisi mi, elementum eu varius in, pretium ut enim. Phasellus id odio a odio mollis dapibus eu ut lacus.</p>', '2021-03-05 08:24:52', NULL, 'event-b', '', '', '');
+(24, 'Belajar Materi Seleksi PPPK', '', '2021-03-08 07:23:28', NULL, 'belajar-materi-seleksi-pppk', '', '', ''),
+(25, 'Pemerintah Harus Pastikan Daerah Mana Yang Siap Tatap Muka', '', '2021-03-08 07:24:06', NULL, 'pemerintah-harus-pastikan-daerah-mana-yang-siap-tatap-muka', '', '', ''),
+(26, 'Puncak Acara HUT Ke-75 PGRI dan HGN Tahun 2020', '', '2021-03-08 07:24:47', NULL, 'puncak-acara-hut-ke-75-pgri-dan-hgn-tahun-2020', '', '', ''),
+(27, 'PGRI Jawa Tengah SLCC Turut Berduka Cita Atas Meninggalnya Prie GS', '<p>Inna lillahi wainna ilaihi roji\'un. PGRI Jawa Tengah SLCC turut berduka cita atas meninggalnya Prie GS. Semoga keluarga yang ditinggalkan diberi ketabahan. Aamiin YRA.</p>', '2021-03-08 07:26:26', NULL, 'pgri-jawa-tengah-slcc-turut-berduka-cita-atas-meninggalnya-prie-gs', 'WhatsApp_Image_2021-02-12_at_09_54_48.jpeg', '', ''),
+(28, 'PGRI Wonosobo Satu-Satunya PGRI di Jateng yang Telah Bertali-kasih dengan Guru Wiyata Bakti', '<p style=\"box-sizing: border-box; margin: 0px; font-family: Tahoma, sans-serif; color: #5f5f5f; padding: 5px 0px 10px;\">Dari Konferensi XXII PGRI Kabupaten Wonosobo.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-family: Tahoma, sans-serif; color: #5f5f5f; padding: 5px 0px 10px;\"><span style=\"box-sizing: border-box; font-weight: bold;\">Suratman SPd MMPd Ketua PGRI XXII Kab Wonosobo</span></p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-family: Tahoma, sans-serif; color: #5f5f5f; padding: 5px 0px 10px;\">Wonosobo, Infokom PGRI Jateng.<br style=\"box-sizing: border-box;\" />Dibingkai melalui tema \'Peran PGRI Mewujudkan SDM Unggul untuk Indonesia\', Konferensi PGRI Kabupaten Wonosobo masa bakti XXII berlangsung hidmat, tertib dan lancar bertempat di gedung PGRI Wonosobo, Sabtu (4/1/2020).</p>\r\n<p style=\"box-sizing: border-box; margin: 0px; font-family: Tahoma, sans-serif; color: #5f5f5f; padding: 5px 0px 10px;\">Diawali dengan laporan Ketua PGRI Wonosobo XXI H. Mustangin SPd MSi yang melaporkan Konferensi Kabupaten Wonosobo diikuti oleh 15 cabang teroterial dan 1 cabang khusus PGRI Kemenag Kabupaten Wonosobo. Konferensi juga dihadiri Bupati, Ketua DPRD, Ketua Dewan Pendidikan, Kemenag, dan Jajaran Penasihat PGRI Kab Wonosobo serta Ketua Pengurus PGRI Profinsi. Tiga agenda konferensi Kabupaten Wonosobo adalah pertanggungjawaban kepengurusan masa bakti XXI, penyusunan program kerja, dan pemilihan pengurus baru masa bakti XXII.</p>', '2021-03-08 07:28:18', NULL, 'pgri-wonosobo-satu-satunya-pgri-di-jateng-yang-telah-bertali-kasih-dengan-guru-wiyata-bakti', 'Wonosobo3.jpeg', '', ''),
+(29, 'Belajar dari Rumah tentang Pengolahan data (modus, median, mean)', '<p><span style=\"color: #656565; font-family: \'Open Sans\', sans-serif;\">PGRI Jawa Tengah SLCC pada ?&nbsp;</span><b style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: #656565; font-family: \'Open Sans\', sans-serif;\">Senin, 15 Februari 2021</b><span style=\"color: #656565; font-family: \'Open Sans\', sans-serif;\">&nbsp;siap hadir menemani waktu belajar siswa kelas VI belajar tentang&nbsp;</span><b style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: #656565; font-family: \'Open Sans\', sans-serif;\">Pengolahan data (modus, median, mean)</b></p>', '2021-03-08 07:29:37', NULL, 'belajar-dari-rumah-tentang-pengolahan-data-modus-median-mean', '', '', ''),
+(30, 'Belajar dari Rumah tentang Ungkapan Petunjuk, Perintah, dan Pemberitahuan', '<p><span style=\"color: #656565; font-family: \'Open Sans\', sans-serif;\">PGRI Jawa Tengah SLCC pada ?&nbsp;</span><b style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: #656565; font-family: \'Open Sans\', sans-serif;\">Senin, 15 Februari 2021</b><span style=\"color: #656565; font-family: \'Open Sans\', sans-serif;\">&nbsp;siap hadir menemani waktu belajar&nbsp;</span><b style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: #656565; font-family: \'Open Sans\', sans-serif;\">siswa kelas I</b><span style=\"color: #656565; font-family: \'Open Sans\', sans-serif;\">&nbsp;belajar tentang&nbsp;</span><b style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: #656565; font-family: \'Open Sans\', sans-serif;\">Berbagai Ungkapan : Ungkapan Petunjuk, Perintah, dan Pemberitahuan</b></p>', '2021-03-08 07:30:18', NULL, 'belajar-dari-rumah-tentang-ungkapan-petunjuk-perintah-dan-pemberitahuan', 'wINASTI.png', '', ''),
+(31, 'Kapan Anak Boleh Mandi Hujan?', '', '2021-03-08 07:30:53', NULL, 'kapan-anak-boleh-mandi-hujan', '', '', ''),
+(32, 'Izza Rufaida, S.Si : Guru-guru Hebat, Harus Mampu Menjadi Role Model', '<p><span style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: \'Open Sans\', sans-serif; color: #050505; white-space: pre-wrap;\">SLCCNews. Lomba Gurulympics PGRI 2020 yang dilakukan secara online baru saja selesai digelar dan hasilnya pun telah diumumkan. Ada 14 jenis lomba olah ilmu dan 8 jenis lomba olah karya. </span><span style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: \'Open Sans\', sans-serif; color: #050505; white-space: pre-wrap;\">Takkan pernah habis cerita dari Jawa Tengah tentang Gurulympics, karena ada 118 guru dari Provinsi Jawa Tengah terdaftar sebagai peserta. Mereka berasal dari berbagai satuan pendidikan baik negeri maupun swasta. Demikian diungkapkan Wakil Sekretaris Umum PGRI Jateng, Dr. Saptono Nugrohadi, M.Pd, M.Si. yang juga bertindak selaku leader organizer delegasi Jawa Tengah. Dikatakan, untuk memimpin delegasi tersebut, Dr. Saptono menemani Dr. Listyaning Sumardiyani, M.,Hum, Ketua Biro Diklat dan Pengabdian Masyarakat PGRI Jateng. </span></p>\r\n<p><span style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: \'Open Sans\', sans-serif; color: #050505; white-space: pre-wrap;\">&nbsp;</span></p>\r\n<div class=\"o9v6fnle cxmmr5t8 oygrvhab hcukyx3x c1et5uql ii04i59q\" style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: \'Open Sans\', sans-serif; color: #050505; margin: 0.5em 0px 0px; overflow-wrap: break-word; white-space: pre-wrap;\">\r\n<div dir=\"auto\" style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px;\"><span style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; font-family: inherit;\"><b style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px;\">Izza Rufaida, SS</b></span></div>\r\n<div dir=\"auto\" style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px;\"><span style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; font-family: inherit;\">Salah satu delegasi Jawa Tengah yang turut menyumbang medali adalah Nur Izza Rufaida, S.Si. Guru SD Al-Irsyad 02 Cilacap berusia 40 tahun yang mengikuti 6 cabang lomba gurulympics ini memperoleh 2 medali emas, 1 medali perak, dan 2 medali Perunggu. </span></div>\r\n</div>\r\n<p><span style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: \'Open Sans\', sans-serif; color: #050505; white-space: pre-wrap;\"></span></p>\r\n<div class=\"o9v6fnle cxmmr5t8 oygrvhab hcukyx3x c1et5uql ii04i59q\" style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: \'Open Sans\', sans-serif; color: #050505; margin: 0.5em 0px 0px; overflow-wrap: break-word; white-space: pre-wrap;\">\r\n<div dir=\"auto\" style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px;\"><span style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; font-family: inherit;\">Kepada Infokom PGRI Jateng, Izza Rufaida menjelaskan dua Medali emas itu diperoleh dari Olah Karya cabang Q, Informatika dan Inovasi, dan Olah karya cabang U, Perguruan Tinggi dan Globalisasi. Dan satu Medali perak diperoleh dari Olah Karya cabang V, Sekolah Dasar. Sedangkan untuk Olah ilmu cabang L, Distance Education and X-Learning dan Olah ilmu cabang N, Deep Learning and Online Evaluation, Izza Rufaida baru berhasil mendapatkan Medali perunggu. </span></div>\r\n<div dir=\"auto\" style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px;\"><span style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; font-family: inherit;\"></span></div>\r\n<div dir=\"auto\" style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px;\">\r\n<div dir=\"auto\" style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px;\"><span style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; font-family: inherit;\"><b style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px;\">Kesulitan </b></span></div>\r\n<div dir=\"auto\" style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px;\"><span style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; font-family: inherit;\">Keberhasilan Izza Rufaida meraih 2 Medali Emas, 1 Medali Perak dan 2 Medali Perunggu bukan tanpa kesulitan. Isteri dari dr. Maskur ini mengungkapkan adanya kesulitan menghadapi lomba tersebut. Menurut Ibu dari M. Yusuf Farhani (15 thn), M. Aufaqul Himam (11 thn), Aqila Aufinida Rakhma(7 thn), dan Khilya Najwa Kamila (4 thn) ini kesulitanya adalah membagi waktu untuk belajar dan untuk kepentingan keluarga. </span></div>\r\n</div>\r\n</div>', '2021-03-08 07:32:36', NULL, 'izza-rufaida-ssi-guru-guru-hebat-harus-mampu-menjadi-role-model', 'iZZA.png', '', ''),
+(33, 'Jurus Jitu Menulis Artikel Ilmiah dan Artikel Populer', '<div style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: #656565; font-family: \'Open Sans\', sans-serif;\">\r\n<p style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px;\"><span style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; font-family: inherit;\"><iframe width=\"560\" height=\"314\" src=\"//www.youtube.com/embed/v_g0dCvgv70\" allowfullscreen=\"allowfullscreen\"></iframe></span></p>\r\n<p style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px;\"><span style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; font-family: inherit;\">SLCCEvent. Temukan jurus jitu menulis Artikel Ilmiah dan Artikel Populer bersama&nbsp;</span></p>\r\n<span style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; font-family: inherit;\"><b style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px;\">Pemateri</b><br />Aris Kukuh Prasetyo, S.Pd. M.Pd --- Top 50 Global Teacher Prize&nbsp;<br />Johan Wahyudi, M.Pd --- Juara Nasional Lomba Esai&nbsp;<br /><br /></span></div>\r\n<div style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: #656565; font-family: \'Open Sans\', sans-serif;\"><span style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; font-family: inherit;\"><b style=\"padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px;\">Penguatan</b><br />Dr. Dyah Nugrahani, S.Pd., , M.Hum --- SLCC PGRI Jawa Tengah</span></div>', '2021-03-08 07:35:27', NULL, 'jurus-jitu-menulis-artikel-ilmiah-dan-artikel-populer', '', '', ''),
+(34, 'PGRI Dorong GTK Menolak Menyerah Kepada Corona', '<p><span style=\"color: #656565; font-family: \'Open Sans\', sans-serif;\">Virus Corona memang telah mendunia Virus Corona mengancam kesehatan kita Virus Corona membatasi sekolah dan sebagian kegiatannya Tapi akankah kita biarkan Virus Corona menghentikan proses belajar anak-anak kita? Tinggal di rumah, bukan berarti menyerah, untuk memberikan kesempatan belajar bagi murid, guru dan orangtua!</span></p>\r\n<p><span style=\"color: #656565; font-family: \'Open Sans\', sans-serif;\">&nbsp;</span></p>', '2021-03-08 07:36:06', NULL, 'pgri-dorong-gtk-menolak-menyerah-kepada-corona', 'Flyer_Sekadar_5_November.jpeg', '', ''),
+(35, 'Pengembangan Keprofesian Guru Pada Masa Kebiasaan Baru Pembelajaran', '', '2021-03-08 07:37:00', NULL, 'pengembangan-keprofesian-guru-pada-masa-kebiasaan-baru-pembelajaran', 'Flyer_Sekadar_10_Oktober_2020.jpeg', '', ''),
+(36, 'Temu Dewan Pakar PGRI Jawa Tengah', '<p><iframe width=\"560\" height=\"314\" src=\"//www.youtube.com/embed/bPfKKKgAEpA\" allowfullscreen=\"allowfullscreen\"></iframe></p>', '2021-03-08 07:37:21', NULL, 'temu-dewan-pakar-pgri-jawa-tengah', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -465,46 +463,19 @@ CREATE TABLE `post_detail` (
 --
 
 INSERT INTO `post_detail` (`id`, `id_post`, `id_kategori`) VALUES
-(6, 1, 1),
-(7, 2, 0),
-(8, 2, 1),
-(10, 3, 2),
-(11, 4, 3),
-(13, 4, 0),
-(14, 5, 5),
-(15, 4, 1),
-(16, 2, 3),
-(17, 1, 3),
-(18, 1, 1),
-(19, 2, 1),
-(20, 3, 0),
-(21, 4, 1),
-(22, 5, 0),
-(23, 4, 1),
-(24, 2, 3),
-(25, 5, 0),
-(26, 2, 1),
-(27, 2, 1),
-(28, 6, 1),
-(29, 7, 1),
-(30, 8, 1),
-(31, 9, 0),
-(32, 9, 2),
-(33, 10, 2),
-(34, 11, 3),
-(35, 12, 3),
-(36, 13, 4),
-(37, 14, 4),
-(38, 12, 0),
-(39, 15, 6),
-(40, 16, 9),
-(41, 17, 9),
-(42, 18, 10),
-(43, 19, 10),
-(44, 20, 11),
-(45, 21, 11),
-(46, 22, 12),
-(47, 23, 12);
+(1, 24, 14),
+(2, 25, 13),
+(3, 26, 13),
+(4, 27, 13),
+(5, 28, 13),
+(6, 29, 15),
+(7, 30, 15),
+(8, 31, 15),
+(9, 32, 15),
+(10, 33, 16),
+(11, 34, 16),
+(12, 35, 16),
+(13, 36, 16);
 
 -- --------------------------------------------------------
 
@@ -523,10 +494,10 @@ CREATE TABLE `post_kategori` (
 --
 
 INSERT INTO `post_kategori` (`id`, `kategori`, `slug`) VALUES
-(9, 'Berita', 'Berita'),
-(10, 'Post Terbaru', 'Post-Terbaru'),
-(11, 'Pengumuman', 'Pengumuman'),
-(12, 'Event', 'Event');
+(13, 'Berita', 'Berita'),
+(14, 'Pelatihan', 'Pelatihan'),
+(15, 'Parenting', 'Parenting'),
+(16, 'Webinar', 'Webinar');
 
 -- --------------------------------------------------------
 
@@ -632,7 +603,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `website_name`, `website_url`, `facebook_url`, `instagram_url`, `twitter_url`, `youtube_url`, `email`, `about_section`, `carousel`, `feature_section`, `foot1`, `foot2`, `foot3`, `foot4`, `logo`, `alamat`, `fax`, `telp`, `about_text`, `about_images`, `lbanner_images`, `lbanner_tagline`, `site_tagline`, `permalink`) VALUES
-(0, 'SLCC PGRI Wonosobo', 'www.slccpgriwonosobo.org', '#', '#', '#', 'https://www.youtube.com/embed/SHpa1LB-1A8', 'slccpgriwonosobo@pgri.or.id', NULL, 1, NULL, 'Navigasi', 'Internal Link', 'Ikuti Kami', 'Hubungi Kami', 'SLCC-removebg-preview.png', 'Pagerkukuh, 1, Sukoyoso, Pagerkukuh, Kec. Wonosobo, Kabupaten Wonosobo, Jawa Tengah 56314', '', '(0286) 321625', '<p>Ini Greeting</p>', 'Koala.jpg', 'banner-left.png', 'Smart Learning Character Center', 'Smart Learning Character Center', 2);
+(0, 'SLCC PGRI Wonosobo', 'www.slccpgriwonosobo.org', 'https://www.facebook.com/pgrijateng.lontar/', 'https://www.instagram.com/pgriwonosobo/', 'https://twitter.com/pgriwonosobo', 'https://www.youtube.com/embed/SHpa1LB-1A8', 'slccpgriwonosobo@pgri.or.id', NULL, 1, NULL, 'Navigasi', 'Internal Link', 'Ikuti Kami', 'Hubungi Kami', 'SLCC-removebg-preview.png', 'Pagerkukuh, 1, Sukoyoso, Pagerkukuh, Kec. Wonosobo, Kabupaten Wonosobo, Jawa Tengah 56314', '', '(0286) 321625', '<p>Ini Greeting</p>', 'Koala.jpg', 'banner-left.png', 'Smart Learning Character Center', 'Smart Learning Character Center', 2);
 
 -- --------------------------------------------------------
 
@@ -655,8 +626,9 @@ CREATE TABLE `sidebar` (
 --
 
 INSERT INTO `sidebar` (`id`, `title`, `jenis`, `id_kategori`, `table`, `isi`, `limit`) VALUES
-(1, 'Side Widget A', 2, 1, NULL, '', 0),
-(2, 'Side Widget B', 2, 1, NULL, '', 0);
+(5, 'Kategori', 2, 13, NULL, '', 0),
+(6, 'Artikel', 1, 13, NULL, '', 100),
+(7, 'Percobaan Launching Website SLCC Kabupaten Wonosobo', 3, 13, NULL, '<p>Selamat datang di website SLCC PGRI Kabupaten Wonosobo</p>', 0);
 
 -- --------------------------------------------------------
 
@@ -674,10 +646,9 @@ CREATE TABLE `sidebar_arrange` (
 --
 
 INSERT INTO `sidebar_arrange` (`id`, `id_sidebar`) VALUES
-(1, 1),
-(2, 2),
-(3, 3),
-(4, 4);
+(1, 5),
+(2, 6),
+(3, 7);
 
 -- --------------------------------------------------------
 
@@ -713,15 +684,6 @@ CREATE TABLE `sliders` (
   `title` varchar(150) NOT NULL,
   `content` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `sliders`
---
-
-INSERT INTO `sliders` (`id`, `image`, `url`, `level`, `title`, `content`) VALUES
-(52, 'Desert6.jpg', '#', 1, 'Slider A', 'Ini isi Slider A'),
-(53, 'Hydrangeas4.jpg', '#', 2, 'Slider B', 'Ini isi Slider B'),
-(54, 'Jellyfish.jpg', '#', 3, 'Slider C', 'Ini isi Slider C');
 
 -- --------------------------------------------------------
 
@@ -821,7 +783,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2y$12$0Os7zz3d28mM/StrSK6xM.JDuKSllI6AqodCqu.KHgMc2qNl4Pg.e', '', 'admin@admin.com', '', NULL, NULL, 'JIQTvL22C28l6soX5V.mTO', 1268889823, 1614993653, 1, 'Admin', 'istrator', 'ADMIN', '0');
+(1, '127.0.0.1', 'administrator', '$2y$12$0Os7zz3d28mM/StrSK6xM.JDuKSllI6AqodCqu.KHgMc2qNl4Pg.e', '', 'admin@admin.com', '', NULL, NULL, 'JIQTvL22C28l6soX5V.mTO', 1268889823, 1615190672, 1, 'Admin', 'istrator', 'ADMIN', '0');
 
 -- --------------------------------------------------------
 
@@ -1225,19 +1187,19 @@ ALTER TABLE `lowongan`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `news_section`
 --
 ALTER TABLE `news_section`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `page`
 --
 ALTER TABLE `page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `panel_berita`
@@ -1261,31 +1223,31 @@ ALTER TABLE `perusahaan`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `post_detail`
 --
 ALTER TABLE `post_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `post_kategori`
 --
 ALTER TABLE `post_kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `sidebar`
 --
 ALTER TABLE `sidebar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `sidebar_arrange`
 --
 ALTER TABLE `sidebar_arrange`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sidebar_opsi`

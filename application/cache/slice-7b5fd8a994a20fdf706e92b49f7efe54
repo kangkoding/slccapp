@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1615020570;s:3:"ttl";i:3600;s:4:"data";s:5964:"<?php $this->_opening_section('content'); ?>
+a:3:{s:4:"time";i:1615187390;s:3:"ttl";i:3600;s:4:"data";s:5944:"<?php $this->_opening_section('content'); ?>
 <link rel="stylesheet" href="<?php echo base_url('assets/datatables/dataTables.bootstrap.css') ?>" />
 <link rel="stylesheet" href="<?php echo base_url('assets/datatables/dataTables.bootstrap.css') ?>" />
 <style>
@@ -76,11 +76,9 @@ a:3:{s:4:"time";i:1615020570;s:3:"ttl";i:3600;s:4:"data";s:5964:"<?php $this->_o
         <div class="panel panel-primary panel-body">
             <ul id="sortable">
                 <?php
-                $i = 1;
                 foreach ($news_section as $n) : ?>
-                    <li class="ui-state-default" id="item-<?php echo $i ?>"><?php echo $n->title ?> - <?php echo $i ?></li>
+                    <li class="ui-state-default" id="item-<?php echo $n->arrange ?>"><?php echo $n->title ?></li>
                 <?php
-                    $i++;
                 endforeach ?>
             </ul>
             <br>
@@ -166,7 +164,8 @@ a:3:{s:4:"time";i:1615020570;s:3:"ttl";i:3600;s:4:"data";s:5964:"<?php $this->_o
                 type: 'post',
                 data: data,
                 success: function(response) {
-                    window.location.reload();
+                    // window.location.reload();
+                    alert('success');
                 }
             });
         });

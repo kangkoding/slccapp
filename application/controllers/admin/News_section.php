@@ -115,6 +115,7 @@ class News_section extends CI_Controller
         if (!empty($sort)) {
             $i = 0;
             $result = $this->db->get('news_section')->result();
+            // $result = $this->db->order_by('arrange', 'asc')->get('news_section')->result();
             foreach ($result as $row) {
                 $id = $row->id;
                 $this->db->where('id', $id);

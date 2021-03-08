@@ -77,11 +77,9 @@
         <div class="panel panel-primary panel-body">
             <ul id="sortable">
                 <?php
-                $i = 1;
                 foreach ($news_section as $n) : ?>
-                    <li class="ui-state-default" id="item-<?php echo $i ?>"><?php echo $n->title ?> - <?php echo $i ?></li>
+                    <li class="ui-state-default" id="item-<?php echo $n->arrange ?>"><?php echo $n->title ?></li>
                 <?php
-                    $i++;
                 endforeach ?>
             </ul>
             <br>
@@ -167,7 +165,8 @@
                 type: 'post',
                 data: data,
                 success: function(response) {
-                    window.location.reload();
+                    // window.location.reload();
+                    alert('success');
                 }
             });
         });

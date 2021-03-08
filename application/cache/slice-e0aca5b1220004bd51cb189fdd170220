@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1615009314;s:3:"ttl";i:3600;s:4:"data";s:12057:"<?php $this->_opening_section('title', ' SLCC PGRI WONOSOBO'); ?><?php $this->_opening_section('carousel'); ?>
+a:3:{s:4:"time";i:1615190837;s:3:"ttl";i:3600;s:4:"data";s:12057:"<?php $this->_opening_section('title', ' SLCC PGRI WONOSOBO'); ?><?php $this->_opening_section('carousel'); ?>
 <?php if(count($data_sliders) > 0): ?>
 <div class="col-md-12" style="margin-top: 50px;">
 	<div class="row">
