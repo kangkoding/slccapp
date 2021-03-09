@@ -1,18 +1,18 @@
 @extends('admin.template.admin')
 @section('content')
 <style>
-.dd-handle {
-    display: block;
-    min-height: 38px;
-    margin: 5px 0;
-    padding: 8px 12px;
-    background: #F8FAFF;
-    border: 1px solid #DAE2EA;
-    color: #7C9EB2;
-    text-decoration: none;
-    font-weight: 700;
-    box-sizing: border-box;
-}
+    .dd-handle {
+        display: block;
+        min-height: 38px;
+        margin: 5px 0;
+        padding: 8px 12px;
+        background: #F8FAFF;
+        border: 1px solid #DAE2EA;
+        color: #7C9EB2;
+        text-decoration: none;
+        font-weight: 700;
+        box-sizing: border-box;
+    }
 </style>
 <div class="row">
     <div class="col-md-6">
@@ -21,39 +21,39 @@
             <div class="pull-right">
                 <a href="#" id="addSubMenu" data-id="{{ $menu['id'] }}">
                     <span style="padding:5px">
-                        <i class="fa fa-plus"></i> 
+                        <i class="fa fa-plus"></i>
                     </span>
                 </a>
                 <a href="#" id="editMenu" data-id="{{ $menu['id'] }}">
                     <span style="padding:5px">
-                        <i class="fa fa-edit"></i> 
+                        <i class="fa fa-edit"></i>
                     </span>
                 </a>
-                <a href="<?php echo base_url('admin/menu/delete/').$menu['id'] ?>" onclick="return confirm('are you sure?')">
+                <a href="<?php echo base_url('admin/menu/delete/') . $menu['id'] ?>" onclick="return confirm('are you sure?')">
                     <span style="padding:5px;color:red">
-                        <i class="fa fa-trash"></i> 
+                        <i class="fa fa-trash"></i>
                     </span>
                 </a>
             </div>
             {{ $menu['menu'] }}
             @if(!empty($menu['sub_menu']))
-                @foreach($menu['sub_menu'] as $submenu)
-                    <div class="dd-handle" style="background-color:white">
-                        <div class="pull-right">
-                            <a href="#" id="editSubMenu" data-id="{{ $submenu->id }}">
-                                <span style="padding:5px">
-                                    <i class="fa fa-edit"></i> 
-                                </span>
-                            </a>
-                            <a href="<?php echo base_url('admin/menu/delete_submenu/').$submenu->id ?>" onclick="return confirm('are you sure?')">
-                                <span style="padding:5px;color:red">
-                                    <i class="fa fa-times"></i> 
-                                </span>
-                            </a>
-                        </div>
-                        {{ $submenu->submenu }}
-                    </div>
-                @endforeach
+            @foreach($menu['sub_menu'] as $submenu)
+            <div class="dd-handle" style="background-color:white">
+                <div class="pull-right">
+                    <a href="#" id="editSubMenu" data-id="{{ $submenu->id }}">
+                        <span style="padding:5px">
+                            <i class="fa fa-edit"></i>
+                        </span>
+                    </a>
+                    <a href="<?php echo base_url('admin/menu/delete_submenu/') . $submenu->id ?>" onclick="return confirm('are you sure?')">
+                        <span style="padding:5px;color:red">
+                            <i class="fa fa-times"></i>
+                        </span>
+                    </a>
+                </div>
+                {{ $submenu->submenu }}
+            </div>
+            @endforeach
             @endif
         </div>
         @endforeach
@@ -62,10 +62,10 @@
         <div class="dd-handle">
             @if(!empty($message))
             <div class="alert alert-info alert-dismissible" role="alert">
-              {{ $message }}
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                {{ $message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             @endif
             <h4 class="title border-bottom">Tambah Menu</h4>
@@ -109,193 +109,192 @@
     </div>
 </div>
 <div id="modalMenu" class="modal" role="dialog">
-  <div class="modal-dialog">
+    <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Ubah Menu</h4>
-      </div>
-      <div class="modal-body">
-            <form id="menuEdit" type="post">
-                <input type="hidden" name="id" id="eId">
-                <div class="form-group">
-                    <label for="menu">Menu</label>
-                    <input type="text" name="menu" class="form-control" id="eMenu">
-                </div>
-                <div class="form-group">
-                    <label for="menu">Slug</label>
-                    <input type="text" name="slug" class="form-control" id="eSlug">
-                </div>
-                <div class="form-group">
-                    <label for="menu">Url ?</label>
-                    <input type="checkbox" name="is_url" id="eis_url" class="" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="menu">Aksi</label>
-                    <select class="form-control" name="parameter" id="eparameter">
-                        <option value="">Pilih</option>
-                        <option value="download">Download</option>
-                        <option value="target='_blank'">New Tab</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary" id="submitEdit" type="button"><i class="fa fa-check"></i> Update</button>
-                </div>
-            </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Ubah Menu</h4>
+            </div>
+            <div class="modal-body">
+                <form id="menuEdit" type="post">
+                    <input type="hidden" name="id" id="eId">
+                    <div class="form-group">
+                        <label for="menu">Menu</label>
+                        <input type="text" name="menu" class="form-control" id="eMenu">
+                    </div>
+                    <div class="form-group">
+                        <label for="menu">Slug</label>
+                        <input type="text" name="slug" class="form-control" id="eSlug">
+                    </div>
+                    <div class="form-group">
+                        <label for="menu">Url ?</label>
+                        <input type="checkbox" name="is_url" id="eis_url" class="" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="menu">Aksi</label>
+                        <select class="form-control" name="parameter" id="eparameter">
+                            <option value="">Pilih</option>
+                            <option value="download">Download</option>
+                            <option value="target='_blank'">New Tab</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="submitEdit" type="button"><i class="fa fa-check"></i> Update</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
     </div>
-
-  </div>
 </div>
 <div id="modalSubMenu" class="modal" role="dialog">
-  <div class="modal-dialog">
+    <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Tambah Sub Menu</h4>
-      </div>
-      <div class="modal-body">
-            <form id="subForm" method="post" action="<?php echo base_url('admin/menu/create_submenu') ?>">
-                <input type="hidden" name="id_menu" id="idMenu">
-                <div class="form-group">
-                    <label for="menu">Pilih jenis</label>
-                    <select id="sub_jenis" class="form-control">
-                        <option value="">Pilih</option>
-                        <option value="1">Halaman</option>
-                        <option value="2">Post</option>
-                        <option value="3">Program Studi</option>
-                    </select>
-                </div>
-                <div class="form-group" id="jenis">
-                </div>
-                <div class="form-group">
-                    <label for="menu">Sub Menu</label>
-                    <input type="text" name="submenu" class="form-control" placeholder="Masukan Nama Menu">
-                </div>
-                <div class="form-group">
-                    <label for="menu">Slug</label>
-                    <input type="text" name="slug" id="subSlug" class="form-control" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="menu">Url ?</label>
-                    <input type="checkbox" name="is_url" id="sub_url" class="" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="menu">Aksi</label>
-                    <select class="form-control" name="parameter" id="sub_parameter">
-                        <option value="">Pilih</option>
-                        <option value="download">Download</option>
-                        <option value="target='_blank'">New Tab</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</button>
-                </div>
-            </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Tambah Sub Menu</h4>
+            </div>
+            <div class="modal-body">
+                <form id="subForm" method="post" action="<?php echo base_url('admin/menu/create_submenu') ?>">
+                    <input type="hidden" name="id_menu" id="idMenu">
+                    <div class="form-group">
+                        <label for="menu">Pilih jenis</label>
+                        <select id="sub_jenis" class="form-control">
+                            <option value="">Pilih</option>
+                            <option value="1">Halaman</option>
+                            <option value="2">Post</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="jenis">
+                    </div>
+                    <div class="form-group">
+                        <label for="menu">Sub Menu</label>
+                        <input type="text" name="submenu" class="form-control" placeholder="Masukan Nama Menu">
+                    </div>
+                    <div class="form-group">
+                        <label for="menu">Slug</label>
+                        <input type="text" name="slug" id="subSlug" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="menu">Url ?</label>
+                        <input type="checkbox" name="is_url" id="sub_url" class="" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="menu">Aksi</label>
+                        <select class="form-control" name="parameter" id="sub_parameter">
+                            <option value="">Pilih</option>
+                            <option value="download">Download</option>
+                            <option value="target='_blank'">New Tab</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
     </div>
-
-  </div>
 </div>
 <script>
-    function sendUpdate(type){
-        $('#submitEdit').click(function(){
+    function sendUpdate(type) {
+        $('#submitEdit').click(function() {
             var data = $('#menuEdit').serialize();
             var url = '';
-            if(type == 1){
-                url = '<?php echo base_url();?>admin/menu/edit-menu';
-            }else{
-                url = '<?php echo base_url();?>admin/menu/edit-submenu';
+            if (type == 1) {
+                url = '<?php echo base_url(); ?>admin/menu/edit-menu';
+            } else {
+                url = '<?php echo base_url(); ?>admin/menu/edit-submenu';
             }
             $.ajax({
-                url:url,
-                type:'post',
-                data:data,
-                success:function(response){
+                url: url,
+                type: 'post',
+                data: data,
+                success: function(response) {
                     alert(response);
                     window.location.reload();
                 }
             });
         });
     }
-    $(document).ready(function(){
-        $('[id*=addSubMenu]').click(function(){
+    $(document).ready(function() {
+        $('[id*=addSubMenu]').click(function() {
             var id = $(this).attr('data-id');
             $('#idMenu').val(id);
             $('#modalSubMenu').modal('show');
         });
-        $('[id*=editMenu]').click(function(){
+        $('[id*=editMenu]').click(function() {
             var id = $(this).attr('data-id');
             console.log(id);
             $.ajax({
-                url:'<?php echo base_url();?>admin/menu/getjson',
-                type:'post',
-                data:'id='+id+'&&type=1',
-                success:function(response){
+                url: '<?php echo base_url(); ?>admin/menu/getjson',
+                type: 'post',
+                data: 'id=' + id + '&&type=1',
+                success: function(response) {
                     var json = JSON.parse(response);
                     var is_url = json.is_url;
                     var parameter = json.parameter;
-                    if(is_url == 1){
-                        $('#eis_url').attr('checked',true);
+                    if (is_url == 1) {
+                        $('#eis_url').attr('checked', true);
                     }
-                    $("#eparameter").children('[value="'+parameter+'"]').attr('selected', true);
+                    $("#eparameter").children('[value="' + parameter + '"]').attr('selected', true);
                     $('#eId').val(json.id);
-                    $('#eMenu').val(json.menu).attr('name','menu');
+                    $('#eMenu').val(json.menu).attr('name', 'menu');
                     $('#eSlug').val(json.slug);
                     $('#modalMenu').modal('show');
                     sendUpdate(1);
                 }
             })
         });
-        $('[id*=editSubMenu]').click(function(){
+        $('[id*=editSubMenu]').click(function() {
             var id = $(this).attr('data-id');
             $.ajax({
-                url:'<?php echo base_url();?>admin/menu/getjson',
-                type:'post',
-                data:'id='+id+'&&type=2',
-                success:function(response){
+                url: '<?php echo base_url(); ?>admin/menu/getjson',
+                type: 'post',
+                data: 'id=' + id + '&&type=2',
+                success: function(response) {
                     var json = JSON.parse(response);
                     var json = JSON.parse(response);
                     var is_url = json.is_url;
                     var parameter = json.parameter;
-                    if(is_url == 1){
-                        $('#eis_url').attr('checked',true);
+                    if (is_url == 1) {
+                        $('#eis_url').attr('checked', true);
                     }
-                    $("#eparameter").children('[value="'+parameter+'"]').attr('selected', true);
+                    $("#eparameter").children('[value="' + parameter + '"]').attr('selected', true);
                     $('#eId').val(json.id);
-                    $('#eMenu').val(json.submenu).attr('name','submenu');
+                    $('#eMenu').val(json.submenu).attr('name', 'submenu');
                     $('#eSlug').val(json.slug);
                     $('#modalMenu').modal('show');
                     sendUpdate(2);
                 }
             })
         });
-        $('[id*=halaman]').change(function(){
-            var slug = 'page/'+$(this).val();
-            if(slug != ''){
-                $('#slug').val(slug).attr('readonly','readonly');
-            }else{
+        $('[id*=halaman]').change(function() {
+            var slug = 'page/' + $(this).val();
+            if (slug != '') {
+                $('#slug').val(slug).attr('readonly', 'readonly');
+            } else {
                 $('#slug').val('').removeAttr('readonly');
             }
         });
-        $('[id*=sub_jenis]').change(function(){
+        $('[id*=sub_jenis]').change(function() {
             var id = $(this).val();
             $.ajax({
-                url :'<?php echo base_url();?>admin/menu/ajax',
-                type:'post',
-                data:'id='+id,
-                success : function(response){
-                  $('#jenis').html(response);
+                url: '<?php echo base_url(); ?>admin/menu/ajax',
+                type: 'post',
+                data: 'id=' + id,
+                success: function(response) {
+                    $('#jenis').html(response);
                 }
             });
         });

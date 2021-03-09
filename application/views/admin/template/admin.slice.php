@@ -203,11 +203,11 @@
               <li><a href="<?php echo base_url('admin/page/create') ?>"><i class="fa fa-plus"></i> Buat Baru</a></li>
             </ul>
           </li>
-          <li class="">
+          <!-- <li class="">
             <a href="<?php echo base_url() ?>admin/users">
               <i class="fa fa-users"></i> <span>Data Pengguna</span>
             </a>
-          </li>
+          </li> -->
 
         </ul>
       </section>

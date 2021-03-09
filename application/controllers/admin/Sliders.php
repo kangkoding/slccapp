@@ -10,8 +10,8 @@ class Sliders extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Sliders_model');
-        $this->load->library('form_validation');        
-	    $this->load->library('datatables');
+        $this->load->library('form_validation');
+        $this->load->library('datatables');
         $this->load->model('Cek_login');
         $data_login = $this->Cek_login->is_admin();
     }
@@ -20,13 +20,14 @@ class Sliders extends CI_Controller
     {
         $data_login = $this->Cek_login->is_admin();
         $this->slice->view('admin.sliders.sliders_list');
-    } 
-    
-    public function json() {
+    }
+
+    public function json()
+    {
         header('Content-Type: application/json');
         echo $this->Sliders_model->json();
     }
-    public function read($id) 
+    public function read($id)
     {
         $row = $this->Sliders_model->get_by_id($id);
         if ($row) {
@@ -42,44 +43,45 @@ class Sliders extends CI_Controller
         }
     }
 
-    public function create() 
+    public function create()
     {
         $data = array(
             'button' => 'Create',
             'action' => site_url('admin/sliders/create_action'),
             'id' => set_value('id'),
             'image' => set_value('image'),
-            'url'=> set_value('url'),
+            'url' => set_value('url'),
             'level' => set_value('level'),
             'title' => set_value('title'),
             'content' => set_value('content'),
         );
         $this->slice->view('admin.sliders.sliders_form', $data);
     }
-    
-    public function create_action() 
+
+    public function create_action()
     {
         $this->_rules();
         if ($this->form_validation->run() == FALSE) {
             $this->create();
         } else {
             $config['upload_path'] = './assets/images/';
-            $config['allowed_types'] = 'gif|jpg|png';
-            $config['max_size']  = '10000';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['max_size']  = '15000';
             $config['min_width']  = '0';
             $config['min_height']  = '0';
             $config['max_width']  = '4867';
             $config['max_height']  = '2071';
             $this->load->library('upload', $config);
-            if ($this->upload->do_upload('image')){
+            if ($this->upload->do_upload('image')) {
                 $data_upload = $this->upload->data();
                 $data = array(
                     'image' => $data_upload['file_name'],
-                    'level' => $this->input->post('level',TRUE),
-                    'url'   => $this->input->post('url',TRUE),
+                    'level' => $this->input->post('level', TRUE),
+                    'url'   => $this->input->post('url', TRUE),
                     'title' => $this->input->post('title', TRUE),
                     'content'   => $this->input->post('content', TRUE)
                 );
+
                 $this->Sliders_model->insert($data);
                 $this->session->set_flashdata('message', 'Create Record Success');
             } else {
@@ -89,8 +91,8 @@ class Sliders extends CI_Controller
             redirect(site_url('admin/sliders'));
         }
     }
-    
-    public function update($id) 
+
+    public function update($id)
     {
         $row = $this->Sliders_model->get_by_id($id);
         if ($row) {
@@ -100,9 +102,9 @@ class Sliders extends CI_Controller
                 'id' => set_value('id', $row->id),
                 'image' => set_value('image', $row->image),
                 'level' => set_value('level', $row->level),
-                'url' => set_value('url',$row->url),
+                'url' => set_value('url', $row->url),
                 'title' => set_value('title', $row->title),
-                'content' => set_value('content',$row->content),
+                'content' => set_value('content', $row->content),
             );
             $this->slice->view('admin.sliders.sliders_form', $data);
         } else {
@@ -110,8 +112,8 @@ class Sliders extends CI_Controller
             redirect(site_url('sliders'));
         }
     }
-    
-    public function update_action() 
+
+    public function update_action()
     {
         $this->_rules();
         if ($this->form_validation->run() == FALSE) {
@@ -131,8 +133,8 @@ class Sliders extends CI_Controller
                 $data['url'] = $this->input->post('url');
                 $data['title'] = $this->input->post('title');
                 $data['content'] = $this->input->post('content');
-                $data['level'] = $this->input->post('level',TRUE);
-                if ($this->upload->do_upload('image')){
+                $data['level'] = $this->input->post('level', TRUE);
+                if ($this->upload->do_upload('image')) {
                     $data_upload = $this->upload->data();
                     $data['image'] = $data_upload['file_name'];
                 }
@@ -144,8 +146,8 @@ class Sliders extends CI_Controller
             redirect(site_url('admin/sliders'));
         }
     }
-    
-    public function delete($id) 
+
+    public function delete($id)
     {
         $row = $this->Sliders_model->get_by_id($id);
         if ($row) {
@@ -158,12 +160,11 @@ class Sliders extends CI_Controller
         }
     }
 
-    public function _rules() 
+    public function _rules()
     {
         $this->form_validation->set_rules('level', 'level', 'trim|required');
         $this->form_validation->set_rules('image', 'image', 'trim');
         $this->form_validation->set_rules('id', 'id', 'trim');
         $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
-
 }

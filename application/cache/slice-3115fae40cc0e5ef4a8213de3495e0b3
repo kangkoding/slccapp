@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1615191252;s:3:"ttl";i:3600;s:4:"data";s:1039:"
+a:3:{s:4:"time";i:1615271164;s:3:"ttl";i:3600;s:4:"data";s:1039:"
 <?php if($data->template == 1): ?><?php $this->_opening_section('subcontent'); ?>
 <?php else: ?><?php $this->_opening_section('content'); ?>
 <?php endif; ?>

@@ -643,6 +643,12 @@
                 right: 0px !important;
             }
 
+            .dropdown-item {
+                color: white;
+                font-size: 14px;
+                padding: 8px;
+            }
+
             .header-v4 .navbar-collapse {
                 border: 0px !important;
             }

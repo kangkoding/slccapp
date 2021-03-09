@@ -1,26 +1,39 @@
-a:3:{s:4:"time";i:1615192034;s:3:"ttl";i:3600;s:4:"data";s:1483:"<?php $this->_opening_section('title'); ?>
-	Artikel
+a:3:{s:4:"time";i:1615271927;s:3:"ttl";i:3600;s:4:"data";s:1667:"<?php $this->_opening_section('title'); ?>
+Artikel
 <?php $this->_closing_section(); ?><?php $this->_opening_section('subcontent'); ?>
-	<div style="margin-top:10px">
+<div style="margin-top:10px">
 	<?php $lang = $this->session->userdata('swu_lang'); ?>
 	<?php if(!empty($post)): ?>
 	<?php foreach($post as $p): ?>
- 	<div class="alert">
-      	<div class="media">
-	      	<a class="pull-left" href="<?php echo  base_url().permalink($p->permalink).$p->slug ; ?>">
-	    		<img class="media-object" src="<?php echo  base_url('assets/images/').$p->featured_image ; ?>" style="height:100px">
-	  		</a>
-	    		<h4 class="media-heading" style="color:#003e6f;font-family:Helvetica!important"><?php if($lang != 2): ?> <?php echo  $p->judul ; ?> <?php else: ?> <?php echo  $p->title ; ?> <?php endif; ?></h4>
-		        <p><?php if($lang != 2){ echo strip_tags(substr($p->isi,0,400)); } else { echo substr($p->content,0,150); } ?><a href="<?php echo  base_url().permalink($p->permalink).$p->slug ; ?>"> Read More</a> </p>
-		        <ul class="list-inline list-unstyled">
-		  		   <li><span><i class="fa fa-clock-o"></i> <?php echo  $p->created ; ?> </span> &nbsp;&nbsp; <i class="fa fa-user"></i> Administrator</li>
-				</ul>
-    	</div>
-  	</div>
-  	<?php endforeach; ?>
-  	<?php else: ?>
-  		<div class="well"><i>Tidak ada tulisan di kategori ini</i></div>
-  	<?php endif; ?>
-  	<?php echo $links ?>
-  	</div>
+	<div class="alert">
+		<div class="media">
+			<a class="pull-left" href="<?php echo  base_url().permalink($p->permalink).$p->slug ; ?>">
+				<?php
+				if ($p->featured_image != '') {
+				?>
+					<img class="media-object" src="<?php echo  base_url('assets/images/').$p->featured_image ; ?>" style="height:150px; width: 700px;">
+				<?php } else { ?>
+					<img src="http://tk.budyawacana.sch.id/joimg/publikasi/415069default-image.jpg">
+				<?php
+				}
+				?>
+			</a>
+			<h4 class="media-heading" style="color:#003e6f;font-family:Helvetica!important"><?php if($lang != 2): ?> <?php echo  $p->judul ; ?> <?php else: ?> <?php echo  $p->title ; ?> <?php endif; ?></h4>
+			<br>
+			<p><?php if ($lang != 2) {
+					echo strip_tags(substr($p->isi, 0, 400));
+				} else {
+					echo substr($p->content, 0, 150);
+				} ?><a href="<?php echo  base_url().permalink($p->permalink).$p->slug ; ?>"> Read More</a> </p>
+			<ul class="list-inline list-unstyled">
+				<li><span><i class="fa fa-clock-o"></i> <?php echo  $p->created ; ?> </span> &nbsp;&nbsp; <i class="fa fa-user"></i> Administrator</li>
+			</ul>
+		</div>
+	</div>
+	<?php endforeach; ?>
+	<?php else: ?>
+	<div class="well"><i>Tidak ada tulisan di kategori ini</i></div>
+	<?php endif; ?>
+	<?php echo $links ?>
+</div>
 <?php $this->_closing_section(); ?><?php echo $this->_include('template.simple.page'); ?>";}

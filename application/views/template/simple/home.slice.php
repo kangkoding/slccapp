@@ -1,7 +1,7 @@
 @extends('template.simple.app')
 @section('title', ' SLCC PGRI WONOSOBO')
 @section('carousel')
-@if(count($data_sliders) > 0)
+@if(count($data_sliders) > 1)
 <div class="col-md-12" style="margin-top: 50px;">
 	<div class="row">
 		<div class="coba">
@@ -83,9 +83,6 @@
 							overflow-y: hidden;
 							overflow-x: auto;
 							scroll-snap-type: x mandatory;
-
-
-
 							scroll-behavior: smooth;
 							-webkit-overflow-scrolling: touch;
 
@@ -113,7 +110,7 @@
 							scroll-snap-align: start;
 							flex-shrink: 0;
 							width: 1050px;
-							height: 300px;
+							height: 400px;
 							/* height: auto; */
 							margin-right: 50px;
 							border-radius: 10px;
@@ -127,6 +124,7 @@
 							justify-content: center;
 							align-items: center;
 							font-size: 100px;
+							background-color: #F6F9FF;
 						}
 
 						.slide-title {
@@ -136,6 +134,7 @@
 							opacity: 0.9;
 							color: white;
 							left: 0;
+							padding: 10px;
 						}
 
 						.slide-title>h3 {
@@ -232,10 +231,10 @@
 								@endif
 								<?php
 								$arrayCol = [
-									array("col" => "4", "wp" => true, "yt" => false),
-									array("col" => "8", "wp" => true, "yt" => false),
-									array("col" => "4", "wp" => false, "yt" => false),
-									array("col" => "8", "wp" => false, "yt" => false),
+									array("col" => "4", "wp" => false, "yt" => false, "wp-row" => true),
+									array("col" => "8", "wp" => true, "yt" => false, "wp-row" => false),
+									array("col" => "4", "wp" => false, "yt" => false, "wp-row" => false),
+									array("col" => "8", "wp" => false, "yt" => false, "wp-row" => false),
 								];
 
 								// (settings('youtube_url') != '') ? array_unshift($arrayCol, array("col" => "8", "wp" => false, "yt" => true)) : '';
@@ -270,6 +269,30 @@
 															</div>
 														</a>
 													</div>
+													@endforeach
+												</div>
+												@elseif($arrayCol[$i]['wp-row'] == true)
+												<div class="row">
+													@foreach($item['data'] as $p)
+													<a href="{{ base_url().permalink($p['permalink']).$p['slug'] }}">
+														<div class="col-md-12">
+															<div class="news-title">
+																<div class="row event">
+																	<div class="col-xs-3 date bg-card">
+																		<?php if ($p['featured_image'] != "") { ?>
+																			<img src="{{site_url('assets/images/'.$p['featured_image'])}}">
+																		<?php } else { ?>
+																			<img src="http://tk.budyawacana.sch.id/joimg/publikasi/415069default-image.jpg">
+																		<?php } ?>
+																	</div>
+																	<div class="col-xs-9 detail" style="background-color: #F1F1E6;">
+																		<h4 style="font-size:13px;font-weight:lighter">{{ $p['judul'] }}</h4>
+																		<span style="font-size:13px;color:black"><i class="fa fa-clock-o c-green"></i> {{ date('d-m-Y',strtotime($p['created'])) }} <i class="fa fa-user c-green"></i> Admin</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</a>
 													@endforeach
 												</div>
 												@else
@@ -316,7 +339,7 @@
 													<div class="news-images bottom" style="background:url({{ base_url('assets/images/').$postleft['data']['featured_image'] }});border:solid 1px #cecece;height:320px">
 														<div class="news-title">
 															<h4 style="font-size:15px;font-weight:bold">{{ $postleft['data']['judul'] }}</h4>
-															<span style="font-size:13px;color:black"><i class="fa fa-clock-o c-green"></i> {{ date('d-m-Y',strtotime($postleft['data']['created'])) }} <i class="fa fa-user c-green"></i> Admin</span>
+															<span style="font-size:13px;color:whitesmoke"><i class="fa fa-clock-o c-green"></i> {{ date('d-m-Y',strtotime($postleft['data']['created'])) }} <i class="fa fa-user c-green"></i> Admin</span>
 														</div>
 													</div>
 												</div>
@@ -356,9 +379,9 @@
 							</div>
 						</div>
 						<div class="col-md-12 text-center" style="margin-top:20px">
-							<a href="<?php echo base_url('post') ?>">
+							<!-- <a href="<?php echo base_url('post') ?>">
 								View All <i class="fa fa-arrow-right"></i>
-							</a>
+							</a> -->
 						</div>
 					</div>
 				</div>

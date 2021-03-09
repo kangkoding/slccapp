@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1615190667;s:3:"ttl";i:3600;s:4:"data";s:27666:"<!DOCTYPE html>
+a:3:{s:4:"time";i:1615270910;s:3:"ttl";i:3600;s:4:"data";s:27809:"<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -641,6 +641,12 @@ a:3:{s:4:"time";i:1615190667;s:3:"ttl";i:3600;s:4:"data";s:27666:"<!DOCTYPE html
             .dm>ul.dropdown-menu {
                 position: absolute !important;
                 right: 0px !important;
+            }
+
+            .dropdown-item {
+                color: white;
+                font-size: 14px;
+                padding: 8px;
             }
 
             .header-v4 .navbar-collapse {

@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1615192844;s:3:"ttl";i:3600;s:4:"data";s:17792:"<!DOCTYPE html>
+a:3:{s:4:"time";i:1615272036;s:3:"ttl";i:3600;s:4:"data";s:17801:"<!DOCTYPE html>
 <html>
 
 <head>
@@ -203,11 +203,11 @@ a:3:{s:4:"time";i:1615192844;s:3:"ttl";i:3600;s:4:"data";s:17792:"<!DOCTYPE html
               <li><a href="<?php echo base_url('admin/page/create') ?>"><i class="fa fa-plus"></i> Buat Baru</a></li>
             </ul>
           </li>
-          <li class="">
+          <!-- <li class="">
             <a href="<?php echo base_url() ?>admin/users">
               <i class="fa fa-users"></i> <span>Data Pengguna</span>
             </a>
-          </li>
+          </li> -->
 
         </ul>
       </section>
