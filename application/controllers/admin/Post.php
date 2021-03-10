@@ -184,11 +184,21 @@ class Post extends CI_Controller
                     'featured_image' => $files,
                 );
             } else {
+                $arr = array(
+                    '<!DOCTYPE html>' => '',
+                    '<html>' => '',
+                    '<head>' => '',
+                    '</head>' => '',
+                    '<body>' => '',
+                    '</body>' => '',
+                    '</html>' => '',
+                );
+                $isi = strtr($this->input->post('isi'), $arr);
                 $slug = $this->Upload_model->clean($this->input->post('judul'));
                 $data = array(
                     'judul' => $this->input->post('judul', TRUE),
                     'slug'  => $slug,
-                    'isi'   => $this->input->post('isi', TRUE),
+                    'isi'   => $isi,
                     'title' => $this->input->post('title'),
                     'content' => $this->input->post('content'),
                 );

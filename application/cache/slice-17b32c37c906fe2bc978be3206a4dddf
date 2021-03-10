@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1615270910;s:3:"ttl";i:3600;s:4:"data";s:27809:"<!DOCTYPE html>
+a:3:{s:4:"time";i:1615357686;s:3:"ttl";i:3600;s:4:"data";s:27908:"<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -228,7 +228,7 @@ a:3:{s:4:"time";i:1615270910;s:3:"ttl";i:3600;s:4:"data";s:27809:"<!DOCTYPE html
         .footer-v1 .footer {
             background: #003568 !important;
             /* background-image: linear-gradient(to right, #D9F0EC, #003568) !important; */
-            margin-top: 120px;
+            /* margin-top: 120px; */
         }
 
         .footer-v2 .copyright {
@@ -339,6 +339,10 @@ a:3:{s:4:"time";i:1615270910;s:3:"ttl";i:3600;s:4:"data";s:27809:"<!DOCTYPE html
 
         .bg-grad {
             background-image: linear-gradient(to right, #022140, #004D6F);
+        }
+
+        .bg-black {
+            background-color: black;
         }
 
         .bg-grad-2 {
@@ -702,7 +706,7 @@ a:3:{s:4:"time";i:1615270910;s:3:"ttl";i:3600;s:4:"data";s:27809:"<!DOCTYPE html
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-grad fixed-top navbar-collapse">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top navbar-collapse" style="padding: 0;">
         <div class="container">
             <a href="<?php echo  base_url() ; ?>" target="blank">
                 <div class="" style="overflow:hidden;float:left">

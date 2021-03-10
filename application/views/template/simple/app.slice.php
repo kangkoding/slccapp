@@ -228,7 +228,7 @@
         .footer-v1 .footer {
             background: #003568 !important;
             /* background-image: linear-gradient(to right, #D9F0EC, #003568) !important; */
-            margin-top: 120px;
+            /* margin-top: 120px; */
         }
 
         .footer-v2 .copyright {
@@ -339,6 +339,10 @@
 
         .bg-grad {
             background-image: linear-gradient(to right, #022140, #004D6F);
+        }
+
+        .bg-black {
+            background-color: black;
         }
 
         .bg-grad-2 {
@@ -702,7 +706,7 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-grad fixed-top navbar-collapse">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top navbar-collapse" style="padding: 0;">
         <div class="container">
             <a href="{{ base_url() }}" target="blank">
                 <div class="" style="overflow:hidden;float:left">

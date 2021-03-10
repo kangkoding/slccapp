@@ -11,7 +11,7 @@
 					foreach ($data_sliders as $key_sliders) :
 					?>
 						<div class="slide-item">
-							<div class="slide-title bg-grad">
+							<div class="slide-title bg-black">
 								<h3><?= $key_sliders->title ?></h3>
 							</div>
 							<a href="<?= $key_sliders->url ?>">
@@ -62,8 +62,8 @@
 
 <div class="row section" style="border-top:0px">
 	<div class="container p-20">
-		<div class="row" style="margin-top:30px;">
-			<div class="col-md-12" style="margin-bottom:50px">
+		<div class="row">
+			<div class="col-md-12">
 				<div class="row">
 					<style>
 						.panel {
@@ -199,7 +199,7 @@
 						}
 					</style>
 					<div class="col-md-12">
-						<div class="col-md-12" style="margin-bottom:50px">
+						<div class="col-md-12">
 							<div class="row">
 								<style>
 									.panel {
@@ -207,7 +207,7 @@
 									}
 								</style>
 								@if(settings('youtube_url') != '')
-								<div class="col-md-8" style="margin-bottom:50px">
+								<div class="col-md-8">
 									<div class="row">
 										<style>
 											.panel {
@@ -217,7 +217,7 @@
 										<div class="col-md-12">
 											<div class="panel panel-sidebar" style="background-color:rgba(0,0,0,0)">
 												<div class="panel-heading" style="border-bottom:solid 3px #00BCD4">
-													<h3 class="panel-title bg-grad-2">Subscribe Us </h3>
+													<h3 class="panel-title bg-black">Subscribe Us </h3>
 												</div>
 												<div class="panel-body">
 													<div class="youtube-video">
@@ -246,7 +246,7 @@
 									<div class="col-md-{{$arrayCol[$i]['col']}}">
 										<div class="panel panel-sidebar" style="background-color:rgba(0,0,0,0)">
 											<div class="panel-heading" style="border-bottom:solid 3px #00BCD4">
-												<h3 class="panel-title bg-grad-2">{{ $item['title'] }} </h3>
+												<h3 class="panel-title bg-black">{{ $item['title'] }} </h3>
 											</div>
 											<div class="panel-body">
 												@if($arrayCol[$i]['wp'] == true)
@@ -278,9 +278,9 @@
 														<div class="col-md-12">
 															<div class="news-title">
 																<div class="row event">
-																	<div class="col-xs-3 date bg-card">
+																	<div class="col-xs-3 date" style="padding: 0;">
 																		<?php if ($p['featured_image'] != "") { ?>
-																			<img src="{{site_url('assets/images/'.$p['featured_image'])}}">
+																			<img src="{{site_url('assets/images/'.$p['featured_image'])}}" style="width: 180px;">
 																		<?php } else { ?>
 																			<img src="http://tk.budyawacana.sch.id/joimg/publikasi/415069default-image.jpg">
 																		<?php } ?>

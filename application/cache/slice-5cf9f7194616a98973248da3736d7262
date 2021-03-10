@@ -1,3 +1,3 @@
-a:3:{s:4:"time";i:1615272044;s:3:"ttl";i:3600;s:4:"data";s:220:"<?php $this->_opening_section('content'); ?>
+a:3:{s:4:"time";i:1615348678;s:3:"ttl";i:3600;s:4:"data";s:220:"<?php $this->_opening_section('content'); ?>
 <center><div class="well"><h1>Selamat datang di Admin Dashboard</h1></div></center>
 <?php $this->_closing_section(); ?><?php echo $this->_include('admin.template.admin'); ?>";}

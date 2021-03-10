@@ -1,4 +1,4 @@
-a:3:{s:4:"time";i:1615270990;s:3:"ttl";i:3600;s:4:"data";s:13515:"<?php $this->_opening_section('title', ' SLCC PGRI WONOSOBO'); ?><?php $this->_opening_section('carousel'); ?>
+a:3:{s:4:"time";i:1615360984;s:3:"ttl";i:3600;s:4:"data";s:13442:"<?php $this->_opening_section('title', ' SLCC PGRI WONOSOBO'); ?><?php $this->_opening_section('carousel'); ?>
 <?php if(count($data_sliders) > 1): ?>
 <div class="col-md-12" style="margin-top: 50px;">
 	<div class="row">
@@ -9,7 +9,7 @@ a:3:{s:4:"time";i:1615270990;s:3:"ttl";i:3600;s:4:"data";s:13515:"<?php $this->_
 					foreach ($data_sliders as $key_sliders) :
 					?>
 						<div class="slide-item">
-							<div class="slide-title bg-grad">
+							<div class="slide-title bg-black">
 								<h3><?= $key_sliders->title ?></h3>
 							</div>
 							<a href="<?= $key_sliders->url ?>">
@@ -58,8 +58,8 @@ a:3:{s:4:"time";i:1615270990;s:3:"ttl";i:3600;s:4:"data";s:13515:"<?php $this->_
 
 <div class="row section" style="border-top:0px">
 	<div class="container p-20">
-		<div class="row" style="margin-top:30px;">
-			<div class="col-md-12" style="margin-bottom:50px">
+		<div class="row">
+			<div class="col-md-12">
 				<div class="row">
 					<style>
 						.panel {
@@ -195,7 +195,7 @@ a:3:{s:4:"time";i:1615270990;s:3:"ttl";i:3600;s:4:"data";s:13515:"<?php $this->_
 						}
 					</style>
 					<div class="col-md-12">
-						<div class="col-md-12" style="margin-bottom:50px">
+						<div class="col-md-12">
 							<div class="row">
 								<style>
 									.panel {
@@ -203,7 +203,7 @@ a:3:{s:4:"time";i:1615270990;s:3:"ttl";i:3600;s:4:"data";s:13515:"<?php $this->_
 									}
 								</style>
 								<?php if(settings('youtube_url') != ''): ?>
-								<div class="col-md-8" style="margin-bottom:50px">
+								<div class="col-md-8">
 									<div class="row">
 										<style>
 											.panel {
@@ -213,7 +213,7 @@ a:3:{s:4:"time";i:1615270990;s:3:"ttl";i:3600;s:4:"data";s:13515:"<?php $this->_
 										<div class="col-md-12">
 											<div class="panel panel-sidebar" style="background-color:rgba(0,0,0,0)">
 												<div class="panel-heading" style="border-bottom:solid 3px #00BCD4">
-													<h3 class="panel-title bg-grad-2">Subscribe Us </h3>
+													<h3 class="panel-title bg-black">Subscribe Us </h3>
 												</div>
 												<div class="panel-body">
 													<div class="youtube-video">
@@ -242,7 +242,7 @@ a:3:{s:4:"time";i:1615270990;s:3:"ttl";i:3600;s:4:"data";s:13515:"<?php $this->_
 									<div class="col-md-<?php echo $arrayCol[$i]['col']; ?>">
 										<div class="panel panel-sidebar" style="background-color:rgba(0,0,0,0)">
 											<div class="panel-heading" style="border-bottom:solid 3px #00BCD4">
-												<h3 class="panel-title bg-grad-2"><?php echo  $item['title'] ; ?> </h3>
+												<h3 class="panel-title bg-black"><?php echo  $item['title'] ; ?> </h3>
 											</div>
 											<div class="panel-body">
 												<?php if($arrayCol[$i]['wp'] == true): ?>
@@ -274,9 +274,9 @@ a:3:{s:4:"time";i:1615270990;s:3:"ttl";i:3600;s:4:"data";s:13515:"<?php $this->_
 														<div class="col-md-12">
 															<div class="news-title">
 																<div class="row event">
-																	<div class="col-xs-3 date bg-card">
+																	<div class="col-xs-3 date" style="padding: 0;">
 																		<?php if ($p['featured_image'] != "") { ?>
-																			<img src="<?php echo site_url('assets/images/'.$p['featured_image']); ?>">
+																			<img src="<?php echo site_url('assets/images/'.$p['featured_image']); ?>" style="width: 180px;">
 																		<?php } else { ?>
 																			<img src="http://tk.budyawacana.sch.id/joimg/publikasi/415069default-image.jpg">
 																		<?php } ?>

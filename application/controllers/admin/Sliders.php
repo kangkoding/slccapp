@@ -74,6 +74,17 @@ class Sliders extends CI_Controller
             $this->load->library('upload', $config);
             if ($this->upload->do_upload('image')) {
                 $data_upload = $this->upload->data();
+                $config['image_library'] = 'gd2';
+                $config['source_image'] = './assets/images/' . $data_upload['file_name'];
+                $config['create_thumb'] = FALSE;
+                $config['maintain_ratio'] = FALSE;
+                $config['quality'] = '50%';
+                $config['width'] = 1250;
+                $config['height'] = 500;
+                $config['new_image'] = './assets/images/' . $data_upload['file_name'];
+                $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
+
                 $data = array(
                     'image' => $data_upload['file_name'],
                     'level' => $this->input->post('level', TRUE),
@@ -124,8 +135,8 @@ class Sliders extends CI_Controller
                 $config['upload_path'] = './assets/images/';
                 $config['allowed_types'] = 'gif|jpg|png';
                 $config['max_size']  = '10000';
-                $config['min_width']  = '3267';
-                $config['min_height']  = '471';
+                $config['min_width']  = '0';
+                $config['min_height']  = '0';
                 $config['max_width']  = '4867';
                 $config['max_height']  = '2071';
                 $this->load->library('upload', $config);
@@ -136,6 +147,17 @@ class Sliders extends CI_Controller
                 $data['level'] = $this->input->post('level', TRUE);
                 if ($this->upload->do_upload('image')) {
                     $data_upload = $this->upload->data();
+                    $config['image_library'] = 'gd2';
+                    $config['source_image'] = './assets/images/' . $data_upload['file_name'];
+                    $config['create_thumb'] = FALSE;
+                    $config['maintain_ratio'] = FALSE;
+                    $config['quality'] = '50%';
+                    $config['width'] = 1250;
+                    $config['height'] = 500;
+                    $config['new_image'] = './assets/images/' . $data_upload['file_name'];
+                    $this->load->library('image_lib', $config);
+                    $this->image_lib->resize();
+
                     $data['image'] = $data_upload['file_name'];
                 }
                 $this->Sliders_model->update($this->input->post('id', TRUE), $data);
